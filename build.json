@@ -1,0 +1,85 @@
+{
+    "id": "develop/galaxymanager",
+    "apps": [
+        {
+            "id": "galaxymanager",
+            "cpus": 1.0,
+            "mem": 512.0,
+            "ports": [
+                0
+            ],
+            "requirePorts": false,
+            "instances": 1,
+            "executor": "",
+            "container": {
+                "type": "DOCKER",
+                "docker": {
+                    "image": "10.5.24.46:80/galaxymanager:1.0.0.0",
+                    "forcePullImage": true,
+                    "network": "BRIDGE",
+                    "portMappings": [
+                        {
+                            "containerPort": 80,
+                            "hostPort": 0,
+                            "servicePort": 0,
+                            "protocol": "tcp"
+                        },
+                        {
+                            "containerPort": 443,
+                            "hostPort": 0,
+                            "servicePort": 0,
+                            "protocol": "tcp"
+                        }
+                    ],
+                    "privileged": false,
+                    "parameters": [
+                    ]
+                },
+                "volumes": [
+                    {
+                        "containerPath": "/opt/applications/logs",
+                        "hostPath": "/opt/fileserver/galaxymanager-demo/logs",
+                        "mode": "RW"
+                    },
+                    {
+                        "containerPath": "/opt/applications/template/sharedfiles",
+                        "hostPath": "/opt/fileserver/galaxymanager-demo/files/sharedfiles",
+                        "mode": "RW"
+                    }
+                ]
+            },
+            "env": {
+                "MYSQL_DATABASE": "mysite",
+                "MYSQL_USER": "mysite",
+                "MYSQL_PASSWORD": "Admin@123",
+                "MYSQL_HOST": "mysqldb-envname-product.marathon.mesos.",
+                "MYSQL_PORT": "31111"
+            },
+            "constraints": [
+            ],
+            "labels": {
+            },
+            "uris": [
+            ],
+            "dependencies": [],
+            "healthChecks": [
+                {
+                    "protocol": "HTTP",
+                    "path": "/",
+                    "gracePeriodSeconds": 3,
+                    "intervalSeconds": 10,
+                    "portIndex": 0,
+                    "timeoutSeconds": 10,
+                    "maxConsecutiveFailures": 3
+                }
+            ],
+            "backoffSeconds": 1,
+            "backoffFactor": 1.15,
+            "maxLaunchDelaySeconds": 3600,
+            "upgradeStrategy": {
+                "minimumHealthCapacity": 0.5,
+                "maximumOverCapacity": 0.2
+            }
+        }
+    ]
+}

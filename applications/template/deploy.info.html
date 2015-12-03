@@ -1,0 +1,829 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="height: 100%;border: none;padding: 0px;margin: 0px;">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7;  IE=EDGE"/>
+	<meta content="Deploy" name="keywords" />
+	<meta content="Deploy" name="description" />
+	<meta name="generator" content="Deploy"/>
+	<title>Deploy-Malakas</title>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/bootstrap.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/bootstrap-theme.min.css" type="text/css"/>
+	<!--<link rel="stylesheet" href="/static/js/model/DataTables-1.10.4-trial/media/css/jquery.dataTables.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/DataTables-1.10.4-trial/extensions/TableTools/css/dataTables.tableTools.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/DataTables-1.10.4-trial/extensions/Editor-1.3.3/css/dataTables.editor.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/font-awesome.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/css/demo/nav/docs.min.css" type="text/css"/>-->
+	<link rel="stylesheet" href="/static/js/model/bootstrap-datetimepicker-master/build/css/bootstrap-datetimepicker.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-table-master/dist/bootstrap-table.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/patch.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/css/docs.min.css" type="text/css"/>
+	<style type="text/css">
+		/* Move down content because we have a fixed navbar that is 50px tall */
+		body {
+			padding-top: 50px;
+			padding-bottom: 20px;
+		}
+		/* footer css #f8f8f8; */
+		.pb-page-footer{
+			width: 100%;
+			color: gray;
+			background-color: #3C3C3C;
+			#border-top: 1px solid #e7e7e7;
+			margin-top: 5px;
+			margin-bottom: 0px;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+		.pb-page-footer a, .pb-page-footer a:visited {
+			color: #777;
+			text-decoration: none;
+		}
+		.pb-page-footer a:active, .pb-page-footer a:hover, .pb-page-footer a:focus{
+			color: white;
+			text-decoration: none;
+		}
+		body {
+			padding-bottom:0px;
+		}
+		.pb-page-footer h4 {
+			color:white;
+		}
+		
+		/* job center body */
+		.form-control {
+			height: 34px;
+		}
+		.keep-open {
+			height: 28px;
+		}
+		div.bootstrap-table > div.fixed-table-toolbar > div.columns.columns-right.btn-group.pull-right > div > button {
+			height: 28px;
+		}
+		div.fixed-table-pagination > div.pull-left.pagination-detail > span.page-list {
+			display: inline-block !important;
+		}
+		div.fixed-table-container > div.fixed-table-pagination > div.pull-right.pagination {
+			display: inline-block !important;
+		}
+		.fixed-table-container {
+			border: none;
+		}
+		
+		
+		/* new create */
+		body{margin-top:50px;}
+		.glyphicon { margin-right:10px; }
+		.panel-body { padding:0px; }
+		.panel-body table tr td { padding-left: 15px }
+		.panel-body .table {margin-bottom: 0px; }
+		/* blogitem style*/
+		.blogitem {
+			margin-top:10px;
+			border-bottom: 1px solid #E3E3E3;
+		}
+		/* bot-links style */
+		.bot-links{float: left; width: 100%;}
+		/* bot-links-all style */
+		.bot-links-all{float: left; width: 100%;}
+		.bot-links-all a{margin-bottom:5px;font-size: 18px;}
+		.bot-links a .badge:hover{background-color: #F87B00;}
+		.bot-links-all a .badge:hover{background-color: #F87B00;}
+		/*.bot-links a{display: inline-block; padding: 5px; background: #ccc; font-size: 12px; margin-bottom: 5px; color: #9c9c9c; text-decoration:none;}*/
+		/* search style*/
+		.stylish-input-group .input-group-addon{
+			background: white !important; 
+		}
+		.stylish-input-group .form-control{
+			border-right:0; 
+			box-shadow:0 0 0; 
+			border-color:#ccc;
+		}
+		.stylish-input-group button{
+			border:0;
+			background:transparent;
+		}
+		/* recommendlist style*/
+		.recommendlist li {
+			margin-bottom:10px;
+		}
+		/* filter new blog style*/
+		.filter {
+			margin-top: 10px;
+			padding: 5px;
+			padding-right:10px;
+			border: 1px solid #eee;
+		}
+		/**/
+		#id_addTag {
+			border: 0;
+			background: none;
+			/** belows styles are working good */
+			padding: 2px 5px;
+			margin-top: 2px;
+			position: relative;
+			left: -28px;
+			/* IE7-8 doesn't have border-radius, so don't indent the padding */
+			margin-bottom: 0;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			color:#D9230F;
+			z-index: 3;   
+		}
+		.twitter-typeahead {
+			width:100%;
+		}
+		
+		
+		.panel-body {
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<!-- Navigation
+	================================================== -->
+	<nav class="navbar navbar-fixed-top navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/" style="font-size:18px;font-weight:bold;color:#FFF;"><!--<img alt="Brand" src="/static/images/favicon.ico" title="junneyang.sinaapp.com" style="margin-left:5px;height:24px;width:24px;"/>-->Malakas</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse js-navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/">Home</a></li>
+					<li><a href="#">Dashboard</a></li>
+					<li><a href="/jobcenter/">Job Center</a></li>
+					<li  class="active"><a href="/deploy/">Deploy</a></li>
+					<!--<li class="dropdown dropdown-large">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog Center<span class="caret"></span></a>
+						<ul class="dropdown-menu dropdown-menu-large row">
+							<li class="col-sm-4">
+								<ul>
+									<li class="dropdown-header">系统</li>
+									<li><a href="#">Linux</a></li>
+									<li><a href="#">Shell</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-header">架构</li>
+									<li><a href="#">设计模式</a></li>
+									<li><a href="#">Web系统</a></li>
+									<li><a href="#">后端</a></li>
+									<li><a href="#">网络框架</a></li>
+									<li><a href="#">中间件</a></li>
+								</ul>
+							</li>
+							<li class="col-sm-4">
+								<ul>
+									<li class="dropdown-header">开发</li>
+									<li><a href="#">C/C++</a></li>
+									<li><a href="#">Java</a></li>
+									<li><a href="#">Python</a></li>
+									<li><a href="#">html/css/js</a></li>
+									<li><a href="#">Algorithm</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-header">测试</li>
+									<li><a href="#">系统测试</a></li>
+									<li><a href="#">自动化测试</a></li>
+									<li><a href="#">性能测试</a></li>
+									<li><a href="#">持续集成</a></li>
+								</ul>
+							</li>
+							<li class="col-sm-4">
+								<ul>
+									<li class="dropdown-header">云计算</li>
+									<li><a href="#">数据中心</a></li>
+									<li><a href="#">虚拟化</a></li>
+									<li><a href="#">OpenStack</a></li>
+									<li><a href="#">Hadoop/Spark</a></li>
+									<li><a href="#">SDN/NFV</a></li>
+									<li><a href="#">存储技术</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>-->
+					<li><a href="/help/">Help</a></li>
+				</ul>
+				<!--<form class="navbar-form navbar-right" role="search">
+					<div class="form-group"><input type="text" class="form-control" placeholder="Search"></div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>-->
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#" class="navbar-link">sign up</a></li>
+					<li class="dropdown">
+						<a href="#" class="navbar-link" class="dropdown-toggle" data-toggle="dropdown">log in<b class="caret"></b></a>
+						<ul class="dropdown-menu" style="padding:15px;min-width:250px;">
+							<li>
+								<div class="row">
+									<div class="col-md-12">
+										<form class="form" role="form" onsubmit="return loginWithDefault();">
+											<div class="form-group">
+												<label class="sr-only" for="exampleInputEmail2">Email address</label>
+												<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+											</div>
+											<div class="form-group">
+												<label class="sr-only" for="exampleInputPassword2">Password</label>
+												<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+											</div>
+											<div class="checkbox">
+												<label>
+												<input type="checkbox" class="checkbox" checked="checked"/>Subscribe Newsletter
+												</label>
+											</div>
+											<div class="form-group">
+												<button type="submit" class="btn btn-success btn-block">Sign in</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<input class="btn btn-primary btn-block" type="button" id="sign-in-google" value="Sign In with QQ">
+								<input class="btn btn-primary btn-block" type="button" id="sign-in-twitter" value="Sign In with GitHub">
+								<!--<input class="btn btn-primary btn-block" type="button" id="sign-in-google" value="Sign In with Google">-->
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<!--<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">{{usrname}}<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">个人中心</a></li>
+							<li><a href="#">退出登录</a></li>
+						</ul>
+					</li>
+					<li class="divider-vertical"></li>
+					<li><a href="#">帮助</a></li>
+				</ul>-->
+			</div><!-- /.nav-collapse -->
+		</div><!-- /.container -->
+	</nav><!-- /.navbar -->
+	
+	<!-- <div id="id_loading" style="display:none;">
+		<p style="text-align:center;"><img src="/static/images/loading.gif"></img></p>
+		<p style="text-align:center;">Deploying，Please wait a moment...</p>
+	</div> -->
+	<div class="container" style="margin-bottom: 10px;">
+		<div class="row">
+			<div class="col-sm-5 col-md-5">
+				<div id="id_workflow"></div>
+			</div>
+			<div class="col-sm-7 col-md-7" style="margin-top:10px;padding-left:80px;">
+				<h5><b>DeployStatus</b></h5>
+				<table class="table table-condensed">
+					<tbody>
+					<tr>
+						<td>ID: </td>
+						<td id="id_ID"></td>
+					</tr>
+					<!-- <tr>
+						<td>taskStatus: </td>
+						<td><img src='/static/images/r_success.png' title='success'></td>
+					</tr> -->
+					<tr>
+						<td>deployName: </td>
+						<td id="id_deployName"></td>
+					</tr>
+					<tr>
+						<td>serviceName: </td>
+						<td id="id_serviceName"></td>
+					</tr>
+					<tr>
+						<td>taskAll: </td>
+						<td id="id_taskAll"></td>
+					</tr>
+					<tr>
+						<td>taskNext: </td>
+						<td id="id_taskNext"></td>
+					</tr>
+					<tr>
+						<td>taskRunning: </td>
+						<td id="id_taskRunning"></td>
+					</tr>
+					<tr>
+						<td>taskRemian: </td>
+						<td id="id_taskRemian"></td>
+					</tr>
+					<tr>
+						<td>taskFinished: </td>
+						<td id="id_taskFinished"></td>
+					</tr>
+					<tr>
+						<td>taskFailed: </td>
+						<td id="id_taskFailed"></td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<h5 class="page-header" style="margin-top:5px;"><b>DeployDetails</b></h5>
+		<div id="id_DeployDetails" class="container" style="margin-top: 10px;min-height:300px;font-size:15px;">
+			<div id="id_loading" style="display:none;">
+				<p style="text-align:center;"><img src="/static/images/loading.gif"></img></p>
+				<p style="text-align:center;">Loading，Please wait a moment...</p>
+			</div>
+		</div>
+		<!-- <div class="panel panel-default">
+			<div class="panel-body">
+				<p>Basic panel example</p>
+			</div>
+		</div> -->
+	</div>
+	
+	<footer class="footer" style="margin-top:0px;margin-bottom:0px;padding-top:20px;background-color:black;">
+		<div class="container text-center">
+			<p class="text-muted">Copyright ©2015 NSFOCUS. All Rights Reserved. </p>
+			<p class="text-muted">Technical Support : <a href="http://www.ansible.com/">Ansible</a></p>
+			<p class="text-muted">Malakas 2015 Lab @NSFOCUS</p><br/>
+		</div>
+	</footer>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+					<h4 class="modal-title" id="myModalLabel">Info</h4>
+				</div>
+				<div class="modal-body text-center">
+					Operation Success
+				</div>
+				<!--<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>-->
+			</div>
+		</div>
+	</div>
+	
+	<div id="alerts" style='position:fixed;top:60px;right:20px;'></div>
+	
+	<script src="/static/js/jquery-1.11.2.min.js"></script>
+	<script src="/static/js/model/bootstrap-3.3.1-dist/dist/js/bootstrap.min.js"></script>
+	<script src="/static/js/model/bootstrap-3.3.1-dist/dist/js/docs.min.js"></script>
+	<script src="/static/js/model/moment-develop/min/moment-with-locales.min.js"></script>
+	<script src="/static/js/model/bootstrap-datetimepicker-master/build/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="/static/js/model/bootstrap-table-master/dist/bootstrap-table.min.js"></script>
+	<script src="/static/js/model/bootstrap-table-master/dist/locale/bootstrap-table-zh-CN.min.js"></script>
+	
+	<script src="/static/js/viz.js"></script>
+	
+	<script type="text/javascript">
+		//表格行style设置
+		function rowStyle(row, index) {
+			var classes = ['active', 'success', 'info', 'warning', 'danger'];
+			/*if (index % 2 === 0 && index / 2 < classes.length) {
+				return {
+					classes: classes[index / 2]
+				};
+			}*/
+			/*if (row.job_status == 5) {
+				return {
+					classes: 'danger'
+				};
+			}*/
+			return {};
+		}
+		//表格列data设置
+		function moduleNameFormatter(value) {
+			return '<a href="/helpModuleInfo/?module='+value+'"><b>'+value+'</b></a>';
+		}
+		function jobTypeFormatter(value) {
+			if (value == 0) {
+				return "Basic";
+			} else if (value == 1) {
+				return "Script";
+			} else if (value == 2) {
+				return "Playbook";
+			}
+		}
+		function deployStatusFormatter(value) {
+			if (value == 0) {
+				return "<img src='/static/images/r_loading.gif' title='initial'>";
+			} else if (value == 1) {
+				return "<img src='/static/images/r_running.gif' title='running'>";
+			} else if (value == 2) {
+				return "<img src='/static/images/r_exception.png' title='exception'>";
+			} else if (value == 3) {
+				return "<img src='/static/images/r_success.png' title='success'>";
+			}
+		}
+		//表格列data设置
+		function operationFormatter(value) {
+			//return '<a href="#"><i class="glyphicon glyphicon-cutlery"></i>查看</a> <a href="#"><i class="glyphicon glyphicon-cutlery"></i>修改</a>';
+			//return '<i class="glyphicon glyphicon-cutlery"></i> ' ;//+ value;
+			return '<a href="javascript:queryDeployInfo(' + value.id + ')"><i class="glyphicon glyphicon-search"></i>查看详情</a>';
+			/*if (value.job_type == 0 || value.job_type == 1) {
+				return "<a href='/getJobRes/?job_id="+value.id+"'>执行结果</a>";
+			} else if (value.job_type == 2 && value.job_status < 4) {
+				return "<a href='/getJobRes/?job_id="+value.id+"'>执行结果</a>";
+			} else if (value.job_type == 2 && value.job_status >= 4) {
+				return "<a href='/getJobRes/?job_id="+value.id+"'>执行结果</a> | " +
+				"<a href='/getPlaybookJobLog/?job_id="+value.id+"'>详细日志</a>";
+			}*/
+		}
+		//表格index设置
+		function runningFormatter(value, row, index) {
+			return index;
+		}
+		//表格复选设置
+		function stateFormatter(value, row, index) {
+			if (index === 2) {
+				return {
+					disabled: true
+				};
+			}
+			if (index === 0) {
+				return {
+					disabled: true,
+					checked: true
+				}
+			}
+			return value;
+		}
+		//表格分页查询设置
+		function queryParams() {
+			return {
+				limit: 5,
+				offset: 0,
+				//search: 
+				sort: 'id',
+				order: 'desc'
+			};
+		}
+		/*
+		$(document).ready(function() {
+			$('.page-list').css('display','inline-block'); 
+			$('.pagination').css('display','inline-block'); 
+			$('.page-list').css({visibility,"visible"});
+			$('.pagination').css({visibility,"visible"});
+		});*/
+		/*$(document).ready(function() {
+			$('#datetimepicker1').datetimepicker({
+				format: 'YYYY-MM-DD',
+				useCurrent: true,
+				calendarWeeks: true,
+				showTodayButton: true,
+				showClear: true
+			});
+		});
+		$(document).ready(function() {
+			initAccountList();
+		});*/
+		function initAccountList() {
+			$.when(queryAccounts()).done(function(data){
+				$.each(data,function(n,value) {  
+					$("#id_account_select").append('<option value="' + value + '">' + value + '</option>');
+				});
+			});
+		}
+		function queryAccounts() {
+			var metricsID = parseRequestURL("metricsID");
+			//alert(metricsID);
+			var defer = $.Deferred();
+			$.ajax({
+				type: "POST",
+				url : '/queryAccounts/',
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				data: {metricsID:metricsID},
+				//async : false,
+				success: function(data){
+					defer.resolve(data)
+				}
+			});
+			return defer.promise();
+		}
+		/**********************************************************************************************
+		*****账户点击率监控曲线
+		**********************************************************************************************/
+		function queryAccountInfoChart() {
+			var date = $("#datetimepicker1 input").val();
+			alert(date);
+			var account = $("#id_account_select option:selected").val();
+			if(account == "NULL") {
+				alert("请选择查询账号");
+				return;
+			}
+			var categories = new Array();
+			var data = new Array();
+			data[0] = new Array();
+			data[1] = new Array();
+			data[2] = new Array();
+			data[3] = new Array();
+			$.each(accountInfo,function(i,item) {
+				$.each(item,function(j,itemitem) {  
+					if(itemitem.accountName == account) {
+						categories.push(itemitem.datetime);
+						data[0].push(Number(itemitem.clickrate[0]));
+						data[1].push(Number(itemitem.clickrate[1]));
+						data[2].push(Number(itemitem.clickrate[2]));
+						data[3].push(Number(itemitem.clickrate[3]));
+					}
+				});
+			});
+			/*alert(data[0]);
+			alert(data[1]);
+			alert(data[2]);
+			alert(data[3]);*/
+			disStatChart(categories, data);
+		}
+		/*$(document).ready(function() {
+			initAlarmTrendChart();
+		});
+		function initAlarmTrendChart(){
+			$('#alarmTrendLoading').show();
+			$.when(queryAlarmTrendData()).done(function(data){
+				$('#alarmTrendLoading').hide();
+				disAlarmTrendChart(data.date, data.data);
+			});
+		}
+		function queryAlarmTrendData() {
+			var defer = $.Deferred();
+			$.ajax({
+				type: "POST",
+				url : '/queryAlarmDayperiod/',
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				//async : false,
+				success: function(data){
+					defer.resolve(data)
+				}
+			});
+			return defer.promise();
+		}*/
+		function disStatChart(categories, data) {
+			$('#container_account_clickrate').highcharts({
+				chart: {
+					type: 'column'
+				},
+				title: {
+					text: '账户点击率监控曲线'
+				},
+				subtitle: {
+					text: '今天-前一周-前两周-前三周'
+				},
+				credits: { 
+					enabled: false   //右下角不显示LOGO 
+				}, 
+				xAxis: {
+					categories: categories
+				},
+				yAxis: {
+					min: 0,
+					title: {
+						text: '次数/次'
+					}
+				},
+				tooltip: {
+					pointFormat: '<b>{series.name} : {point.y}</b>次 ',
+					shared: true,
+					useHTML: true
+				},
+				exporting: {
+					enabled: true  //设置导出按钮不可用
+				},
+				plotOptions: {
+					column: {
+						pointPadding: 0.2,
+						borderWidth: 0
+					}
+				},
+				series: [{
+					name: '今天',
+					data: data[0]
+
+				}, {
+					name: '前一周',
+					data: data[1]
+
+				}, {
+					name: '前两周',
+					data: data[2]
+
+				}, {
+					name: '前三周',
+					data: data[3]
+
+				}]
+			});
+		}
+		function parseRequestURL(paras) {
+			var url = location.href;
+			var paraString = url.substring(url.indexOf("?")+1,url.length).split("&"); 
+			var paraObj = {} 
+			for (i=0; j=paraString[i]; i++){ 
+				paraObj[j.substring(0,j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=")+1,j.length); 
+			} 
+			var returnValue = paraObj[paras.toLowerCase()]; 
+			if(typeof(returnValue)=="undefined"){ 
+				return ""; 
+			}else{ 
+				return returnValue; 
+			} 
+		}
+		
+		
+		function addAlert(message) {
+			$('#alerts').append(
+				'<div class="alert alert-danger alert-dismissible fade in" style="min-width:300px;">' +
+					'<button type="button" class="close" data-dismiss="alert">' +
+					'&times;</button>' + message + '</div>');
+		}
+		
+		$(document).ready(function(){
+			queryDeploy();
+		});
+		function queryDeploy() {
+			var deploy_id = parseRequestURL("deploy_id");
+			$.when(getDeployByID(deploy_id)).done(function(data){
+				if(data.ERRORCODE == 0) {
+					document.getElementById("id_ID").innerHTML = data.msg.id;
+					document.getElementById("id_deployName").innerHTML = data.msg.deployName;
+					document.getElementById("id_serviceName").innerHTML = data.msg.serviceName;
+					document.getElementById("id_taskAll").innerHTML = JSON.stringify(data.msg.taskInfo.task_all,null,0);
+					document.getElementById("id_taskNext").innerHTML = JSON.stringify(data.msg.taskInfo.task_next,null,0);
+					document.getElementById("id_taskRunning").innerHTML = JSON.stringify(data.msg.taskInfo.task_running,null,0);
+					document.getElementById("id_taskRemian").innerHTML = JSON.stringify(data.msg.taskInfo.task_remian,null,0);
+					document.getElementById("id_taskFinished").innerHTML = JSON.stringify(data.msg.taskInfo.task_finished,null,0);
+					document.getElementById("id_taskFailed").innerHTML = JSON.stringify(data.msg.taskInfo.task_failed,null,0);
+					
+					var t = "";
+					var taskStatus = data.msg.taskStatus;
+					if (taskStatus == 0) {
+						t += "<p>taskStatus: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='/static/images/r_loading.gif' title='initial'>";
+					} else if (taskStatus == 1) {
+						t += "<p>taskStatus: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='/static/images/r_running.gif' title='running'>";
+					} else if (taskStatus == 2) {
+						t += "<p>taskStatus: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='/static/images/r_exception.png' title='exception'>";
+					} else if (taskStatus == 3) {
+						t += "<p>taskStatus: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='/static/images/r_success.png' title='success'>";
+					}
+					
+					var taskDesc = data.msg.taskDesc;
+					t += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+					t += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+					t += "taskDesc: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+taskDesc+"</p>";
+					var taskStartTime = data.msg.task_start_time;
+					t += "<p>taskStartTime: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+taskStartTime+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+					
+					var taskEndTime = data.msg.task_end_time;
+					t += "taskEndTime: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+taskEndTime+"</p>";
+					
+					var taskList = data.msg.taskList;
+					if (taskList) {
+						taskList = JSON.stringify(taskList, null, 4);
+					} else {
+						taskList = "Internal Error...";
+					}
+					t += "<p>taskList: <br/><pre>" + taskList + "</pre></p>";
+					
+					var taskParamList = data.msg.taskParamList;
+					if (taskParamList) {
+						taskParamList = JSON.stringify(taskParamList, null, 4);
+					} else {
+						taskParamList = "Internal Error...";
+					}
+					t += "<p>taskParamList: <br/><pre>" + taskParamList + "</pre></p>";
+					$("#id_DeployDetails").append(t);
+					
+					
+					
+					disWorkflow(data.msg);
+				} else {
+					addAlert(data.CH + " : " + data.msg);
+				}
+			});
+			return false;
+		}
+		function getDeployByID(deploy_id) {
+			var defer = $.Deferred();
+			$.ajax({
+				type: "GET",
+				url : '/getDeployByID/?deploy_id='+deploy_id,
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				//data: JSON.stringify(request),
+				//async : false,
+				beforeSend:function(XMLHttpRequest){
+				   document.getElementById('id_loading').style.display = "block";
+				},
+				success: function(data){
+					document.getElementById('id_loading').style.display = "none";
+					defer.resolve(data)
+				}
+			});
+			return defer.promise();
+		}
+		function queryDeployInfo(deploy_id) {
+			addAlert("Warning: " + "Deploy详情查询暂未实现，请到Job Center查看子任务状态.");
+		}
+		
+		function disWorkflow(data) {
+			var workflow = 'digraph "DeployTask" {\
+					graph [\
+						fontname = "Helvetica-Oblique",\
+						fontsize = 10,\
+						label = "\n\n\nWorkFlow of the Deploy Task.",\
+						size = "6,6" \
+					];\
+					node [\
+						sides = 4,\
+						distortion = "0.0",\
+						orientation = "0.0",\
+						skew = "0.0",\
+						color = lightgrey,\
+						style = filled,\
+						fontsize = "14",\
+						fontname = "Helvetica-Outline"\
+					];'
+					//workflow += '"service_TEST" [sides=9, distortion="0.936354", orientation=28, skew="-0.126818", color=goldenrod2];'
+					/*workflow += '"service_TEST" -> "task_A";\
+					"service_TEST" -> "task_G";\
+					"task_A" -> "task_B";\
+					"task_B" -> "task_C";\
+					"task_B" -> "task_D";\
+					"task_D" -> "task_E";\
+					"task_D" -> "task_F";\
+					"task_G" -> "task_H";\
+					"task_G" -> "task_I";'*/
+					
+					var serviceName = data.serviceName;
+					var taskList = data.taskList;
+					var taskInfo = data.taskInfo;
+					if(data.taskStatus == 0) {
+						workflow += '"'+serviceName+'" [sides=9, distortion="0.936354", orientation=28, skew="-0.126818", color=lightgrey];';
+						setInterval(function(){
+							$("#node1 text").fadeOut(200).fadeIn(200);
+						},600);
+					} else if(data.taskStatus == 1) {
+						workflow += '"'+serviceName+'" [sides=9, distortion="0.936354", orientation=28, skew="-0.126818", color=goldenrod2];';
+						setInterval(function(){
+							$("#node1 text").fadeOut(200).fadeIn(200);
+						},600);
+					} else if(data.taskStatus == 2) {
+						workflow += '"'+serviceName+'" [sides=9, distortion="0.936354", orientation=28, skew="-0.126818", color=orangered];';
+						setInterval(function(){
+							$("#node1 text").fadeOut(200).fadeIn(200);
+						},600);
+					} else if(data.taskStatus == 3) {
+						workflow += '"'+serviceName+'" [sides=9, distortion="0.936354", orientation=28, skew="-0.126818", color=goldenrod2];';
+					}
+					$.each(taskList,function(i,item) {
+						if (taskInfo.task_running.indexOf(i) > -1) {
+							workflow += '"'+item.taskName+'" [sides=9, distortion="0.936354", orientation=28, skew="-0.126818", color=goldenrod2];';
+							setInterval(function(){
+								var num = (i+2).toString();
+								$("#node"+num+" text").fadeOut(200).fadeIn(200);
+							},600);
+						}
+						if (taskInfo.task_finished.indexOf(item.taskName) > -1) {
+							workflow += '"'+item.taskName+'" [sides=9, distortion="0.936354", orientation=28, skew="-0.126818", color=goldenrod2];';
+						}
+						if (taskInfo.task_failed.indexOf(item.taskName) > -1) {
+							workflow += '"'+item.taskName+'" [sides=9, distortion="0.936354", orientation=28, skew="-0.126818", color=orangered];';
+							setInterval(function(){
+								var num = (i+2).toString();
+								$("#node"+num+" text").fadeOut(200).fadeIn(200);
+							},600);
+						}
+						if(item.depends == null) {
+							workflow += '"'+serviceName+'" -> "'+item.taskName+'"';
+						} else if(item.depends != null){
+							$.each(item.depends,function(j,itemitem) {
+								workflow += '"'+itemitem+'" -> "'+item.taskName+'"';
+							});
+						}
+					});
+				workflow += '}';
+			document.getElementById("id_workflow").innerHTML = Viz(workflow, "svg");
+			
+			$(".node").click(function(){
+				node_id = $(this).attr("id");
+				if (node_id == "node1") {
+					window.location.href = "/jobcenter/";
+				} else {
+					var job_id = taskList[Number(node_id.split("node")[1])-2].job_id;
+					if(typeof(job_id) != "undefined") {
+						window.location.href = "/getJobRes/?job_id="+job_id.toString();
+					}
+				}
+			});
+			$(".node").mouseover(function(){
+				this.style.cursor='pointer'
+				this.style.cursor = "hand"; 
+			});
+			$(".node").mouseout(function(){
+				this.style.cursor = "default"; 
+			});
+		}
+	</script>
+</body>
+</html>

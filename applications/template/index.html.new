@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="height: 100%;border: none;padding: 0px;margin: 0px;">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7;  IE=EDGE"/>
+	<meta content="首页" name="keywords" />
+	<meta content="首页" name="description" />
+	<meta name="generator" content="首页"/>
+	<link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon" />
+	<title>首页-测试一下</title>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/bootstrap.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/bootstrap-theme.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/css/slider.css" type="text/css"/>
+	<style type="text/css">
+	</style>
+</head>
+<body>
+	<div class="container">
+		<p>UserName : {{username}}</p>
+	</div>
+	<div class="container">
+		<form class="form" role="form" onsubmit="return postsubmit();">
+			<div class="form-group">
+				<div class="input-prepend"><span class="add-on"><i class="icon-envelope"></i></span>
+					<label class="sr-only" for="email">Email address</label>
+					<input type="email" class="form-control" id="email" placeholder="Enter your email" required/>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-info btn-block">Submit</button>
+		</form>
+	</div>
+	
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+					<h4 class="modal-title" id="myModalLabel">Info</h4>
+				</div>
+				<div class="modal-body text-center">
+					Operation Success
+				</div>
+				<!--<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>-->
+			</div>
+		</div>
+	</div>
+	
+	<!-- Alert -->
+	<div id="alerts" style='position:fixed;top:20px;right:20px;'></div>
+	
+	<script src="/static/js/jquery-1.11.2.min.js"></script>
+	<script src="/static/js/model/bootstrap-3.3.1-dist/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		function postsubmit() {
+			var email = $('#email').val();
+			if (email == "") {
+				return false;
+			}
+			$.when(posttest(email)).done(function(data){
+				/*$.each(data,function(n,item) {
+				});*/
+				if(data.ERRORCODE == 0) {
+					showModal();
+				} else {
+					//showModal();
+					addAlert(data.CH + " : " + data.msg);
+				}
+			});
+			return false;
+		}
+		function showModal(){
+			$('#myModal').modal('show');
+		}
+		function hideModal(){
+			$('#myModal').modal('hide');
+		}
+		$(document).ready(function(){
+			$('#myModal').on('shown.bs.modal', function() {
+				// remove previous timeouts if it's opened more than once.
+				//clearTimeout(myModalTimeout);
+				myModalTimeout = setTimeout(function() {
+					hideModal();
+				}, 2000);
+			});
+		});
+		function posttest(email) {
+			var defer = $.Deferred();
+			var data = {};
+			data['email'] = email;
+			$.ajax({
+				type: "POST",
+				url : '/posttest/',
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				data: JSON.stringify(data),
+				//async : false,
+				success: function(data){
+					defer.resolve(data)
+				}
+			});
+			return defer.promise();
+		}
+		function addAlert(message) {
+			$('#alerts').append(
+				'<div class="alert alert-danger alert-dismissible fade in" style="min-width:300px;">' +
+					'<button type="button" class="close" data-dismiss="alert">' +
+					'&times;</button>' + message + '</div>');
+		}
+	</script>
+</body>
+</html>

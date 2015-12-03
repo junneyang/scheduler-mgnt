@@ -1,0 +1,860 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="height: 100%;border: none;padding: 0px;margin: 0px;">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7;  IE=EDGE"/>
+	<meta content="首页" name="keywords" />
+	<meta content="首页" name="description" />
+	<meta name="generator" content="首页"/>
+	<link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon" />
+	<title>Products & Services-GalaxyManager</title>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/bootstrap.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/bootstrap-theme.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/css/slider.css" type="text/css"/>
+	<style type="text/css">
+        /* Move down content because we have a fixed navbar that is 50px tall */
+		body {
+			padding-top: 50px;
+			padding-bottom: 20px;
+		}
+		/* item img opacity */
+		.item img {
+			opacity:0.8;
+			filter:alpha(opacity=80); /* 针对 IE8 以及更早的版本 */
+		}
+		/* IMG hover rotate */
+		.hover {
+			margin: 0 auto;
+			width: 140px;
+			height: 140px;
+			position: relative;
+			#font-size: .8em;
+			font-size: 14px;
+			-webkit-perspective: 600px;
+			-moz-perspective: 600px;
+		}
+		.hover .front {
+			position: absolute;
+			top: 0;
+			z-index: 900;
+			width: inherit;
+			height: inherit;
+			text-align: center;
+		}
+		.hover .back {
+			position: absolute;
+			top: 0;
+			z-index: 800;
+			width: inherit;
+			height: inherit;
+		}
+		/* -- make sure to declare a default for every property that you want animated -- */
+		/* -- general styles, including Y axis rotation -- */
+		.hover .front {
+			position: absolute;
+			top: 0;
+			z-index: 900;
+			width: inherit;
+			height: inherit;
+			text-align: center;
+			-webkit-transform: rotateX(0deg) rotateY(0deg);
+			-webkit-transform-style: preserve-3d;
+			-webkit-backface-visibility: hidden;
+			-moz-transform: rotateX(0deg) rotateY(0deg);
+			-moz-transform-style: preserve-3d;
+			-moz-backface-visibility: hidden;
+			/* -- transition is the magic sauce for animation -- */
+			-o-transition: all .4s ease-in-out;
+			-ms-transition: all .4s ease-in-out;
+			-moz-transition: all .4s ease-in-out;
+			-webkit-transition: all .4s ease-in-out;
+			transition: all .4s ease-in-out;
+		}
+		.hover.flip .front {
+			z-index: 900;
+			-webkit-transform: rotateY(180deg);
+			-moz-transform: rotateY(180deg);
+		}
+		.hover .back {
+			position: absolute;
+			top: 0;
+			z-index: 800;
+			width: inherit;
+			height: inherit;
+			-webkit-transform: rotateY(-180deg);
+			-webkit-transform-style: preserve-3d;
+			-webkit-backface-visibility: hidden;
+		 
+			-moz-transform: rotateY(-180deg);
+			-moz-transform-style: preserve-3d;
+			-moz-backface-visibility: hidden;
+			/* -- transition is the magic sauce for animation -- */
+			-o-transition: all .4s ease-in-out;
+			-ms-transition: all .4s ease-in-out;
+			-moz-transition: all .4s ease-in-out;
+			-webkit-transition: all .4s ease-in-out;
+			transition: all .4s ease-in-out;
+		}
+		.hover.flip .back {
+			z-index: 1000;
+			-webkit-transform: rotateX(0deg) rotateY(0deg);
+			-moz-transform: rotateX(0deg) rotateY(0deg);
+		}
+		/* dropdown-large-menu style */
+		.dropdown-large {
+			#position: static !important;
+            position: relative;
+            display: block;
+		}
+		.dropdown-menu-large {
+			/*margin-left: 400px;
+			margin-right: 16px;
+			padding: 20px 0px;
+            position: absolute;
+            left: 0px;
+            z-index: 1000;
+            display: none;
+            float: left;*/
+            position: absolute;
+            top: 100%;
+            left: 0px;
+            z-index: 1000;
+            display: none;
+            float: left;
+		}
+		.dropdown-menu-large > li > ul {
+			padding: 0;
+			margin: 0;
+		}
+		.dropdown-menu-large > li > ul > li {
+			list-style: none;
+		}
+		.dropdown-menu-large > li > ul > li > a {
+			display: block;
+			padding: 3px 20px;
+			clear: both;
+			font-weight: normal;
+			line-height: 1.428571429;
+			color: #333333;
+			white-space: normal;
+		}
+		.dropdown-menu-large > li ul > li > a:hover,
+		.dropdown-menu-large > li ul > li > a:focus {
+			text-decoration: none;
+			color: #262626;
+			background-color: #f5f5f5;
+		}
+		.dropdown-menu-large .disabled > a,
+		.dropdown-menu-large .disabled > a:hover,
+		.dropdown-menu-large .disabled > a:focus {
+			color: #999999;
+		}
+		.dropdown-menu-large .disabled > a:hover,
+		.dropdown-menu-large .disabled > a:focus {
+			text-decoration: none;
+			background-color: transparent;
+			background-image: none;
+			filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+			cursor: not-allowed;
+		}
+		.dropdown-menu-large .dropdown-header {
+			color: #428bca;
+			font-size: 16px;
+		}
+		@media (max-width: 800px) {
+			.dropdown-menu-large {
+				margin-left: 0 ;
+				margin-right: 0 ;
+			}
+			.dropdown-menu-large > li {
+				margin-bottom: 30px;
+			}
+			.dropdown-menu-large > li:last-child {
+				margin-bottom: 0;
+			}
+			.dropdown-menu-large .dropdown-header {
+				padding: 3px 15px !important;
+			}
+		}
+		/* footer css #f8f8f8; */
+		.pb-page-footer{
+			width: 100%;
+			color: gray;
+			background-color: #3C3C3C;
+			#border-top: 1px solid #e7e7e7;
+			margin-top: 5px;
+			margin-bottom: 0px;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+		.pb-page-footer a, .pb-page-footer a:visited {
+			color: #777;
+			text-decoration: none;
+		}
+		.pb-page-footer a:active, .pb-page-footer a:hover, .pb-page-footer a:focus{
+			color: white;
+			text-decoration: none;
+		}
+		body {
+			padding-bottom:0px;
+		}
+		.pb-page-footer h4 {
+			color:white;
+		}
+		/* carousel-caption position */
+		/*.carousel-caption {
+			left:10%;
+			right:45%;
+			text-align:left;
+		}
+		.carousel-caption .pbutton{
+			text-align:center;
+		}*/
+        
+        /* IMG hover rotate */
+		.hover {
+			margin: 0 auto;
+			width: 140px;
+			height: 140px;
+			position: relative;
+			#font-size: .8em;
+			font-size: 14px;
+			-webkit-perspective: 600px;
+			-moz-perspective: 600px;
+		}
+		.hover .front {
+			position: absolute;
+			top: 0;
+			z-index: 900;
+			width: inherit;
+			height: inherit;
+			text-align: center;
+		}
+		.hover .back {
+			position: absolute;
+			top: 0;
+			z-index: 800;
+			width: inherit;
+			height: inherit;
+		}
+		/* -- make sure to declare a default for every property that you want animated -- */
+		/* -- general styles, including Y axis rotation -- */
+		.hover .front {
+			position: absolute;
+			top: 0;
+			z-index: 900;
+			width: inherit;
+			height: inherit;
+			text-align: center;
+			-webkit-transform: rotateX(0deg) rotateY(0deg);
+			-webkit-transform-style: preserve-3d;
+			-webkit-backface-visibility: hidden;
+			-moz-transform: rotateX(0deg) rotateY(0deg);
+			-moz-transform-style: preserve-3d;
+			-moz-backface-visibility: hidden;
+			/* -- transition is the magic sauce for animation -- */
+			-o-transition: all .4s ease-in-out;
+			-ms-transition: all .4s ease-in-out;
+			-moz-transition: all .4s ease-in-out;
+			-webkit-transition: all .4s ease-in-out;
+			transition: all .4s ease-in-out;
+		}
+		.hover.flip .front {
+			z-index: 900;
+			-webkit-transform: rotateY(180deg);
+			-moz-transform: rotateY(180deg);
+		}
+		.hover .back {
+			position: absolute;
+			top: 0;
+			z-index: 800;
+			width: inherit;
+			height: inherit;
+			-webkit-transform: rotateY(-180deg);
+			-webkit-transform-style: preserve-3d;
+			-webkit-backface-visibility: hidden;
+		 
+			-moz-transform: rotateY(-180deg);
+			-moz-transform-style: preserve-3d;
+			-moz-backface-visibility: hidden;
+			/* -- transition is the magic sauce for animation -- */
+			-o-transition: all .4s ease-in-out;
+			-ms-transition: all .4s ease-in-out;
+			-moz-transition: all .4s ease-in-out;
+			-webkit-transition: all .4s ease-in-out;
+			transition: all .4s ease-in-out;
+		}
+		.hover.flip .back {
+			z-index: 1000;
+			-webkit-transform: rotateX(0deg) rotateY(0deg);
+			-moz-transform: rotateX(0deg) rotateY(0deg);
+		}
+        
+        .stepwizard-step p {
+			margin-top: 10px;
+		}
+
+		.stepwizard-row {
+			display: table-row;
+		}
+
+		.stepwizard {
+			display: table;
+			width: 100%;
+			position: relative;
+		}
+
+		.stepwizard-step button[disabled] {
+			opacity: 1 !important;
+			filter: alpha(opacity=100) !important;
+		}
+
+		.stepwizard-row:before {
+			top: 14px;
+			bottom: 0;
+			position: absolute;
+			content: " ";
+			width: 100%;
+			height: 1px;
+			background-color: #ccc;
+			z-order: 0;
+
+		}
+
+		.stepwizard-step {
+			display: table-cell;
+			text-align: center;
+			position: relative;
+		}
+
+		.btn-circle {
+		  width: 30px;
+		  height: 30px;
+		  text-align: center;
+		  padding: 6px 0;
+		  font-size: 12px;
+		  line-height: 1.428571429;
+		  border-radius: 15px;
+		}
+	</style>
+</head>
+<body>
+	<!-- <div id="id_header" style="width:100%;"></div> -->
+    <!-- Navigation
+	================================================== -->
+	<nav class="navbar navbar-fixed-top navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/" style="font-size:18px;font-weight:bold;color:#FFF;"><!--<img alt="Brand" src="/static/images/favicon.ico" title="junneyang.sinaapp.com" style="margin-left:5px;height:24px;width:24px;"/>-->GalaxyManager</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse js-navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li id="id_menu_home"><a href="/">Home</a></li>
+                    <li id="id_menu_dashboard"><a href="#">Dashboard</a></li>
+					<!-- <li id="id_menu_dashboard"><a href="#">资源</a></li> -->
+                    <li id="id_menu_resource" class="dropdown autospan">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">虚拟化环境</a></li>
+                            <li><a href="#">规格与模板</a></li>
+                            <li><a href="#">虚拟机生命周期</a></li>
+                            <li><a href="#">块存储</a></li>
+                        </ul>
+                    </li>
+					<!-- <li id="id_menu_jobcenter"><a href="/jobcenter/">产品与服务</a></li> -->
+                    <li id="id_menu_product" class="dropdown dropdown-large active">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Products & Services<span class="caret"></span></a>
+						<ul class="dropdown-menu dropdown-menu-large row" style="width:600px;">
+							<li class="col-sm-3">
+								<ul>
+									<li class="dropdown-header">弹性计算</li>
+									<li><a href="/product/cloudhost.html">云主机</a></li>
+									<li><a href="#">云引擎</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-header">存储</li>
+									<li><a href="#">块存储</a></li>
+									<li><a href="#">对象存储</a></li>
+                                    <li><a href="#">分布式文件系统</a></li>
+								</ul>
+							</li>
+							<li class="col-sm-3">
+								<ul>
+									<li class="dropdown-header">数据库</li>
+									<li><a href="/product/rdb.html">RDB</a></li>
+									<li><a href="#">开放缓存</a></li>
+									<li><a href="#">键值存储</a></li>
+                                    <li><a href="#">Redis</a></li>
+                                    <li><a href="#">MongoDB</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-header">中间件</li>
+									<li><a href="#">消息队列</a></li>
+									<li><a href="#">任务调度</a></li>
+								</ul>
+							</li>
+							<li class="col-sm-3">
+								<ul>
+									<li class="dropdown-header">云计算</li>
+									<li><a href="#">分布式计算</a></li>
+									<li><a href="#">流式处理</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-header">短信邮件</li>
+									<li><a href="#">短信服务</a></li>
+									<li><a href="#">邮件服务</a></li>
+								</ul>
+							</li>
+                            <li class="col-sm-3">
+								<ul>
+									<li class="dropdown-header">应用服务</li>
+									<li><a href="#">日志服务</a></li>
+									<li><a href="#">开放搜索</a></li>
+                                    <li><a href="#">性能测试</a></li>
+                                    <li><a href="#">绿盟云</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+                    <li id="id_menu_solution" class="dropdown dropdown-large autospan">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Solutions<span class="caret"></span></a>
+						<ul class="dropdown-menu dropdown-menu-large row" style="width:450px;">
+							<li class="col-sm-6">
+								<ul>
+									<li class="dropdown-header">通用解决方案</li>
+									<li><a href="#">网站解决方案</a></li>
+									<li><a href="#">安全解决方案</a></li>
+                                    <li><a href="#">云存储解决方案</a></li>
+									<li><a href="#">业务迁移解决方案</a></li>
+									<li><a href="#">运维服务解决方案</a></li>
+								</ul>
+							</li>
+							<li class="col-sm-6">
+								<ul>
+									<li class="dropdown-header">多媒体解决方案</li>
+									<li><a href="#">金融解决方案</a></li>
+									<li><a href="#">政务解决方案</a></li>
+									<li><a href="#">医疗解决方案</a></li>
+                                    <li><a href="#">电商解决方案</a></li>
+                                    <li><a href="#">游戏解决方案</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li id="id_menu_monitor"><a href="#">Monitor</a></li>
+                    <!-- <li id="id_menu_cloudhost"><a href="#">用户</a></li> -->
+                    <li id="id_menu_system"><a href="#">System</a></li>
+					<!-- <li id="id_menu_help"><a href="/help/">Help</a></li> -->
+				</ul>
+				<!--<form class="navbar-form navbar-right" role="search">
+					<div class="form-group"><input type="text" class="form-control" placeholder="Search"></div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>-->
+				<ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">欢迎您, yangjun<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">账号信息</a></li>
+                            <li><a href="/product/svc_list_test.html">我的工作台</a></li>
+                            <li><a href="#">退出登录</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">OpenStack01<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">OpenStack02</a></li>
+                            <li><a href="#">Aliyun01</a></li>
+                            <li><a href="#">DockerCluster01</a></li>
+                        </ul>
+                    </li>
+					<!-- <li><a href="#" class="navbar-link">欢迎您, admin</a></li>
+					<li class="dropdown">
+						<a href="#" class="navbar-link" class="dropdown-toggle" data-toggle="dropdown">log in<b class="caret"></b></a>
+						<ul class="dropdown-menu" style="padding:15px;min-width:250px;">
+							<li>
+								<div class="row">
+									<div class="col-md-12">
+										<form class="form" role="form" onsubmit="return loginWithDefault();">
+											<div class="form-group">
+												<label class="sr-only" for="exampleInputEmail2">Email address</label>
+												<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+											</div>
+											<div class="form-group">
+												<label class="sr-only" for="exampleInputPassword2">Password</label>
+												<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+											</div>
+											<div class="checkbox">
+												<label>
+												<input type="checkbox" class="checkbox" checked="checked"/>Subscribe Newsletter
+												</label>
+											</div>
+											<div class="form-group">
+												<button type="submit" class="btn btn-success btn-block">Sign in</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<input class="btn btn-primary btn-block" type="button" id="sign-in-google" value="Sign In with QQ">
+								<input class="btn btn-primary btn-block" type="button" id="sign-in-twitter" value="Sign In with GitHub">
+								<input class="btn btn-primary btn-block" type="button" id="sign-in-google" value="Sign In with Google">
+							</li>
+						</ul>
+					</li> -->
+				</ul>
+				<!--<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">{{usrname}}<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">个人中心</a></li>
+							<li><a href="#">退出登录</a></li>
+						</ul>
+					</li>
+					<li class="divider-vertical"></li>
+					<li><a href="#">帮助</a></li>
+				</ul>-->
+			</div><!-- /.nav-collapse -->
+		</div><!-- /.container -->
+	</nav><!-- /.navbar -->
+    
+    <!-- <div style="min-height:750px;">
+        <div class="jumbotron">
+          <div class="container">
+            <h1>RDB</h1>
+            <p>填写参数</p>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+           </div>
+            <div class="col-md-4">
+              <h2>Heading</h2>
+              <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div>
+          </div>
+        </div>
+    </div>   -->
+    <div class="container-fluid" style='min-height:730px;'>
+		<div class="container" style="margin-top:50px;">
+			<h4 class="page-header" style="margin-top:10px;">Service Apply -- RDB</h4>
+			<div class="stepwizard">
+				<div class="stepwizard-row setup-panel">
+					<div class="stepwizard-step">
+						<a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+						<p>Step 1</p>
+					</div>
+					<div class="stepwizard-step">
+						<a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+						<p>Step 2</p>
+					</div>
+					<div class="stepwizard-step">
+						<a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+						<p>Step 3</p>
+					</div>
+				</div>
+			</div>
+			<form role="form">
+				<div class="row setup-content" id="step-1">
+					<div class="col-xs-12">
+						<div class="col-md-12">
+							<h3> Step 1</h3>
+							<div class="form-group">
+								<label class="control-label">* 产品类型</label>&nbsp;&nbsp;<a href="/help/#id_createjob_basic" style="vertical-align: middle;">Help ?</a>
+								<select class="form-control">
+                                  <option>MySQL</option>
+                                  <option>SQLServer</option>
+                                </select>
+							</div>
+                            <div class="form-group">
+								<label class="control-label">* 技术方案</label>&nbsp;&nbsp;<a href="/help/#id_createjob_basic" style="vertical-align: middle;">Help ?</a>
+								<select class="form-control">
+                                  <option>共享型-MySQL Cluster</option>
+                                  <option>独占型-Docker</option>
+                                </select>
+							</div>
+							<!-- <div class="form-group">
+								<label class="control-label">* JobName</label>&nbsp;&nbsp;<a href="/help/#id_createjob_basic" style="vertical-align: middle;">Help ?</a>
+								<input id="id_job_name" maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Job Name, eg: JobName" />
+							</div> -->
+					
+							<button class="btn btn-primary nextBtn pull-right" type="button" style="margin-left:10px">Next</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<button class="btn btn-primary nextBtn pull-right" type="button" onclick="javascript:window.location.href='/jobcenter/'">Cancel</button>
+						</div>
+					</div>
+				</div>
+				<div class="row setup-content" id="step-2">
+					<div class="col-xs-12">
+						<div class="col-md-12">
+							<h3> Step 2</h3>
+                            <div class="form-group">
+								<label class="control-label">* 目录标签</label>&nbsp;&nbsp;<a href="/help/#id_createjob_basic" style="vertical-align: middle;">Help ?</a>
+								<select class="form-control">
+                                  <option>test</option>
+                                </select>
+							</div>
+                            <div class="form-group">
+								<label class="control-label">* MySQL版本</label>&nbsp;&nbsp;<a href="/help/#id_createjob_basic" style="vertical-align: middle;">Help ?</a>
+								<select class="form-control">
+                                    <option>5.5</option>
+                                  <option>5.6</option>
+                                </select>
+							</div>
+                            <div class="form-group">
+								<label class="control-label">* MySQL配置</label>&nbsp;&nbsp;<a href="/help/#id_createjob_basic" style="vertical-align: middle;">Help ?</a>
+								<select class="form-control">
+                                    <option>单节点</option>
+                                    <option>一主一从</option>
+                                    <option>一主二从</option>
+                                </select>
+							</div>
+                            <div class="form-group">
+								<label class="control-label">* 套餐类型</label>&nbsp;&nbsp;<a href="/help/#id_createjob_basic" style="vertical-align: middle;">Help ?</a>
+								<select class="form-control">
+                                    <option>1U 512M 100连接数</option>
+                                    <option>1U 1G 200连接数</option>
+                                </select>
+							</div>
+                            <div class="form-group">
+								<label class="control-label">* 实例名称</label>&nbsp;&nbsp;<a href="/help/#id_createjob_basic" style="vertical-align: middle;">Help ?</a>
+								<input id="id_module_name" maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Instance Name, eg: mysql01" />
+							</div>
+                            <div class="form-group">
+								<label class="control-label">* 申请时长</label>&nbsp;&nbsp;<a href="/help/#id_createjob_basic" style="vertical-align: middle;">Help ?</a>
+								<select class="form-control">
+                                    <option>1 月</option>
+                                    <option>2 月</option>
+                                    <option>3 月</option>
+                                </select>
+							</div>
+							<!-- <div class="form-group">
+								<label class="control-label">* ModuleName</label>&nbsp;&nbsp;<a href="/help/#id_createjob_basic" style="vertical-align: middle;">Help ?</a>
+								<input id="id_module_name" maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Module Name, eg: shell" />
+							</div>
+							<div class="form-group">
+								<label class="control-label">ModuleArgs</label>&nbsp;&nbsp;<a href="/help/#id_createjob_basic" style="vertical-align: middle;">Help ?</a>
+								<input id="id_module_args" maxlength="2000" type="text" class="form-control" placeholder="Enter Module Args, eg: sleep 5 && date && echo $PATH"  />
+							</div>
+							<div class="form-group">
+								<label class="control-label">* HostList</label>&nbsp;&nbsp;<a href="/help/#id_createjob_basic" style="vertical-align: middle;">Help ?</a>
+								<input id="id_pattern" maxlength="2000" type="text" required="required" class="form-control" placeholder="Enter Host List, eg: 10.20.0.89;10.20.0.90"  />
+							</div>
+							<div class="form-group">
+								<label class="control-label">Forks</label>&nbsp;&nbsp;<a href="/help/#id_createjob_basic" style="vertical-align: middle;">Help ?</a>
+								<input id="id_forks" maxlength="200" type="text" class="form-control" placeholder="Enter Forks Number, eg: 5"  />
+							</div>
+							<div class="form-group">
+								<label class="control-label">Submit</label>&nbsp;&nbsp;<a href="/help/#id_createjob_basic" style="vertical-align: middle;">Help ?</a>
+								<input id="id_job_submit" maxlength="200" type="text" class="form-control" placeholder="Enter Submit User, eg: yangjun"  />
+							</div> -->
+							
+							<button class="btn btn-primary nextBtn pull-right" type="button" style="margin-left:10px">Next</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<button class="btn btn-primary nextBtn pull-right" type="button" onclick="javascript:window.location.href='/jobcenter/'">Cancel</button>
+						</div>
+					</div>
+				</div>
+				<div class="row setup-content" id="step-3">
+					<div class="col-xs-12">
+						<div class="col-md-12">
+							<h3> Step 3</h3>
+							
+							<button class="btn btn-success pull-right" type="submit" style="margin-left:10px" onclick="return submitJobBasic();">Submit!</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<button class="btn btn-primary nextBtn pull-right" type="button" onclick="javascript:window.location.href='/jobcenter/'">Cancel</button>
+							<div id="id_loading" style="display:none;">
+								<p style="text-align:center;"><img src="/static/images/loading.gif"></img></p>
+								<p style="text-align:center;">Submitting，Please wait a moment...</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+    
+    <!-- <div class="bs-example">
+                        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                            <button type="button" class="btn btn-default">1</button>
+                            <button type="button" class="btn btn-default">2</button>
+
+                            <div class="btn-group" role="group">
+                                <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Dropdown
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                    <li><a href="#">Dropdown link</a></li>
+                                    <li><a href="#">Dropdown link</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    
+    <!-- <div id="id_footer" style="width:100%;"></div> -->
+    <footer class="footer" style="margin-top:0px;margin-bottom:0px;padding-top:20px;background-color:black;">
+		<div class="container text-center">
+			<p class="text-muted">Copyright ©2015 NSFOCUS. <a href="http://www.nsfocus.com">绿盟科技</a>. All Rights Reserved. </p>
+			<p class="text-muted">Technical Support : <a href="#">nscloud</a></p>
+			<p class="text-muted">京ICP备14004349号 京公网安备110108002872号 京ICP证110355号</p><br/>
+		</div>
+	</footer>
+    
+    <div id="alerts" style='position:fixed;top:60px;right:20px;'></div>
+	<script src="/static/js/jquery-1.11.2.min.js"></script>
+	<script src="/static/js/model/bootstrap-3.3.1-dist/dist/js/bootstrap.min.js"></script>
+    <script src="/static/js/model/bootstrap-dropdown-hover-master/dist/jquery.bootstrap-dropdown-hover.min.js"></script>
+	<script type="text/javascript">
+        $(document).ready(function(){
+			// set up hover panels
+			// although this can be done without JavaScript, we've attached these events
+			// because it causes the hover to be triggered when the element is tapped on a touch device
+			$('.hover').hover(function(){
+				$(this).addClass('flip');
+			},function(){
+				$(this).removeClass('flip');
+			});
+		});
+        $(document).ready(function(e) {
+            //$('[data-toggle="dropdown"]').bootstrapDropdownHover();
+            $.fn.bootstrapDropdownHover();
+        });
+        
+        //向导插件
+		$(document).ready(function () {
+			var navListItems = $('div.setup-panel div a'),
+					allWells = $('.setup-content'),
+					allNextBtn = $('.nextBtn');
+
+			allWells.hide();
+
+			navListItems.click(function (e) {
+				e.preventDefault();
+				var $target = $($(this).attr('href')),
+						$item = $(this);
+
+				if (!$item.hasClass('disabled')) {
+					navListItems.removeClass('btn-primary').addClass('btn-default');
+					$item.addClass('btn-primary');
+					allWells.hide();
+					$target.show();
+					$target.find('input:eq(0)').focus();
+				}
+			});
+
+			allNextBtn.click(function(){
+				var curStep = $(this).closest(".setup-content"),
+					curStepBtn = curStep.attr("id"),
+					nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+					curInputs = curStep.find("input[type='text'],input[type='url']"),
+					isValid = true;
+
+				$(".form-group").removeClass("has-error");
+				for(var i=0; i<curInputs.length; i++){
+					if (!curInputs[i].validity.valid){
+						isValid = false;
+						$(curInputs[i]).closest(".form-group").addClass("has-error");
+					}
+				}
+
+				if (isValid)
+					nextStepWizard.removeAttr('disabled').trigger('click');
+			});
+
+			$('div.setup-panel div a.btn-primary').trigger('click');
+		});
+        
+        
+        function addAlert(message) {
+			$('#alerts').append(
+				'<div class="alert alert-danger alert-dismissible fade in" style="min-width:300px;">' +
+					'<button type="button" class="close" data-dismiss="alert">' +
+					'&times;</button>' + message + '</div>');
+		}
+        function submitJobBasic() {
+			var request = {};
+			request['project_id'] = 1;
+			request['user_id'] = 1;
+            //request['svc_id'] = 1;
+            request['action_type'] = 'new_instance';
+            request['svc_type'] = 'PAAS_RDB_MySQL_Docker';
+            request['sub_type'] = 'single_instance';
+            request['svc_label'] = 'test';
+            request['apply_time_limit'] = 1;
+            request['svc_params'] = {"instance_name":"mysql01","mysql_version":"5.6"};
+			//request['module_name'] = $('#id_module_name').val();
+			//request['module_args'] = $('#id_module_args').val();
+			//request['pattern'] = $('#id_pattern').val();
+			
+			/*var forks = Number($('#id_forks').val());
+			if (isNaN(forks)) {
+				addAlert("ParamException: " + "forks should be Number.");
+				return false;
+			}
+			
+			if (forks < 0 || forks > 100) {
+				addAlert("ParamException: " + "forks should be between 1 and 100.");
+				return false;
+			}
+			
+			if (forks == 0) {
+				request['forks'] = 5;
+			} else {
+				request['forks'] = forks;
+			}
+			
+			var submit = $('#id_job_submit').val();
+			if (submit == "") {
+				request['job_submit'] = "admin";
+			} else {
+				request['job_submit'] = submit;
+			}*/
+			//alert(JSON.stringify(request));
+			$.when(svc_apply(request)).done(function(data){
+				if(data.err_code == 0) {
+					//showModal();
+					window.location.href = "/product/svc_list_test.html";
+                    //addAlert(data.ch + " : " + data.msg);
+				} else {
+					//showModal();
+					addAlert(data.ch + " : " + data.msg);
+				}
+			});
+			return false;
+		}
+		function svc_apply(request) {
+			var defer = $.Deferred();
+			$.ajax({
+				type: "POST",
+				url : '/svc_apply/',
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				data: JSON.stringify(request),
+				//async : false,
+				beforeSend:function(XMLHttpRequest){
+				   document.getElementById('id_loading').style.display = "block";
+				},
+				success: function(data){
+					//document.getElementById('id_loading').style.display = "block";
+					defer.resolve(data)
+				}
+			});
+			return defer.promise();
+		}
+	</script>
+</body>
+</html>

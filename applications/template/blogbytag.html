@@ -1,0 +1,1423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="height: 100%;border: none;padding: 0px;margin: 0px;">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7;  IE=EDGE"/>
+	<meta content="首页" name="keywords" />
+	<meta content="首页" name="description" />
+	<meta name="generator" content="首页"/>
+	<link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon" />
+	<title>Blog Center-junneyang.sinaapp.com</title>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/bootstrap.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/bootstrap-theme.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/typeahead.js-bootstrap-css-master/typeaheadjs.css" type="text/css"/>
+	<!--<link rel="stylesheet" href="/static/js/model/bootstrap-tagsinput/bootstrap-tagsinput.css" type="text/css"/>-->
+	<style type="text/css">
+		/* Move down content because we have a fixed navbar that is 50px tall */
+		body {
+			padding-top: 50px;
+			padding-bottom: 20px;
+		}
+		/* dropdown-large-menu style */
+		.dropdown-large {
+			position: static !important;
+		}
+		.dropdown-menu-large {
+			margin-left: 300px;
+			margin-right: 16px;
+			padding: 20px 0px;
+		}
+		.dropdown-menu-large > li > ul {
+			padding: 0;
+			margin: 0;
+		}
+		.dropdown-menu-large > li > ul > li {
+			list-style: none;
+		}
+		.dropdown-menu-large > li > ul > li > a {
+			display: block;
+			padding: 3px 20px;
+			clear: both;
+			font-weight: normal;
+			line-height: 1.428571429;
+			color: #333333;
+			white-space: normal;
+		}
+		.dropdown-menu-large > li ul > li > a:hover,
+		.dropdown-menu-large > li ul > li > a:focus {
+			text-decoration: none;
+			color: #262626;
+			background-color: #f5f5f5;
+		}
+		.dropdown-menu-large .disabled > a,
+		.dropdown-menu-large .disabled > a:hover,
+		.dropdown-menu-large .disabled > a:focus {
+			color: #999999;
+		}
+		.dropdown-menu-large .disabled > a:hover,
+		.dropdown-menu-large .disabled > a:focus {
+			text-decoration: none;
+			background-color: transparent;
+			background-image: none;
+			filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+			cursor: not-allowed;
+		}
+		.dropdown-menu-large .dropdown-header {
+			color: #428bca;
+			font-size: 16px;
+		}
+		@media (max-width: 800px) {
+			.dropdown-menu-large {
+				margin-left: 0 ;
+				margin-right: 0 ;
+			}
+			.dropdown-menu-large > li {
+				margin-bottom: 30px;
+			}
+			.dropdown-menu-large > li:last-child {
+				margin-bottom: 0;
+			}
+			.dropdown-menu-large .dropdown-header {
+				padding: 3px 15px !important;
+			}
+		}
+		/* footer css #f8f8f8; */
+		.pb-page-footer{
+			width: 100%;
+			color: gray;
+			background-color: #3C3C3C;
+			#border-top: 1px solid #e7e7e7;
+			margin-top: 5px;
+			margin-bottom: 0px;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+		.pb-page-footer a, .pb-page-footer a:visited {
+			color: #777;
+			text-decoration: none;
+		}
+		.pb-page-footer a:active, .pb-page-footer a:hover, .pb-page-footer a:focus{
+			color: white;
+			text-decoration: none;
+		}
+		body {
+			padding-bottom:0px;
+		}
+		.pb-page-footer h4 {
+			color:white;
+		}
+		body{margin-top:50px;}
+		.glyphicon { margin-right:10px; }
+		.panel-body { padding:0px; }
+		.panel-body table tr td { padding-left: 15px }
+		.panel-body .table {margin-bottom: 0px; }
+		/* blogitem style*/
+		.blogitem {
+			margin-top:10px;
+			border-bottom: 1px solid #E3E3E3;
+		}
+		/* bot-links style */
+		.bot-links{float: left; width: 100%;}
+		/* bot-links-all style */
+		.bot-links-all{float: left; width: 100%;}
+		.bot-links-all a{margin-bottom:5px;font-size: 18px;}
+		.bot-links a .badge:hover{background-color: #F87B00;}
+		.bot-links-all a .badge:hover{background-color: #F87B00;}
+		/*.bot-links a{display: inline-block; padding: 5px; background: #ccc; font-size: 12px; margin-bottom: 5px; color: #9c9c9c; text-decoration:none;}*/
+		/* search style*/
+		.stylish-input-group .input-group-addon{
+			background: white !important; 
+		}
+		.stylish-input-group .form-control{
+			border-right:0; 
+			box-shadow:0 0 0; 
+			border-color:#ccc;
+		}
+		.stylish-input-group button{
+			border:0;
+			background:transparent;
+		}
+		/* recommendlist style*/
+		.recommendlist li {
+			margin-bottom:10px;
+		}
+		/* filter new blog style*/
+		.filter {
+			margin-top: 10px;
+			padding: 5px;
+			padding-right:10px;
+			border: 1px solid #eee;
+		}
+		/**/
+		#id_addTag {
+			border: 0;
+			background: none;
+			/** belows styles are working good */
+			padding: 2px 5px;
+			margin-top: 2px;
+			position: relative;
+			left: -28px;
+			/* IE7-8 doesn't have border-radius, so don't indent the padding */
+			margin-bottom: 0;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			color:#D9230F;
+			z-index: 3;   
+		}
+		.twitter-typeahead {
+			width:100%;
+		}
+		/* tagcanvas 样式*/
+		#tagCloudCanvas2 { 
+			#height: 300px; width: 300px;
+			#border: 1px solid black; 
+		} 
+		</style>
+</head>
+<body>
+	<!-- Navigation
+	================================================== -->
+	<nav class="navbar navbar-fixed-top navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/" style="font-size:18px;font-weight:bold;color:#FFF;"><!--<img alt="Brand" src="/static/images/favicon.ico" title="junneyang.sinaapp.com" style="margin-left:5px;height:24px;width:24px;"/>-->ReadMe</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse js-navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/">Home</a></li>
+					<li><a href="#">Project Dev</a></li>
+					<li class="active"><a href="/blog/cat/?cat=all&page=1&limit=5">Blog Center</a></li>
+					<!--<li class="dropdown dropdown-large">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog Center<span class="caret"></span></a>
+						<ul class="dropdown-menu dropdown-menu-large row">
+							<li class="col-sm-4">
+								<ul>
+									<li class="dropdown-header">系统</li>
+									<li><a href="#">Linux</a></li>
+									<li><a href="#">Shell</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-header">架构</li>
+									<li><a href="#">设计模式</a></li>
+									<li><a href="#">Web系统</a></li>
+									<li><a href="#">后端</a></li>
+									<li><a href="#">网络框架</a></li>
+									<li><a href="#">中间件</a></li>
+								</ul>
+							</li>
+							<li class="col-sm-4">
+								<ul>
+									<li class="dropdown-header">开发</li>
+									<li><a href="#">C/C++</a></li>
+									<li><a href="#">Java</a></li>
+									<li><a href="#">Python</a></li>
+									<li><a href="#">html/css/js</a></li>
+									<li><a href="#">Algorithm</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-header">测试</li>
+									<li><a href="#">系统测试</a></li>
+									<li><a href="#">自动化测试</a></li>
+									<li><a href="#">性能测试</a></li>
+									<li><a href="#">持续集成</a></li>
+								</ul>
+							</li>
+							<li class="col-sm-4">
+								<ul>
+									<li class="dropdown-header">云计算</li>
+									<li><a href="#">数据中心</a></li>
+									<li><a href="#">虚拟化</a></li>
+									<li><a href="#">OpenStack</a></li>
+									<li><a href="#">Hadoop/Spark</a></li>
+									<li><a href="#">SDN/NFV</a></li>
+									<li><a href="#">存储技术</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>-->
+					<li><a href="#">About Me</a></li>
+				</ul>
+				<!--<form class="navbar-form navbar-right" role="search">
+					<div class="form-group"><input type="text" class="form-control" placeholder="Search"></div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>-->
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#" class="navbar-link">sign up</a></li>
+					<li class="dropdown">
+						<a href="#" class="navbar-link" class="dropdown-toggle" data-toggle="dropdown">log in<b class="caret"></b></a>
+						<ul class="dropdown-menu" style="padding:15px;min-width:250px;">
+							<li>
+								<div class="row">
+									<div class="col-md-12">
+										<form class="form" role="form" onsubmit="return loginWithDefault();">
+											<div class="form-group">
+												<label class="sr-only" for="exampleInputEmail2">Email address</label>
+												<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+											</div>
+											<div class="form-group">
+												<label class="sr-only" for="exampleInputPassword2">Password</label>
+												<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+											</div>
+											<div class="checkbox">
+												<label>
+												<input type="checkbox" class="checkbox" checked="checked"/>Subscribe Newsletter
+												</label>
+											</div>
+											<div class="form-group">
+												<button type="submit" class="btn btn-success btn-block">Sign in</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<input class="btn btn-primary btn-block" type="button" id="sign-in-google" value="Sign In with QQ">
+								<input class="btn btn-primary btn-block" type="button" id="sign-in-twitter" value="Sign In with GitHub">
+								<!--<input class="btn btn-primary btn-block" type="button" id="sign-in-google" value="Sign In with Google">-->
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<!--<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">{{usrname}}<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">个人中心</a></li>
+							<li><a href="#">退出登录</a></li>
+						</ul>
+					</li>
+					<li class="divider-vertical"></li>
+					<li><a href="#">帮助</a></li>
+				</ul>-->
+			</div><!-- /.nav-collapse -->
+		</div><!-- /.container -->
+	</nav><!-- /.navbar -->
+	<div class="container-fluid" style="margin-bottom: 10px;">
+		<div class="row">
+			<div class="col-sm-2 col-md-2">
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<!--<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-folder-close">
+								</span>Content</a>
+							</h4>-->
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-th">
+								</span>System</a>
+							</h4>
+						</div>
+						<div id="collapseOne" class="panel-collapse collapse"> <!--in-->
+							<div class="panel-body">
+								<table class="table">
+									<tr><!--class="active"-->
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('Linux');" class="active">Linux</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('Windows');">Windows</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('Android/iOS');">Android/iOS</a>
+										</td>
+									</tr>
+									<!--<tr>
+										<td>
+											<span class="glyphicon glyphicon-comment text-success"></span><a href="http://www.jquery2dotnet.com">Comments</a>
+											<span class="badge">42</span>
+										</td>
+									</tr>-->
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<!--<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-th">
+								</span>Modules</a>
+							</h4>
+						</div>-->
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-road">
+								</span>Arch</a>
+							</h4>
+						</div>
+						<div id="collapseTwo" class="panel-collapse collapse">
+							<div class="panel-body">
+								<table class="table">
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('设计模式');">设计模式</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('Web');">Web</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('网络框架');">网络框架</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('DataBase');">DataBase</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('Middleware');">Middleware</a>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<!--<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-user">
+								</span>Account</a>
+							</h4>
+						</div>-->
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-random">
+								</span>Development</a>
+							</h4>
+						</div>
+						<div id="collapseThree" class="panel-collapse collapse">
+							<div class="panel-body">
+								<table class="table">
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('C/C++');">C/C++</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('Java');">Java</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('Python');">Python</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('HTML/JS/CSS');">HTML/JS/CSS</a>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<!--<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-file">
+								</span>Reports</a>
+							</h4>
+						</div>-->
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-hand-right">
+								</span>Testing</a>
+							</h4>
+						</div>
+						<div id="collapseFour" class="panel-collapse collapse">
+							<div class="panel-body">
+								<table class="table">
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('系统测试');">系统测试</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('性能测试');">性能测试</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('测试自动化');">测试自动化</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('持续集成');">持续集成</a>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<!--<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-file">
+								</span>Reports</a>
+							</h4>
+						</div>-->
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"><span class="glyphicon glyphicon-cloud">
+								</span>CloudComputing</a>
+							</h4>
+						</div>
+						<div id="collapseFive" class="panel-collapse collapse">
+							<div class="panel-body">
+								<table class="table">
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('DataCenter');">DataCenter</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('Virturalization');">Virturalization</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('OpenStack');">OpenStack</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('分布式系统');">分布式系统</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('SDN/NFV');">SDN/NFV</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('存储技术');">存储技术</a>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<!--<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-file">
+								</span>Reports</a>
+							</h4>
+						</div>-->
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseSix"><span class="glyphicon glyphicon-flag">
+								</span>Others</a>
+							</h4>
+						</div>
+						<div id="collapseSix" class="panel-collapse collapse">
+							<div class="panel-body">
+								<table class="table">
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="javascript:disCatBlogs('Others');">Others</a>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-7 col-md-7" style="min-height:800px;">
+				<!--<div class="well">
+					<h4 class="pull-left">天才在于积累, 今天, 你积累了吗?</h4>
+					<button type="submit" class="btn btn-default">我要积累</button>
+				</div>-->
+				<div class="container-fluid">
+					<div class="tabable" style="margin-top:10px;" id="items_tab">
+						<ul class="nav nav-tabs" id="pageTab"><!-- id="item_nav"-->
+							<li class="active"><a href="#blog_list" data-toggle="tab">Blog List</a></li>
+							<li><a href="#new_blog" data-toggle="tab">New Blog</a></li>
+						</ul>
+						<div class="tab-content" id="pageTabContent">
+							<div class="tab-pane active" id="blog_list">
+								<div class="container-fluid" style=" margin-top:10px;" id="id_blog_list">
+									<!--<div class="blogitem">
+										<div class="media">
+											<a class="pull-left" href="#">
+											<img class="media-object" src="http://placekitten.com/150/150">
+											</a>
+											<div class="media-body">
+												<a href="#"><h3 class="media-heading">Java设计模式之十五（桥接模式）</h3></a>
+												<p class="text-right">By Francisco</p>
+												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+												Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+												dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+												Aliquam in felis sit amet augue.</p>
+												<ul class="list-inline list-unstyled">
+													<li><span><i class="glyphicon glyphicon-calendar"></i>2015-03-03 10:02:20</span></li>
+													<li>|</li>
+													<span><i class="glyphicon glyphicon-eye-open"></i> 3 views</span>
+													<li>|</li>
+													<span><a href="#"><i class="glyphicon glyphicon-thumbs-up"></i></a> 18 thumbs</span>
+												</ul>
+												<ul class="list-inline list-unstyled">
+													<li>
+														<div class="bot-links">
+															<a href="#"><span class="badge">Java</span></a>
+															<a href="#"><span class="badge">设计模式</span></a>
+															<a href="#"><span class="badge">设计模式</span></a>
+															<a href="#"><span class="badge">设计模式</span></a>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>-->
+								</div>
+								<!--<div id="page-selection" class="pull-right"></div>-->
+								<div class="pull-left"  id="id_page_info">
+									<!--<p style="margin: 25px 0px;">Total Items <label id="id_label_total_items"></label>, Total Pages <label id="id_label_total_pages"></label>, Current Page <label id="id_label_current_page"></label></p>-->
+								</div>
+								<div class="pull-right">
+									<ul id="page-selection" class="pagination pull-right"></ul>
+								</div>
+							</div>
+							<div class="tab-pane" id="new_blog">
+								<div class="container-fluid" style=" margin-top: 10px; ">
+									<div class="filter">
+										<form class="form-horizontal" id="id_addblog_form">
+											<div class="form-group">
+												<label class="col-sm-2 control-label" for="formGroupInputLarge" style="float:left; margin-top: 13px;">Cat:</label>
+												<div class="col-sm-10" style="float:left; margin-top: 5px;">
+													<select class="form-control" id="id_cat_select">
+														<option selected="selected" value="NULL">Please Select The Category</option>
+														<option value="Linux">Linux</option>
+														<option value="Windows">Windows</option>
+														<option value="Android/iOS">Android/iOS</option>
+														<option value="设计模式">设计模式</option>
+														<option value="Web">Web</option>
+														<option value="网络框架">网络框架</option>
+														<option value="DataBase">DataBase</option>
+														<option value="Middleware">Middleware</option>
+														<option value="C/C++">C/C++</option>
+														<option value="Java">Java</option>
+														<option value="Python">Python</option>
+														<option value="HTML/JS/CSS">HTML/JS/CSS</option>
+														<option value="系统测试">系统测试</option>
+														<option value="性能测试">性能测试</option>
+														<option value="测试自动化">测试自动化</option>
+														<option value="持续集成">持续集成</option>
+														<option value="DataCenter">DataCenter</option>
+														<option value="Virturalization">Virturalization</option>
+														<option value="OpenStack">OpenStack</option>
+														<option value="分布式系统">分布式系统</option>
+														<option value="SDN/NFV">SDN/NFV</option>
+														<option value="存储技术">存储技术</option>
+														<option value="Others">Others</option>
+													</select>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="inputEmail3" class="col-sm-2 control-label"   style="float:left; margin-top: 13px;">Title:</label>
+												<div class="col-sm-10" style="float:left; margin-top: 5px;">
+													<!--<select class="form-control" id="id_account_select">
+														<option selected="selected" value="">请选择cityID</option>
+													</select>-->
+													<input type="text" class="form-control" id="id_title_input" placeholder="Input The Blog Title"/>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="inputEmail3" class="col-sm-2 control-label"   style="float:left; margin-top: 13px;">Link:</label>
+												<div class="col-sm-10" style="float:left; margin-top: 5px;">
+													<!--<select class="form-control" id="id_account_select">
+														<option selected="selected" value="">请选择cityID</option>
+													</select>-->
+													<input type="text" class="form-control" id="id_link_input" placeholder="Input The Blog Link"/>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="inputEmail3" class="col-sm-2 control-label"   style="float:left; margin-top: 13px;">Tags:</label>
+												<div class="col-sm-10" style="float:left; margin-top: 5px;">
+													<!--<input type="text" class="form-control typeahead" data-role="tagsinput" id="id_tags_input"/>-->
+													<!--<select class="form-control" id="id_account_select">
+														<option selected="selected" value="">请选择cityID</option>
+													</select>-->
+													<!--<input type="text" class="form-control pull-left" style="margin-right:-6px;" id="id_cityID" placeholder="The Blog Tags, eg: c,redis,epoll"/>
+													<span class="input-group-btn pull-left" style="margin-top: 5px;">
+														<button class="btn btn-danger" type="button" id="id_addTag" onclick="addTag();">
+															<span class=" glyphicon glyphicon-plus"></span>
+														</button>
+													</span>-->
+													<div class="input-group stylish-input-group">
+														<input type="text" class="form-control typeahead" id="id_add_tag_input" autocomplete="off" placeholder="Input Tags" />
+														<span class="input-group-addon">
+															<button type="submit" onclick="return addTag();">
+																<span class="glyphicon glyphicon-plus"></span>
+															</button>  
+														</span>
+													</div>
+													<ul class="list-inline list-unstyled" style="margin-top:5px;">
+														<li>
+															<div class="bot-links-all" id="id_add_tag_list">
+																<!--<a href="#"><span class="badge">c&nbsp;&nbsp;<span class="glyphicon glyphicon-remove"></span></span></a>
+																<a href="#"><span class="badge">redis&nbsp;&nbsp;<span class="glyphicon glyphicon-remove"></span></span></a>
+																<a href="#"><span class="badge">epoll&nbsp;&nbsp;<span class="glyphicon glyphicon-remove"></span></span></a>-->
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-sm-offset-2 col-sm-10">
+												<button type="submit" class="btn btn-default" onClick="return submitBlog();">Submit</button>
+												</div>
+											</div>
+										</form>
+										<!--<label class="col-sm-1 control-label" for="datetimepicker1" style="float:left; margin-top: 13px;">时间 : </label>
+										<div class="col-sm-3" style="float:left; margin-top: 5px;">
+											<div class='input-group date' id='datetimepicker1'>
+												<input type='text' class="form-control" />
+												<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+											</div>
+										</div>
+										<label class="col-sm-1 control-label" for="formGroupInputLarge" style="float:auto; margin-top: 13px;">--</label>
+										<div class="col-sm-3" style="float:left; margin-top: 5px;">
+											<div class='input-group date' id='datetimepicker2'>
+												<input type='text' class="form-control" />
+												<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+											</div>
+										</div>
+										<div class="col-sm-3" style="float:left; margin-top: 5px;">
+											<select class="form-control" id="id_account_select">
+												<option selected="selected" value="NULL">请选择账户</option>
+											</select>
+										</div>
+										<div class="col-sm-1" style="float:left; margin-top: 5px;">
+											<a type="button" class="btn btn-info" href="javascript:queryAccountInfoChart();" role="button">查看</a>
+										</div>
+										<div style="clear:both;"></div>-->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--<div class="blogitem">
+						<div class="media">
+							<div class="media-body">
+								<a href="#"><h3 class="media-heading">Java设计模式之十五（桥接模式）</h3></a>
+								<ul class="list-inline list-unstyled">
+									<li><span><i class="glyphicon glyphicon-calendar"></i>2015-03-03 10:02:20</span></li>
+									<li>|</li>
+									<span><i class="glyphicon glyphicon-eye-open"></i> 3 views</span>
+									<li>|</li>
+									<span><i class="glyphicon glyphicon-thumbs-up"></i> 18 thumbs</span>
+								</ul>
+								<ul class="list-inline list-unstyled">
+									<li>
+										<div class="bot-links">
+											<a href="#"><span class="badge">Java</span></a>
+											<a href="#"><span class="badge">设计模式</span></a>
+											<a href="#"><span class="badge">设计模式</span></a>
+											<a href="#"><span class="badge">设计模式</span></a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="blogitem">
+						<div class="media">
+							<div class="media-body">
+								<a href="#"><h3 class="media-heading">Java设计模式之十五（桥接模式）</h3></a>
+								<ul class="list-inline list-unstyled">
+									<li><span><i class="glyphicon glyphicon-calendar"></i>2015-03-03 10:02:20</span></li>
+									<li>|</li>
+									<span><i class="glyphicon glyphicon-eye-open"></i> 3 views</span>
+									<li>|</li>
+									<span><i class="glyphicon glyphicon-thumbs-up"></i> 18 thumbs</span>
+								</ul>
+								<ul class="list-inline list-unstyled">
+									<li>
+										<div class="bot-links">
+											<a href="#"><span class="badge">Java</span></a>
+											<a href="#"><span class="badge">设计模式</span></a>
+											<a href="#"><span class="badge">设计模式</span></a>
+											<a href="#"><span class="badge">设计模式</span></a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>-->
+				</div>
+			</div>
+			<div class="col-sm-3 col-md-3">
+				<!--<div class="well">
+					<p>搜索</p>
+					<p>热门标签</p>
+					<p>所有标签</p>
+					<p>热门推荐</p>
+				</div>-->
+				<div class="container-fluid">
+					<!--<div class="row">
+						<div class="col-md-6 col-md-offset-3">
+							<h1>Expandable Search Form</h1>
+						</div>
+					</div>-->
+					<div class="row">
+						<!--<div id="custom-search-input">
+							<div class="input-group col-md-12">
+								<input type="text" class="search-query form-control" placeholder="Search" />
+								<span class="input-group-btn">
+									<button class="btn btn-danger" type="button" onclick="searchBlog();">
+										<span class=" glyphicon glyphicon-search"></span>
+									</button>
+								</span>
+							</div>
+						</div>-->
+						<div class="col-md-12">
+							<div id="imaginary_container"> 
+								<div class="input-group stylish-input-group">
+									<input type="text" class="form-control"  placeholder="Search" />
+									<span class="input-group-addon">
+										<button type="submit"  onclick="return searchBlog();">
+											<span class="glyphicon glyphicon-search"></span>
+										</button>  
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--<div class="row" style="margin-top:15px;">
+						<div class="col-md-12">
+							<h5 style="font-family:微软雅黑;">新建链接</h5>
+						</div>
+					</div>-->
+					<div class="row" style="border-bottom: 1px solid #E3E3E3;margin-top:15px;">
+						<div class="col-md-12">
+							<h5 style="font-family:微软雅黑;">全部标签</h5>
+							<ul class="list-inline list-unstyled">
+								<li>
+									<div class="bot-links-all" id="id_all_tags">
+										<!--<a href="#"><span class="badge">Java</span></a>
+										<a href="#"><span class="badge">设计模式</span></a>
+										<a href="#"><span class="badge">css</span></a>
+										<a href="#"><span class="badge">redis</span></a>
+										<a href="#"><span class="badge">javascript</span></a>
+										<a href="#"><span class="badge">html</span></a>
+										<a href="#"><span class="badge">openstack</span></a>
+										<a href="#"><span class="badge">mongodb</span></a>
+										<a href="#"><span class="badge">Java</span></a>
+										<a href="#"><span class="badge">hadoop</span></a>
+										<a href="#"><span class="badge">sql</span></a>
+										<a href="#"><span class="badge">memcache</span></a>-->
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!--<div id="custom-search-input">
+							<div class="input-group col-md-12">
+								<input type="text" class="  search-query form-control" placeholder="Search" />
+								<span class="input-group-btn">
+									<button class="btn btn-danger" type="button" onclick="searchBlog();">
+										<span class=" glyphicon glyphicon-search"></span>
+									</button>
+								</span>
+							</div>
+						</div>-->
+					</div>
+					<div class="row" style="margin-top:15px;">
+						<div class="col-md-12">
+							<h5 style="font-family:微软雅黑;">热门推荐</h5>
+							<ul class="recommendlist list-unstyled" id="id_hot_recommend">
+								<!--<li><a href="#">我对块存储，文件存储，对象存储的认识</a>&nbsp;&nbsp;<span class="badge">22 views</span></li>
+								<li><a href="#">openstack juno版发布文档汇总：各个版本安装、API、配置使用、管理员英文文档</a>&nbsp;&nbsp;<span class="badge">20 views</span></li>
+								<li><a href="#">RESTLET开发实例</a>&nbsp;&nbsp;<span class="badge">14 views</span></li>
+								<li><a href="#">Mysql查询一段时间记录</a>&nbsp;&nbsp;<span class="badge">12 views</span></li>
+								<li><a href="#">Python面试题：请写出一段Python代码实现删除一个list里面的重复元素</a>&nbsp;&nbsp;<span class="badge">8 views</span></li>-->
+							</ul>
+						</div>
+						<!--<div id="custom-search-input">
+							<div class="input-group col-md-12">
+								<input type="text" class="  search-query form-control" placeholder="Search" />
+								<span class="input-group-btn">
+									<button class="btn btn-danger" type="button" onclick="searchBlog();">
+										<span class=" glyphicon glyphicon-search"></span>
+									</button>
+								</span>
+							</div>
+						</div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--<div class="pb-page-footer">
+		<div class="container" style="width:80%;">
+			<div class="col-md-4">
+				<h4>Page Links</h4>
+				<p><a href="#" title="PrepBootstrap - Bootstrap Themes and Templates">Home</a></p>
+				<p><a href="#" title="Buy BootStrap Themes">Project Dev</a></p>
+				<p><a href="#" title="BootStrap Templates">Blog Center</a></p>
+				<p><a href="#" title="BootStrap Themes">About Me</a></p>
+			</div>
+			<div class="col-md-4">
+				<h4>Friendly Links</h4>
+				<p><a href="https://github.com/junneyang" title="GitHub">GitHub</a></p>
+				<p><a href="https://www.linkedin.com/pub/junne-yang/a5/7a0/8a6" title="LinkedIn">LinkedIn</a></p>
+				<p><a href="mailto:597092663@qq.com" title="E-Mail">E-Mail</a></p>
+				<p><a data-toggle="collapse" href="#collapseNewsletter" aria-expanded="false" aria-controls="collapseNewsletter" title="Newsletter">Newsletter</a></p>
+				<div class="collapse" id="collapseNewsletter">
+					<form class="form" role="form" onsubmit="return subscribe();">
+						<div class="form-group">
+							<div class="input-prepend"><span class="add-on"><i class="icon-envelope"></i></span>
+								<label class="sr-only" for="email">Email address</label>
+								<input type="email" class="form-control" id="email" placeholder="Enter your email" required/>
+							</div>
+						</div>
+						<button type="submit" class="btn btn-info btn-block">Subscribe</button>
+					</form>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<h4>Contact Me</h4>
+				<div class="row">
+					<div class="col-sm-6">
+						<h5>QQ</h5>
+						<img src="/static/images/resources/qq.jpg" style="width: 140px; height: 140px;"/>
+					</div>
+					<div class="col-sm-6">
+						<h5>WeChat</h5>
+						<img src="/static/images/resources/junneyang.png" style="width: 140px; height: 140px;"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>-->
+	<footer class="footer" style="margin-top:0px;margin-bottom:0px;padding-top:20px;background-color:black;">
+		<div class="container text-center">
+			<p class="text-muted">Copyright ©2014 junneyang. All Rights Reserved. </p>
+			<p class="text-muted">Technical Support : <a href="http://sae.sina.com.cn/">SinaAppEngine</a></p>
+			<p class="text-muted">JunneYang 版权所有 </p>
+		</div>
+	</footer>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+					<h4 class="modal-title" id="myModalLabel">Info</h4>
+				</div>
+				<div class="modal-body text-center">
+					Operation Success
+				</div>
+				<!--<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>-->
+			</div>
+		</div>
+	</div>
+	<script src="/static/js/jquery-1.11.2.min.js"></script>
+	<script src="/static/js/model/bootstrap-3.3.1-dist/dist/js/bootstrap.min.js"></script>
+	<!--<script src="/static/js/model/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>-->
+	<script src="/static/js/model/typeahead.js-master/dist/typeahead.jquery.js"></script>
+	<!--<script src="/static/js/model/typeahead.js-master/dist/typeahead.bundle.min.js"></script>-->
+	<!--<script src="/static/js/model/jquery-bootpag-master/lib/jquery.bootpag.min.js"></script>-->
+	<script src="/static/js/model/bootstrap-paginator-master/build/bootstrap-paginator.min.js"></script>
+	<script type="text/javascript">
+		//菜单选项点击事件
+		/*$(".panel-body .table tr td a").click(function(){
+			$(".panel-body .table tr").removeClass("active");
+			$(this).parent().parent().addClass("active");
+		});*/
+		//初始菜单样式
+		$(document).ready(function(){
+			var url = decodeURIComponent(location.href);
+			var cat = parseRequestURL(url, 'cat');
+			//alert(cat);
+			/*var catlist = $(".panel-body .table tr td a").toArray();
+			$.each(catlist, function(i, catitem) {
+				if(catlist[i].innerHTML == cat){
+					catlist[i].parent().parent().addClass("active");
+					catlist[i].parent().parent().parent().parent().parent().parent().addClass("in");
+				}
+			});*/
+			var alist = new Array();
+			var flag = 0;
+			$('.panel-body .table tr td a').each(function(){
+				//alert($(this).text());
+				//alert(cat);
+				alist.push($(this));
+				if($(this).text() == cat) {
+					//$(this).parent().parent().addClass("active");
+					$(this).parent().parent().parent().parent().parent().parent().addClass("in");
+					flag = 1;
+				}
+			});
+			if(flag == 0) {
+				//alist[0].parent().parent().addClass("active");
+				alist[0].parent().parent().parent().parent().parent().parent().addClass("in");
+			}
+		});
+		//初始显示blog列表、显示所有标签、显示所有推荐
+		$(document).ready(function(){
+			var tag = parseRequestURL(location.href, 'tag');
+			var page = parseRequestURL(location.href, 'page');
+			var limit = parseRequestURL(location.href, 'limit');
+			queryBlogsByTagDirect(tag, page, limit);
+			disAllTags();
+			disRecommend();
+		});
+		//根据分类查询、显示blog
+		function queryBlogsByTagDirect(tag, page, limit) {
+			/*var request = {};
+			request['cat'] = cat;
+			request['offset'] = offset;
+			request['limit'] = limit;
+			$.when(queryBlogsByCat(request)).done(function(data){
+				//return data.msg;
+				disBlogsByCat(data.msg, page);
+			});*/
+			var retdata = queryBlogsByTag(tag, page, limit);
+			disBlogsByTag(retdata.msg, retdata.total_cnt, page, limit);
+		}
+		//根据分类列表查询blog
+		function queryBlogsByTag(tag, page, limit) {
+			//var defer = $.Deferred();
+			var retdata;
+			$.ajax({
+				type: "GET",
+				url : '/queryBlogsByTag/?tag='+tag+'&page='+page+'&limit='+limit,
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				//data:JSON.stringify(request),
+				async : false,
+				success: function(data){
+					//defer.resolve(data)
+					retdata = data;
+				}
+			});
+			//return defer.promise();
+			return retdata;
+		}
+		//显示blog列表
+		function disBlogsByTag(bloglist, total, page, limit) {
+			$(".panel-body .table tr").removeClass("active");
+			var t = "";
+			$.each(bloglist, function(i, blog) {
+				t += '<div class="blogitem">';
+				t += '<div class="media">';
+				t += '<div class="media-body">';
+				t += '<a onclick="javascript:updateViews(\''+blog.id+'\');" href="javascript:openLink(\'' + blog.link + '\')"><h3 class="media-heading">' + blog.title + '</h3></a>';
+				t += '<ul class="list-inline list-unstyled">';
+				t += '<li><span><i class="glyphicon glyphicon-calendar"></i>' + blog.datetime + '</span></li>';
+				t += '<li>|</li>';
+				t += '<span><i class="glyphicon glyphicon-folder-open"></i> <a href="javascript:disCatBlogs(\''+ blog.catlogue +'\');">' + blog.catlogue + '</a></span>';
+				t += '<li>|</li>';
+				t += '<span><i class="glyphicon glyphicon-eye-open"></i> <label style="font-weight:normal;" id="id_views_bloglist_'+blog.id+'">' + blog.views + '</label> views</span>';
+				t += '<li>|</li>';
+				t += '<span><a href="javascript:updateThumbs(\''+blog.id+'\');"><i class="glyphicon glyphicon-thumbs-up"></i></a> <label  style="font-weight:normal;" id="id_thumbs_bloglist_'+blog.id+'">' + blog.thumbs + '</label> thumbs</span>';
+				t += '</ul>';
+				t += '<ul class="list-inline list-unstyled">';
+				t += '<li><div class="bot-links">';
+				$.each(blog.tags, function(i, tag) {
+					t += '<a href="javascript:disTagBlogs(\''+tag+'\');"><span class="badge">' + tag + '</span></a>';
+				});
+				t += '</div></li></ul></div></div></div>';
+			});
+			$('#id_blog_list div').remove();
+			$('#id_blog_list').append(t);
+			//显示分页
+			var maxVisible = 5;
+			var totalPage = 0;
+			if(total%limit == 0) {
+				totalPage = total/limit;
+			} else {
+				totalPage = Math.floor(total/limit)+1;
+			}
+			/*$('#page-selection').bootpag({
+				total: totalPage,
+				page: page,
+				maxVisible: maxVisible,
+				//leaps: false,
+				next: 'Next',
+				prev: 'Previous',
+			}).on("page", function(event, num){
+				//queryBlogsByCatDirect(cat, (num-1)*maxVisible, maxVisible, num);
+				var tag = parseRequestURL(location.href, 'tag');
+				var limit = parseRequestURL(location.href, 'limit');
+				window.location.href = "/blog/tag/?tag="+tag+"&page="+num+"&limit="+limit;
+			});*/
+			if(totalPage != 0) {
+				var t = '<p style="margin: 25px 0px;">Total Items <b>'+total+'</b>, Total Pages <b>'+totalPage+'</b>, Current Page <b>'+page+'</b></p>';
+				$('#id_page_info p').remove();
+				$('#id_page_info').append(t);
+				$('#page-selection').bootstrapPaginator({
+					currentPage: page,
+					totalPages: totalPage,
+					bootstrapMajorVersion: 3,
+					//alignment: "right",
+					size: "normal",
+					numberOfPages: 5,
+					itemTexts: function (type, page, current) {
+						switch (type) {
+							case "first":
+								return "First";
+							case "prev":
+								return "Previous";
+							case "next":
+								return "Next";
+							case "last":
+								return "Last";
+							case "page":
+								return page;
+						}
+					},
+					onPageClicked: function(e,originalEvent,type,page){
+						var tag = parseRequestURL(location.href, 'tag');
+						var limit = parseRequestURL(location.href, 'limit');
+						window.location.href = "/blog/tag/?tag="+tag+"&page="+page+"&limit="+limit;
+					}
+				});
+				//$('#page-selection').addClass("pull-right");
+			}
+		}
+		function disAllTags() {
+			var tags = queryTags();
+			var taglist = "";
+			$.each(tags, function(i, tag) {
+				taglist += '<a href="javascript:disTagBlogs(\''+tag+'\');"><span class="badge">' + tag + '</span></a>';
+			});
+			$('#id_all_tags a').remove();
+			$('#id_all_tags').append(taglist);
+		}
+		function disRecommend() {
+			var recommends = queryRecommend();
+			var recommendlist = "";
+			$.each(recommends, function(i, recommend) {
+				recommendlist += '<li><a onclick="javascript:updateViews(\''+recommend.id+'\');" href="javascript:openLink(\''+recommend.link+'\');">'+recommend.title+'</a>&nbsp;&nbsp;<span class="badge"><label style="font-weight:normal;" id="id_views_recommend_'+recommend.id+'">'+recommend.views+'</label> views</span></li>';
+			});
+			$('#id_hot_recommend a').remove();
+			$('#id_hot_recommend').append(recommendlist);
+		}
+		function queryRecommend() {
+			//var defer = $.Deferred();
+			var retdata;
+			$.ajax({
+				type: "GET",
+				url : '/queryRecommend/?page=1&limit=5',
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				//data: {metricsID:metricsID,DataLength:accountInfoLength},
+				//data: {flag:0},
+				async : false,
+				success: function(data){
+					//defer.resolve(data)
+					retdata = data;
+				}
+			});
+			//return defer.promise();
+			return retdata.msg;
+		}
+		function loginWithDefault(){
+			window.location = "/";
+			return false;
+		}
+		function searchBlog() {
+			return false;
+		}
+		function addTag() {
+			//获取当前输入的tag
+			var tag = $('#id_add_tag_input').val();
+			tag = tag.toLocaleLowerCase();
+			//获取已经添加的tag
+			var tags = new Array();
+			$("#id_add_tag_list label").each(function(){
+				tags.push($(this).html());
+			});
+			if(tag != "" && $.inArray(tag, tags) == -1) {
+				var tagbadge = '<a href="#"><span class="badge"><label>' + tag + '</label>&nbsp;&nbsp;<span class="glyphicon glyphicon-remove"></span></span></a>';
+				$('#id_add_tag_list').append(tagbadge);
+				var retdata = addTags(tag);
+				$('#id_add_tag_input').val("");
+				//刷新显示全部标签
+				disAllTags();
+			} else {
+				//alert("need tag");
+				$('#id_add_tag_input').val("");
+			}
+			return false;
+		}
+		$(document).ready(function() {
+			//Remove a Tag
+			$('#id_add_tag_list').on('click', 'a', function() {
+				$(this).remove();
+				return false;
+			});
+		});
+		function submitBlog() {
+			var cat = $("#id_cat_select option:selected").val();
+			var title = $('#id_title_input').val();
+			var link = $('#id_link_input').val();
+			var tags = new Array();
+			$("#id_add_tag_list label").each(function(){
+				tags.push($(this).html());
+			});
+			if(cat == "NULL") {
+				alert("please select the category");
+				return false;
+			}
+			if(title == "") {
+				alert("please input the title");
+				return false;
+			}
+			if(link == "") {
+				alert("please input the link");
+				return false;
+			}
+			/*if(IsURL(link) == false) {
+				alert("the url is invalid");
+				return false;
+			}*/
+			if(tags.length == 0) {
+				alert("please input the tags");
+				return false;
+			}
+			//alert(tags);
+			var request = {};
+			request['catlogue'] = cat;
+			request['title'] = title;
+			request['link'] = link;
+			//request['tags'] = tags.join(",");
+			request['tags'] = tags;
+			$.when(addBlog(request)).done(function(data){
+				if(data.retcode == 0) {
+					alert("add success");
+					$('#id_addblog_form')[0].reset();
+					//$("#id_cat_select").val("NULL");
+					$("#id_cat_select").get(0).selectedIndex = 0;
+					$('#id_add_tag_list a').remove();
+					var cat = parseRequestURL(location.href, 'cat');
+					var page = parseRequestURL(location.href, 'page');
+					var limit = parseRequestURL(location.href, 'limit');
+					queryBlogsByCatDirect(cat, page, limit);
+				} else {
+					alert("add failed");
+				}
+			});
+			return false;
+		}
+		function addBlog(request) {
+			var defer = $.Deferred();
+			$.ajax({
+				type: "POST",
+				url : '/addBlog/',
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				data:JSON.stringify(request),
+				//async : false,
+				success: function(data){
+					defer.resolve(data)
+				}
+			});
+			return defer.promise();
+		}
+		function queryTags() {
+			//var defer = $.Deferred();
+			var retdata;
+			$.ajax({
+				type: "GET",
+				url : '/queryTags/',
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				//data: {metricsID:metricsID,DataLength:accountInfoLength},
+				//data: {flag:0},
+				async : false,
+				success: function(data){
+					//defer.resolve(data)
+					retdata = data;
+				}
+			});
+			//return defer.promise();
+			return retdata.msg;
+		}
+		function addTags(tag) {
+			//var defer = $.Deferred();
+			var request = {};
+			request['tag'] = tag;
+			var retdata;
+			$.ajax({
+				type: "POST",
+				url : '/addTags/',
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				//data: {metricsID:metricsID,DataLength:accountInfoLength},
+				data: JSON.stringify(request),
+				async : false,
+				success: function(data){
+					//defer.resolve(data)
+					retdata = data;
+				}
+			});
+			//return defer.promise();
+			return retdata;
+		}
+		$(document).ready(function() {
+			var substringMatcher = function(strs) {
+				return function findMatches(q, cb) {
+					var matches, substringRegex;
+					// an array that will be populated with substring matches
+					matches = [];
+					// regex used to determine if a string contains the substring `q`
+					substrRegex = new RegExp(q, 'i');
+					// iterate through the pool of strings and for any string that
+					// contains the substring `q`, add it to the `matches` array
+					$.each(strs, function(i, str) {
+						if (substrRegex.test(str)) {
+							// the typeahead jQuery plugin expects suggestions to a
+							// JavaScript object, refer to typeahead docs for more info
+							matches.push({ value: str });
+						}
+					});
+					cb(matches);
+				};
+			};
+			$('#id_add_tag_input').typeahead({
+				hint: true,
+				highlight: true,
+				minLength: 1
+			},
+			{
+				name: 'tagsset',
+				displayKey: 'value',
+				source: substringMatcher(queryTags())
+				/*source: function (query, substringMatcher) {
+					//return substringMatcher(tagsset);
+					var tagsset = queryTags();
+					return substringMatcher(tagsset);
+				}*/
+			});
+		});
+		function openLink(link) {
+			window.open(link);
+		}
+		function refreshLink(link) {
+			window.location.href = link;
+		}
+		/*function IsURL(str_url){ 
+			var strRegex = "^((https|http|ftp|rtsp|mms)?://)"  
+			+ "?(([0-9a-z_!~*'().&=+$%-]+: )?[0-9a-z_!~*'().&=+$%-]+@)?" //ftp的user@  
+			+ "(([0-9]{1,3}\.){3}[0-9]{1,3}" // IP形式的URL- 199.194.52.184  
+			+ "|" // 允许IP和DOMAIN（域名） 
+			+ "([0-9a-z_!~*'()-]+\.)*" // 域名- www.  
+			+ "([0-9a-z][0-9a-z-]{0,61})?[0-9a-z]\." // 二级域名  
+			+ "[a-z]{2,6})" // first level domain- .com or .museum  
+			+ "(:[0-9]{1,4})?" // 端口- :80  
+			+ "((/?)|" // a slash isn't required if there is no file name  
+			+ "(/[0-9a-z_!~*'().;?:@&=+$,%#-]+)+/?)$";  
+			var re=new RegExp(strRegex);  
+		//re.test() 
+			if (re.test(str_url)){ 
+				return (true);  
+			}else{  
+				return (false);  
+			} 
+		}*/
+		function IsURL(urlToCheck) {
+			// Below regular expression can validate input URL with or without http:// etc 
+			var pattern = new RegExp("^((http|https|ftp)\://)*([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&%\$\-]+)*@)*((25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])|([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(\:[0-9]+)*(/($|[a-zA-Z0-9\.\,\?\'\\\+&%\$#\=~_\-]+))*$");
+			return pattern.test(urlToCheck);
+		}
+		function parseRequestURL(url, paras) {
+			//var url = location.href;
+			//var url = decodeURIComponent(url);
+			var paraString = url.substring(url.indexOf("?")+1,url.length).split("&"); 
+			var paraObj = {} 
+			for (i=0; j=paraString[i]; i++){ 
+				paraObj[j.substring(0,j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=")+1,j.length); 
+			} 
+			var returnValue = paraObj[paras.toLowerCase()]; 
+			if(typeof(returnValue)=="undefined"){ 
+				return ""; 
+			}else{ 
+				return returnValue; 
+			} 
+		}
+		function disCatBlogs(cat) {
+			var encodedUrl = encodeURIComponent(cat);
+			var link = "/blog/cat/?cat="+encodedUrl+"&page=1&limit=5";
+			refreshLink(link);
+		}
+		function disTagBlogs(tag) {
+			var encodedUrl = encodeURIComponent(tag);
+			var link = "/blog/tag/?tag="+encodedUrl+"&page=1&limit=5";
+			refreshLink(link);
+		}
+		function updateViews(id) {
+			var retdata = updateBlogViews(id);
+			//alert(retdata.msg.views);
+			$("#id_views_bloglist_"+id).text(retdata.msg.views);
+			$("#id_views_recommend_"+id).text(retdata.msg.views);
+		}
+		function updateBlogViews(id) {
+			//var defer = $.Deferred();
+			var retdata;
+			$.ajax({
+				type: "GET",
+				url : '/updateBlogViews/?id='+id,
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				//data:JSON.stringify(request),
+				async : false,
+				success: function(data){
+					//defer.resolve(data)
+					retdata = data;
+				}
+			});
+			//return defer.promise();
+			return retdata;
+		}
+		function updateThumbs(id) {
+			var retdata = updateBlogThumbs(id);
+			//alert(retdata.msg.thumbs);
+			$("#id_thumbs_bloglist_"+id).text(retdata.msg.thumbs);
+		}
+		function updateBlogThumbs(id) {
+			//var defer = $.Deferred();
+			var retdata;
+			$.ajax({
+				type: "GET",
+				url : '/updateBlogThumbs/?id='+id,
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				//data:JSON.stringify(request),
+				async : false,
+				success: function(data){
+					//defer.resolve(data)
+					retdata = data;
+				}
+			});
+			//return defer.promise();
+			return retdata;
+		}
+	</script>
+</body>
+</html>

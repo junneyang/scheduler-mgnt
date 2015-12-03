@@ -1,0 +1,835 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="height: 100%;border: none;padding: 0px;margin: 0px;">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7;  IE=EDGE"/>
+	<meta content="Help" name="keywords" />
+	<meta content="Help" name="description" />
+	<meta name="generator" content="Help"/>
+	<title>Help-Malakas</title>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/bootstrap.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/bootstrap-theme.min.css" type="text/css"/>
+	<!--<link rel="stylesheet" href="/static/js/model/DataTables-1.10.4-trial/media/css/jquery.dataTables.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/DataTables-1.10.4-trial/extensions/TableTools/css/dataTables.tableTools.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/DataTables-1.10.4-trial/extensions/Editor-1.3.3/css/dataTables.editor.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/font-awesome.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/css/demo/nav/docs.min.css" type="text/css"/>-->
+	<link rel="stylesheet" href="/static/js/model/bootstrap-datetimepicker-master/build/css/bootstrap-datetimepicker.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-table-master/dist/bootstrap-table.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/patch.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/css/docs.min.css" type="text/css"/>
+	<style type="text/css">
+		/* Move down content because we have a fixed navbar that is 50px tall */
+		body {
+			padding-top: 50px;
+			padding-bottom: 20px;
+		}
+		/* footer css #f8f8f8; */
+		.pb-page-footer{
+			width: 100%;
+			color: gray;
+			background-color: #3C3C3C;
+			#border-top: 1px solid #e7e7e7;
+			margin-top: 5px;
+			margin-bottom: 0px;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+		.pb-page-footer a, .pb-page-footer a:visited {
+			color: #777;
+			text-decoration: none;
+		}
+		.pb-page-footer a:active, .pb-page-footer a:hover, .pb-page-footer a:focus{
+			color: white;
+			text-decoration: none;
+		}
+		body {
+			padding-bottom:0px;
+		}
+		.pb-page-footer h4 {
+			color:white;
+		}
+	</style>
+</head>
+<body>
+	<!-- Navigation
+	================================================== -->
+	<nav class="navbar navbar-fixed-top navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/" style="font-size:18px;font-weight:bold;color:#FFF;"><!--<img alt="Brand" src="/static/images/favicon.ico" title="junneyang.sinaapp.com" style="margin-left:5px;height:24px;width:24px;"/>-->Malakas</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse js-navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/">Home</a></li>
+					<li><a href="#">Dashboard</a></li>
+					<li><a href="/jobcenter/">Job Center</a></li>
+					<li><a href="/deploy/">Deploy</a></li>
+					<!--<li class="dropdown dropdown-large">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog Center<span class="caret"></span></a>
+						<ul class="dropdown-menu dropdown-menu-large row">
+							<li class="col-sm-4">
+								<ul>
+									<li class="dropdown-header">系统</li>
+									<li><a href="#">Linux</a></li>
+									<li><a href="#">Shell</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-header">架构</li>
+									<li><a href="#">设计模式</a></li>
+									<li><a href="#">Web系统</a></li>
+									<li><a href="#">后端</a></li>
+									<li><a href="#">网络框架</a></li>
+									<li><a href="#">中间件</a></li>
+								</ul>
+							</li>
+							<li class="col-sm-4">
+								<ul>
+									<li class="dropdown-header">开发</li>
+									<li><a href="#">C/C++</a></li>
+									<li><a href="#">Java</a></li>
+									<li><a href="#">Python</a></li>
+									<li><a href="#">html/css/js</a></li>
+									<li><a href="#">Algorithm</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-header">测试</li>
+									<li><a href="#">系统测试</a></li>
+									<li><a href="#">自动化测试</a></li>
+									<li><a href="#">性能测试</a></li>
+									<li><a href="#">持续集成</a></li>
+								</ul>
+							</li>
+							<li class="col-sm-4">
+								<ul>
+									<li class="dropdown-header">云计算</li>
+									<li><a href="#">数据中心</a></li>
+									<li><a href="#">虚拟化</a></li>
+									<li><a href="#">OpenStack</a></li>
+									<li><a href="#">Hadoop/Spark</a></li>
+									<li><a href="#">SDN/NFV</a></li>
+									<li><a href="#">存储技术</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>-->
+					<li class="active"><a href="/help/">Help</a></li>
+				</ul>
+				<!--<form class="navbar-form navbar-right" role="search">
+					<div class="form-group"><input type="text" class="form-control" placeholder="Search"></div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>-->
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#" class="navbar-link">sign up</a></li>
+					<li class="dropdown">
+						<a href="#" class="navbar-link" class="dropdown-toggle" data-toggle="dropdown">log in<b class="caret"></b></a>
+						<ul class="dropdown-menu" style="padding:15px;min-width:250px;">
+							<li>
+								<div class="row">
+									<div class="col-md-12">
+										<form class="form" role="form" onsubmit="return loginWithDefault();">
+											<div class="form-group">
+												<label class="sr-only" for="exampleInputEmail2">Email address</label>
+												<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+											</div>
+											<div class="form-group">
+												<label class="sr-only" for="exampleInputPassword2">Password</label>
+												<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+											</div>
+											<div class="checkbox">
+												<label>
+												<input type="checkbox" class="checkbox" checked="checked"/>Subscribe Newsletter
+												</label>
+											</div>
+											<div class="form-group">
+												<button type="submit" class="btn btn-success btn-block">Sign in</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<input class="btn btn-primary btn-block" type="button" id="sign-in-google" value="Sign In with QQ">
+								<input class="btn btn-primary btn-block" type="button" id="sign-in-twitter" value="Sign In with GitHub">
+								<!--<input class="btn btn-primary btn-block" type="button" id="sign-in-google" value="Sign In with Google">-->
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<!--<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">{{usrname}}<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">个人中心</a></li>
+							<li><a href="#">退出登录</a></li>
+						</ul>
+					</li>
+					<li class="divider-vertical"></li>
+					<li><a href="#">帮助</a></li>
+				</ul>-->
+			</div><!-- /.nav-collapse -->
+		</div><!-- /.container -->
+	</nav><!-- /.navbar -->
+	
+	<!-- Docs page layout -->
+	<div class="bs-docs-header" id="content">
+		<div class="container">
+			<h1>Malakas</h1>
+			<p>Malakas is a simple, Agile, but Powerful automation tool that you can learn quickly. </p>
+			<p>With the restful API and splendid web UI, Malakas is the best way to run Ansible in your company. Just enjoy it right now!</p>
+			<div id="carbonads-container">
+				<div class="carbonad">
+					<div id="azcarbon">
+						<img style="display:inline;" src="/static/images/share/ANSI_logotype_web_white.png"></img><br/><br/>
+						<span style="font-size:16px;">DevOps made simple.</span>
+					</div>
+					<!--<script>var z = document.createElement("script"); z.async = true; z.src = "http://engine.carbonads.com/z/32341/azcarbon_2_1_0_HORIZ"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>-->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container bs-docs-container">
+		<div class="row">
+			<div class="col-md-9" role="main">
+				<div class="bs-docs-section">
+					<h1 id="id_overview" class="page-header">一、概览</h1>
+					<h3 id="id_overview_feature">1.1、Malakas特性</h3>
+					<p>Malakas提供云环境下较大规模场景的自动化部署能力。其特性如下：</p>
+					<ul>
+						<li>支持简单命令、Script脚本、基于Playbook复杂任务编排等各类自动化部署任务。满足实际场景中各类自动化部署需求。</li>
+						<li>支持任务提交、状态跟踪、结果查询、日志获取等功能。</li>
+						<li>支持Restful API调用。</li>
+						<li>支持友好界面操作。</li>
+						<li>支持异步调用。</li>
+						<li>支持大规模场景，架构可横向扩展。</li>
+						<li>支持生产环境可靠性需求，内置失败自动重试机制。</li>
+						<li>基于OpenSSH加密协议通信，满足生产环境安全需求。</li>
+					</ul>
+					
+					<h3 id="id_overview_framework">1.2、Malakas架构</h3>
+					<p>Malakas妥善考虑基础能力完备、调度横向扩展、Restful API调用等因素。其架构如下：</p>
+					<img src="/static/images/share/easyAnsible-framework.png" width="555" height="267.5">
+					
+					<h3 id="id_overview_workflow">1.3、Malakas业务流程</h3>
+					<p>Malakas基于异步、可横向扩展架构，提供Restful API以及Web控制台。其业务流程如下：</p>
+					<img src="/static/images/share/easyAnsible-flowwork.png" width="555" height="267.5">
+				</div>
+				
+				<div class="bs-docs-section">
+					<h1 id="id_createjob" class="page-header">二、任务创建<small>简单命令、Script脚本、Playbook任务编排</small></h1>
+					<h3 id="id_createjob_basic">2.1、简单命令（Basic）</h3>
+					<p>简单命令模式，提供ping、setup、file、copy、command、shell、raw、apt、pip、yum、git、svn、service、user、group、cron等基本命令的快速调用。</p>
+					<p>创建简单任务，其参数说明如下：</p>
+					<ul class="list-group">
+						<li class="list-group-item"><b>任务类型</b>：Basic，表示创建简单命令任务，必选。</li>
+						<li class="list-group-item"><b>任务名称</b>：随意，标识任务，必填。如：JobName。</li>
+						<li class="list-group-item"><b>模块名称</b>：表示调用ansible的哪一个模块，如copy、shell等，必填。如：shell。<a href="/helpModuleList/">查看ansible支持的模块列表？</a></li>
+						<li class="list-group-item"><b>模块参数</b>：此模块附加参数，可为空。如：sleep 5 && date && echo $PATH。</li>
+						<li class="list-group-item"><b>主机列表</b>：必填，多个主机使用英文逗号分割，如：10.20.0.89;10.20.0.90。</li>
+						<li class="list-group-item"><b>Forks</b>：必填，1-100之间，可根据主机规模适当调节此参数。如：5。</li>
+						<li class="list-group-item"><b>提交</b>：任务提交人，必填，当前无意义，可设为admin。如：admin。</li>
+					</ul>
+					
+					<h3 id="id_createjob_script">2.2、Script脚本（Script）</h3>
+					<p>Script脚本模式，提供远程脚本执行能力，脚本语言不限、可传递参数。</p>
+					<p>创建Script脚本任务，其参数说明如下：</p>
+					<ul class="list-group">
+						<li class="list-group-item"><b>任务类型</b>：Script，表示创建Script脚本型任务，必选。</li>
+						<li class="list-group-item"><b>任务名称</b>：随意，标识任务，必填。如：JobName。</li>
+						<li class="list-group-item"><b>模块名称</b>：必填。只允许填：script。
+						<li class="list-group-item"><b>脚本内容</b>：必填。如：
+							<pre>
+#!/bin/sh
+AAA=$1
+echo $AAA
+BBB=$2
+echo $BBB
+echo "Hello, JunneYang!"
+sleep 5
+date</pre>
+						</li>
+						<li class="list-group-item"><b>脚本参数</b>：脚本附加参数，可为空。如：1234567890 9876543210。</li>
+						<li class="list-group-item"><b>主机列表</b>：必填，多个主机使用英文逗号分割，如：10.20.0.89;10.20.0.90。</li>
+						<li class="list-group-item"><b>Forks</b>：必填，1-100之间，可根据主机规模适当调节此参数。如：5。</li>
+						<li class="list-group-item"><b>提交</b>：任务提交人，必填，当前无意义，可设为admin。如：admin。</li>
+					</ul>
+					
+					<h3 id="id_createjob_playbook">2.3、Playbook任务编排（Playbook）</h3>
+					<p>Playbook任务编排模式，提供基于yaml语法任务编排部署能力。</p>
+					<p>创建Playbook任务，其参数说明如下：</p>
+					<ul class="list-group">
+						<li class="list-group-item"><b>任务类型</b>：Playbook，表示创建Playbook型任务，必选。</li>
+						<li class="list-group-item"><b>任务名称</b>：随意，标识任务，必填。如：JobName。</li>
+						<li class="list-group-item"><b>Playbook脚本内容</b>：必填。如：
+							<pre>
+---
+- name: Hello World
+  hosts: base
+  user: root
+  tasks:
+  - name: Hello World
+    shell: echo "Hi! Tower is working"  && sleep 10
+    ignore_errors: True
+    register: tmpa
+  - debug: msg="{{ tmpa }}"
+
+  - name: Print datetime now
+    tags: mytag
+    shell: date && echo {{test_var}} && sleep 10
+    register: tmpb
+
+    notify:
+    - myhandler
+
+  - debug: msg="{{ tmpb }}"
+    tags: mytag
+
+
+  handlers:
+  - name: myhandler
+    shell: echoaaa "this is myhandler"
+    register: tmpc
+  - debug: msg="{{ tmpc }}"</pre>
+						</li>
+						<li class="list-group-item"><b>附加参数</b>：脚本附加参数，字典格式，可为空{}。如：{"test_var":"0123456789"}。</li>
+						<li class="list-group-item"><b>主机列表</b>：必填，字典格式，如：
+							<pre>
+{
+    "web": ["10.20.0.88"],
+    "base": {
+        "children": ["web","db"],
+        "vars": {"b": True}
+    },
+    "db": ["10.20.0.89"]
+}
+							</pre>
+						</li>
+						<li class="list-group-item"><b>Tags</b>：非必填，列表格式，不可为空[]。如：["mytag"]。</li>
+						<li class="list-group-item"><b>Forks</b>：必填，1-100之间，可根据主机规模适当调节此参数。如：5。</li>
+						<li class="list-group-item"><b>提交</b>：任务提交人，必填，当前无意义，可设为admin。如：admin。</li>
+					</ul>
+				</div>
+				
+				<div class="bs-docs-section">
+					<h1 id="id_getjobstatus" class="page-header">三、任务查询</h1>
+					<h3 id="id_getjobstatus_status">3.1、结果查询</h3>
+					<p>Malakas提供各类任务状态、结果、日志等查询，说明如下：</p>
+					<ul>
+						<li>Basic、Script任务支持实时状态查询、任务执行结果查询。</li>
+						<li>Playbook任务支持实时状态查询、任务执行结果查询、任务执行实时日志查询、以及分主机查询史事日志。</li>
+					</ul>
+					
+					<h3 id="id_getjobstatus_express">3.2、任务状态解释</h3>
+					<p>调用任务状态查询接口，返回实时任务状态，job_status解释如下，接口调用方需关注5、6，其他状态可忽略：</p>
+					<ul>
+						<li>0: initial, 初始化状态, 表示该任务已经添加到数据库。</li>
+						<li>1: submited, 提交状态, 表示jobclient已经将任务提交给jobServer。</li>
+						<li>2: scrabed, 获取状态, 表示jobWorker已经获取到该任务。</li>
+						<li>3: polled, ansible内部状态, 表示ansible已经获取到该任务、准备执行。</li>
+						<li>4: running, 执行状态, 表示ansible启动任务执行。</li>
+						<li>5: exception, 异常状态, 表示任务执行异常或者失败。</li>
+						<li>6: success, 成功状态, 表示任务执行成功，没有任何异常、失败。</li>
+					</ul>
+				</div>
+				
+				<div class="bs-docs-section">
+					<h1 id="id_api" class="page-header">四、Restful API示例（python版本）</h1>
+					<h3 id="id_api_basic">4.1、Basic任务创建</h3>
+					<div>接口说明：
+							<pre>
+POST /submitJob/
+Content-Type	application/json
+
+{
+	"job_type":0,
+	"job_name":"Just For Test",
+	"module_name": "shell", 
+	"forks": 5, 
+	"module_args": "sleep 5 && date && echo $PATH", 
+	"pattern": "10.20.0.89;10.20.0.90",
+	"job_submit":"admin"
+}
+
+RET:
+{"ERRORCODE": 0, "msg": {"job_id": 1}, "CH": "\u64cd\u4f5c\u6210\u529f", "EH": "operation success"}
+							</pre>
+							python调用示例：
+							<pre>
+'''
+Created on Jun 26, 2015
+
+@author: yangjun
+'''
+import httplib
+import json
+
+if __name__ == '__main__':
+    try:
+        conn = httplib.HTTPConnection("10.20.0.88:8888")
+        headers = {"Content-type":"application/json"}
+        
+         params = ({
+             "job_type":0,
+             "job_name":"Just For Test",
+             "module_name": "shell", 
+             "forks": 5, 
+             "module_args": "sleep 5 && date && echo $PATH", 
+             "pattern": "10.20.0.89;10.20.0.90",
+             "job_submit":"admin"
+         })
+        
+        #print json.dumps(params)
+        conn.request("POST", "/submitJob/", json.JSONEncoder().encode(params), headers)
+        response = conn.getresponse()
+        data = response.read()
+        data = json.loads(data,encoding='UTF-8')
+        print data
+
+    except Exception as e:
+        print(str(e))
+    finally:
+        conn.close()</pre>
+					</div>
+					
+					<h3 id="id_api_script">4.2、Script任务创建</h3>
+					<div>接口说明：
+							<pre>
+POST /submitJob/
+Content-Type	application/json
+
+{
+	"job_type":1,
+	"job_name":"Just For Test",
+	"module_name":"script",
+	"forks":5, 
+	"module_args":"1234567890 9876543210", 
+	"pattern":"10.20.0.89;10.20.0.90", 
+	"script_content":'''#!/bin/sh
+AAA=$1
+echo $AAA
+BBB=$2
+echo $BBB
+echo "Hello, JunneYang!"
+sleep 5
+date''',
+	"job_submit":"admin"
+}
+
+RET:
+{"ERRORCODE": 0, "msg": {"job_id": 2}, "CH": "\u64cd\u4f5c\u6210\u529f", "EH": "operation success"}
+							</pre>
+							python调用示例：
+							<pre>
+'''
+Created on Jun 26, 2015
+
+@author: yangjun
+'''
+import httplib
+import json
+
+if __name__ == '__main__':
+    try:
+        conn = httplib.HTTPConnection("10.20.0.88:8888")
+        headers = {"Content-type":"application/json"}
+        
+         params = ({
+             "job_type":1,
+             "job_name":"Just For Test",
+             "module_name":"script",
+             "forks":5, 
+             "module_args":"1234567890 9876543210", 
+             "pattern":"10.20.0.89;10.20.0.90", 
+             "script_content":'''#!/bin/sh
+ AAA=$1
+ echo $AAA
+ BBB=$2
+ echo $BBB
+ echo "Hello, JunneYang!"
+ sleep 5
+ date''',
+             "job_submit":"admin"
+         })
+
+        #print json.dumps(params)
+        conn.request("POST", "/submitJob/", json.JSONEncoder().encode(params), headers)
+        response = conn.getresponse()
+        data = response.read()
+        data = json.loads(data,encoding='UTF-8')
+        print data
+
+    except Exception as e:
+        print(str(e))
+    finally:
+        conn.close()</pre>
+					</div>
+					
+					<h3 id="id_api_script">4.3、Playbook任务创建</h3>
+					<div>接口说明：
+							<pre>
+POST /submitJob/
+Content-Type	application/json
+
+{
+	"job_type":2,
+	"job_name":"Just For Test",
+	"hosts_list":'''{
+	"web": ["10.20.0.88"],
+	"base": {
+		"children": ["web","db"],
+		"vars": {"b": True}
+	},
+	"db": ["10.20.0.89"]
+}''',
+    "playbook_content":'''---
+- name: Hello World
+  hosts: base
+  user: root
+  tasks:
+  - name: Hello World
+    shell: echo "Hi! Tower is working"  && sleep 10
+    ignore_errors: True
+    register: tmpa
+  - debug: msg="{{ tmpa }}"
+
+  - name: Print datetime now
+    tags: mytag
+    shell: date && echo {{test_var}} && sleep 10
+    register: tmpb
+
+    notify:
+    - myhandler
+
+  - debug: msg="{{ tmpb }}"
+    tags: mytag
+
+
+  handlers:
+  - name: myhandler
+    shell: echoaaa "this is myhandler"
+    register: tmpc
+  - debug: msg="{{ tmpc }}"''',
+	"forks":5, 
+	"extra_vars":{"test_var":"0123456789"},
+	"only_tags":["mytag"], 
+	"job_submit":"admin"
+}
+
+RET:
+{u'ERRORCODE': 0, u'msg': {u'job_id': 3}, u'CH': u'\u64cd\u4f5c\u6210\u529f', u'EH': u'operation success'}
+							</pre>
+							python调用示例：
+							<pre>
+'''
+Created on Jun 26, 2015
+
+@author: yangjun
+'''
+import httplib
+import json
+
+if __name__ == '__main__':
+    try:
+        conn = httplib.HTTPConnection("10.20.0.88:8888")
+        headers = {"Content-type":"application/json"}
+
+        params = ({
+            "job_type":2,
+            "job_name":"Just For Test",
+            "hosts_list":'''{
+    "web": ["10.20.0.88"],
+    "base": {
+        "children": ["web","db"],
+        "vars": {"b": True}
+    },
+    "db": ["10.20.0.89"]
+}''',
+            "playbook_content":'''---
+- name: Hello World
+  hosts: base
+  user: root
+  tasks:
+  - name: Hello World
+    shell: echo "Hi! Tower is working"  && sleep 10
+    ignore_errors: True
+    register: tmpa
+  - debug: msg="{{ tmpa }}"
+
+  - name: Print datetime now
+    tags: mytag
+    shell: date && echo {{test_var}} && sleep 10
+    register: tmpb
+
+    notify:
+    - myhandler
+
+  - debug: msg="{{ tmpb }}"
+    tags: mytag
+
+
+  handlers:
+  - name: myhandler
+    shell: echoaaa "this is myhandler"
+    register: tmpc
+  - debug: msg="{{ tmpc }}"''',
+            "forks":5, 
+            "extra_vars":{"test_var":"0123456789"},
+            "only_tags":["mytag"], 
+            "job_submit":"admin"
+        })
+        
+        #print json.dumps(params)
+        conn.request("POST", "/submitJob/", json.JSONEncoder().encode(params), headers)
+        response = conn.getresponse()
+        data = response.read()
+        data = json.loads(data,encoding='UTF-8')
+        print data
+
+    except Exception as e:
+        print(str(e))
+    finally:
+        conn.close()</pre>
+					</div>
+					
+					<h3 id="id_api_jobstatus">4.4、任务状态查询</h3>
+					<div>接口说明：
+							<pre>
+GET	/getJobStatusByID/?job_id=13
+Content-Type	application/json
+
+RET:
+{"job_status": 5, "job_start_time": "2015-06-27 23:33:59+08:00", "script_content": null, "job_log": "[{\"skipped\": 0, \"ok\": 3, \"changed\": 1, \"Host\": \"10.20.0.89\", \"unreachable\": 0, \"failures\": 1}, {\"skipped\": 0, \"ok\": 3, \"changed\": 1, \"Host\": \"10.20.0.88\", \"unreachable\": 0, \"failures\": 1}]", "only_tags": "[u'mytag']", "pattern": null, "job_submit_time": "2015-06-27 15:33:58+08:00", "job_type": 2, "job_end_time": "2015-06-27 23:34:16+08:00", "job_name": "Just For Test", "job_submit": "admin", "extra_vars": "{u'test_var': u'0123456789'}", "module_name": null, "forks": 5, "playbook_content": "---\n- name: Hello World\n hosts: base\n user: root\n tasks:\n - name: Hello World\n shell: echo \"Hi! Tower is working\" && sleep 10\n ignore_errors: True\n register: tmpa\n - debug: msg=\"{{ tmpa }}\"\n\n - name: Print datetime now\n tags: mytag\n shell: date && echo {{test_var}} && sleep 10\n register: tmpb\n\n notify:\n - myhandler\n\n - debug: msg=\"{{ tmpb }}\"\n tags: mytag\n\n\n handlers:\n - name: myhandler\n shell: echoaaa \"this is myhandler\"\n register: tmpc\n - debug: msg=\"{{ tmpc }}\"", "id": 13, "hosts_list": "{\n \"web\": [\"10.20.0.88\"],\n \"base\": {\n \"children\": [\"web\",\"db\"],\n \"vars\": {\"b\": True}\n },\n \"db\": [\"10.20.0.89\"]\n}", "module_args": null}
+							</pre>
+					</div>
+					
+					<h3 id="id_api_joblist">4.5、任务列表查询</h3>
+					<div>接口说明：
+							<pre>
+/getJobs/?limit=10&offset=0&sort=id&order=desc
+Content-Type	application/json
+
+RET:
+{"msg": [{"job_status": 5, "job_start_time": "2015-06-27 23:33:59+08:00", "script_content": null, "job_log": "[{\"skipped\": 0, \"ok\": 3, \"changed\": 1, \"Host\": \"10.20.0.89\", \"unreachable\": 0, \"failures\": 1}, {\"skipped\": 0, \"ok\": 3, \"changed\": 1, \"Host\": \"10.20.0.88\", \"unreachable\": 0, \"failures\": 1}]", "only_tags": "[u'mytag']", "pattern": null, "job_submit_time": "2015-06-27 15:33:58+08:00", "job_type": 2, "job_end_time": "2015-06-27 23:34:16+08:00", "job_name": "Just For Test", "job_submit": "admin", "extra_vars": "{u'test_var': u'0123456789'}", "module_name": null, "forks": 5, "playbook_content": "---\n- name: Hello World\n hosts: base\n user: root\n tasks:\n - name: Hello World\n shell: echo \"Hi! Tower is working\" && sleep 10\n ignore_errors: True\n register: tmpa\n - debug: msg=\"{{ tmpa }}\"\n\n - name: Print datetime now\n tags: mytag\n shell: date && echo {{test_var}} && sleep 10\n register: tmpb\n\n notify:\n - myhandler\n\n - debug: msg=\"{{ tmpb }}\"\n tags: mytag\n\n\n handlers:\n - name: myhandler\n shell: echoaaa \"this is myhandler\"\n register: tmpc\n - debug: msg=\"{{ tmpc }}\"", "id": 13, "hosts_list": "{\n \"web\": [\"10.20.0.88\"],\n \"base\": {\n \"children\": [\"web\",\"db\"],\n \"vars\": {\"b\": True}\n },\n \"db\": [\"10.20.0.89\"]\n}", "module_args": null}, {"job_status": 5, "job_start_time": "2015-06-27 23:11:21+08:00", "script_content": null, "job_log": "[{\"skipped\": 0, \"ok\": 3, \"changed\": 1, \"Host\": \"10.20.0.89\", \"unreachable\": 0, \"failures\": 1}, {\"skipped\": 0, \"ok\": 3, \"changed\": 1, \"Host\": \"10.20.0.88\", \"unreachable\": 0, \"failures\": 1}]", "only_tags": "[u'mytag']", "pattern": null, "job_submit_time": "2015-06-27 15:11:21+08:00", "job_type": 2, "job_end_time": "2015-06-27 23:11:34+08:00", "job_name": "Just For Test", "job_submit": "admin", "extra_vars": "{u'test_var': u'0123456789'}", "module_name": null, "forks": 5, "playbook_content": "---\n- name: Hello World\n hosts: base\n user: root\n tasks:\n - name: Hello World\n shell: echo \"Hi! Tower is working\" && sleep 10\n ignore_errors: True\n register: tmpa\n - debug: msg=\"{{ tmpa }}\"\n\n - name: Print datetime now\n tags: mytag\n shell: date && echo {{test_var}} && sleep 10\n register: tmpb\n\n notify:\n - myhandler\n\n - debug: msg=\"{{ tmpb }}\"\n tags: mytag\n\n\n handlers:\n - name: myhandler\n shell: echoaaa \"this is myhandler\"\n register: tmpc\n - debug: msg=\"{{ tmpc }}\"", "id": 12, "hosts_list": "{\n \"web\": [\"10.20.0.88\"],\n \"base\": {\n \"children\": [\"web\",\"db\"],\n \"vars\": {\"b\": True}\n },\n \"db\": [\"10.20.0.89\"]\n}", "module_args": null}], "total_cnt": 13}
+							</pre>
+					</div>
+					
+					<h3 id="id_api_playbooklog">4.6、playbook任务日志查询</h3>
+					<div>接口说明：
+							<pre>
+GET	/getPlaybookJobLog/?job_id=9
+
+RET:
+返回html详细日志
+							</pre>
+					</div>
+					
+					<h3 id="id_api_playbooklogbyhost">4.7、playbook任务日志按照主机查询</h3>
+					<div>接口说明：
+							<pre>
+/getPlaybookJobLogByHost/?job_id=6&host=10.20.0.88
+
+RET:
+返回html详细日志
+							</pre>
+					</div>
+				</div>
+				
+				<div class="bs-docs-section">
+					<h1 id="id_faq" class="page-header">五、常见问题（FAQ）</h1>
+					<h3 id="id_faq_svnfile">5.1、怎么在目标机器执行svn操作？</h3>
+					<ul>
+						<li>方法一，Basic-subversion方式。<a href="/helpModuleInfo/?module=subversion">查看subversion帮助</a></li>
+						subversion参数示例：
+						<pre>repo=XXX dest=/tmp/test username=XXX password=XXX</pre>
+						Basic-API调用截图：
+						<div style="padding:2px;border:1px solid #DDD;"><img src="/static/images/share/basic-subversion.png" width="800px"></img></div>
+						
+						<li>方法二，Script-svn方式</li>
+						shell脚本示例：
+						<pre>svn --username $SVN_USER --password $SVN_PASS --no-auth-cache checkout ${REPO_URL}/${REPO_PATH} $REPO_PATH 2>/dev/null <&lt;EOF
+t
+EOF
+</pre>
+						Script-API调用截图：
+						<div style="padding:2px;border:1px solid #DDD;"><img src="/static/images/share/script-svn.png" width="800px"></img></div>
+						
+						<li>方法三，Playbook-subversion方式。<a href="/helpModuleInfo/?module=subversion">查看subversion帮助</a></li>
+						Playbook书写示例：
+						<pre>---
+- name: SVN Test
+  hosts: test
+  user: root
+  tasks:
+  - name: svn co
+    subversion: repo=XXX dest=/tmp/test username=XXX password=XXX</pre>
+						Playbook-API调用截图：
+						<div style="padding:2px;border:1px solid #DDD;"><img src="/static/images/share/Playbook-subversion.png" width="800px"></img></div>
+					</ul>
+					
+					<h3 id="id_faq_conf">5.2、怎么修改目标机器配置文件？</h3>
+					5.2.1、使用lineinfile匹配特定行，<a href="/helpModuleInfo/?module=lineinfile">查看帮助</a>
+					<ul>
+						<li>方法一，Basic-lineinfile方式</li>
+						lineinfile参数示例：
+						<pre>dest=/etc/httpd/conf/httpd.conf regexp="^Listen " line="Listen 8888" backup=yes</pre>
+						Basic-API调用截图：
+						<div style="padding:2px;border:1px solid #DDD;"><img src="/static/images/share/basic-lineinfile.png" width="800px"></img></div>
+						
+						<li>方法二，Script方式，通过shell脚本正则替换，示例：</li>
+						shell脚本示例：
+						<pre>sed -i "s/Listen 9999/Listen 8888/g" /etc/httpd/conf/httpd.conf</pre>
+						Script-API调用截图：
+						<div style="padding:2px;border:1px solid #DDD;"><img src="/static/images/share/script-sed.png" width="800px"></img></div>
+						
+						<li>方法三，Playbook-lineinfile方式</li>
+						Playbook书写示例：
+						<pre>---
+- name: lineinfile test
+  hosts: test
+  user: root
+  tasks:
+  - name: line replace
+    lineinfile: dest=/etc/httpd/conf/httpd.conf regexp="^Listen " line="Listen 8888" backup=yes</pre>
+						Playbook-API调用截图：
+						<div style="padding:2px;border:1px solid #DDD;"><img src="/static/images/share/Playbook-lineinfile.png" width="800px"></img></div>
+						<li>python正则匹配参考：</li>
+						官方文档：<a href="http://docs.python.org/2/library/re.html">http://docs.python.org/2/library/re.html</a><br/>
+						快速入门：<a href="http://www.yiibai.com/python/python_reg_expressions.html">http://www.yiibai.com/python/python_reg_expressions.html</a>
+						<li>更多示例：</li>
+						<pre>EXAMPLES:
+- lineinfile: dest=/etc/selinux/config regexp=^SELINUX= line=SELINUX=enforcing
+
+- lineinfile: dest=/etc/sudoers state=absent regexp="^%wheel"
+
+- lineinfile: dest=/etc/hosts regexp='^127\.0\.0\.1' line='127.0.0.1 localhost' owner=root group=root mode=0644
+
+- lineinfile: dest=/etc/httpd/conf/httpd.conf regexp="^Listen " insertafter="^#Listen " line="Listen 8080"
+
+- lineinfile: dest=/etc/services regexp="^# port for http" insertbefore="^www.*80/tcp" line="# port for http by default"
+
+# Add a line to a file if it does not exist, without passing regexp
+- lineinfile: dest=/tmp/testfile line="192.168.1.99 foo.lab.net foo"
+
+# Fully quoted because of the ': ' on the line. See the Gotchas in the YAML docs.
+- lineinfile: "dest=/etc/sudoers state=present regexp='^%wheel' line='%wheel ALL=(ALL) NOPASSWD: ALL'"
+
+- lineinfile: dest=/opt/jboss-as/bin/standalone.conf regexp='^(.*)Xms(\d+)m(.*)$' line='\1Xms${xms}m\3' backrefs=yes
+
+# Validate the sudoers file before saving
+- lineinfile: dest=/etc/sudoers state=present regexp='^%ADMIN ALL\=' line='%ADMIN ALL=(ALL) NOPASSWD:ALL' validate='visudo -cf %s'
+</pre>
+					
+					</ul>
+					5.2.2、使用replace批量匹配，<a href="/helpModuleInfo/?module=replace">查看帮助</a>
+					<ul>
+					<li>使用示例：</li>
+						<pre>EXAMPLES:
+- replace: dest=/etc/hosts regexp='(\s+)old\.host\.name(\s+.*)?$' replace='\1new.host.name\2' backup=yes
+
+- replace: dest=/home/jdoe/.ssh/known_hosts regexp='^old\.host\.name[^\n]*\n' owner=jdoe group=jdoe mode=644
+
+- replace: dest=/etc/apache/ports regexp='^(NameVirtualHost|Listen)\s+80\s*$' replace='\1 127.0.0.1:8080' validate='/usr/sbin/apache2ctl -f %s -t'</pre>
+					
+					</ul>
+					<h3 id="id_faq_exe">5.3、怎么在目标机器执行各种命令？</h3>
+					<ul>
+						<li>执行apt、pip、yum、service、user、group等基本命令？<a href="/help/#id_createjob_basic">查看帮助</a></li>
+						<li>执行shell、python等Script脚本？<a href="/help/#id_createjob_script">查看帮助</a></li>
+						<li>执行基于yaml的Playbook任务？<a href="/help/#id_createjob_playbook">查看帮助</a></li>
+					</ul>
+
+					<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				</div>
+
+			</div>
+			<div class="col-md-3">
+				<div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" role="complementary">
+					<ul class="nav bs-docs-sidenav">
+						<li>
+							<a href="#id_overview">一、概览</a>
+							<ul class="nav">
+								<li><a href="#id_overview_feature">1.1、Malakas特性</a></li>
+								<li><a href="#id_overview_framework">1.2、Malakas架构</a></li>
+								<li><a href="#id_overview_workflow">1.3、Malakas业务流程</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#id_createjob">二、任务创建</a>
+							<ul class="nav">
+								<li><a href="#id_createjob_basic">2.1、简单命令（Basic）</a></li>
+								<li><a href="#id_createjob_script">2.2、Script脚本（Script）</a></li>
+								<li><a href="#id_createjob_playbook">2.3、Playbook任务编排（Playbook）</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#id_getjobstatus">三、任务查询</a>
+							<ul class="nav">
+								<li><a href="#id_getjobstatus_status">3.1、结果查询</a></li>
+								<li><a href="#id_getjobstatus_express">3.2、任务状态解释</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#id_api">四、Restful API示例（python版本）</a>
+							<ul class="nav">
+								<li><a href="#id_api_basic">4.1、Basic任务创建</a></li>
+								<li><a href="#id_api_script">4.2、Script任务创建</a></li>
+								<li><a href="#id_api_playbook">4.3、Playbook任务创建</a></li>
+								<li><a href="#id_api_jobstatus">4.4、任务状态查询</a></li>
+								<li><a href="#id_api_joblist">4.5、任务列表查询</a></li>
+								<li><a href="#id_api_playbooklog">4.6、playbook任务日志查询</a></li>
+								<li><a href="#id_api_playbooklogbyhost">4.7、playbook任务日志按照主机查询</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#id_faq">五、常见问题（FAQ）</a>
+							<ul class="nav">
+								<li><a href="#id_faq_svnfile">5.1、怎么在目标机器执行svn操作？</a></li>
+								<li><a href="#id_faq_conf">5.2、怎么修改目标机器配置文件？</a></li>
+								<li><a href="#id_faq_exe">5.3、怎么在目标机器执行各种命令？</a></li>
+							</ul>
+						</li>
+						
+						
+					</ul>
+					<a class="back-to-top" href="#top">返回顶部</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="footer" style="margin-top:0px;margin-bottom:0px;padding-top:20px;background-color:black;">
+		<div class="container text-center">
+			<p class="text-muted">Copyright ©2015 NSFOCUS. All Rights Reserved. </p>
+			<p class="text-muted">Technical Support : <a href="http://www.ansible.com/">Ansible</a></p>
+			<p class="text-muted">Malakas 2015 Lab @NSFOCUS</p><br/>
+		</div>
+	</footer>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+					<h4 class="modal-title" id="myModalLabel">Info</h4>
+				</div>
+				<div class="modal-body text-center">
+					Operation Success
+				</div>
+				<!--<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>-->
+			</div>
+		</div>
+	</div>
+	<script src="/static/js/jquery-1.11.2.min.js"></script>
+	<script src="/static/js/model/bootstrap-3.3.1-dist/dist/js/bootstrap.min.js"></script>
+	<script src="/static/js/model/bootstrap-3.3.1-dist/dist/js/docs.min.js"></script>
+	<script type="text/javascript">
+	</script>
+</body>
+</html>

@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7;  IE=EDGE"/>
+	<meta content="首页" name="keywords" />
+	<meta content="首页" name="description" />
+	<meta name="generator" content="首页"/>
+	<link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon" />
+	<title>首页-easyAnsible.com</title>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/bootstrap.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/bootstrap-theme.min.css" type="text/css"/>
+	<!--<link rel="stylesheet" href="/static/css/slider.css" type="text/css"/>-->
+    <style>
+        .share-icon {
+            display: inline-block;
+            float: left;
+            margin: 4px;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            vertical-align: middle;
+            background-image: url(/static/images/share/share-icons.png);
+        }
+
+        .share-facebook {
+            background-position: 0px 0px;
+        }
+
+            .share-facebook:hover {
+                background-position: 0px -40px;
+            }
+
+        .share-twitter {
+            background-position: -40px 0px;
+        }
+
+            .share-twitter:hover {
+                background-position: -40px -40px;
+            }
+
+        .share-pinterest {
+            background-position: -80px 0px;
+        }
+
+            .share-pinterest:hover {
+                background-position: -80px -40px;
+            }
+
+        .share-linkedin {
+            background-position: -240px 0px;
+        }
+
+            .share-linkedin:hover {
+                background-position: -240px -40px;
+            }
+
+
+        .share-googleplus {
+            background-position: -120px 0px;
+        }
+
+            .share-googleplus:hover {
+                background-position: -120px -40px;
+            }
+
+
+        .share-stumbleupon {
+            background-position: -360px 0px;
+        }
+
+            .share-stumbleupon:hover {
+                background-position: -360px -40px;
+            }
+
+        .share-email {
+            background-position: -320px 0px;
+        }
+
+            .share-email:hover {
+                background-position: -320px -40px;
+            }
+
+        .ad_title_share {
+            position: relative;
+            top: 5px;
+            width: 160px;
+            height: 80px;
+            margin-left: 22px;
+        }
+
+        .share-icons-sidebar {
+            position: fixed;
+            display: block;
+            top: 110px;
+            left: 0px;
+            width: 40px;
+            height: 240px;
+        }
+
+        @media only screen and (max-width: 1080px) {
+            .ad_title_share {
+                display: none;
+            }
+
+            .share-icons-sidebar {
+                display: none;
+            }
+        }
+    </style>
+
+    <!-- Ad styles -->
+    <style>
+        .ad_top, .ad_bill {
+            position: relative;
+            margin: 0 auto;
+            top: 0px;
+            left: 0px;
+            padding: 0px;
+            width: 320px;
+            height: 50px;
+            overflow: hidden;
+        }
+
+        .ad_title_banner {
+            width: 320px;
+            height: 50px;
+            position: relative;
+            top: 0px;
+            padding: 0px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .ad_space {
+            height: 0px;
+        }
+
+        .ad_title {
+            position: relative;
+            margin: 0 auto;
+            padding: 0px;
+            width: 100%;
+            max-width: 980px;
+            height: 50px;
+            background-color: #F0F0F0;
+        }
+
+        .ad_title_caption {
+            display: none;
+        }
+
+        .ad_rect {
+            position: absolute;
+            padding: 10px;
+            top: -10px;
+            left: -10px;
+            width: 300px;
+            height: 250px;
+            /*background-color: #FFF;*/
+        }
+
+            .ad_rect:hover {
+                /*background-color: #edb802;*/
+                /*background-color: transparent;*/
+            }
+
+        .ad_hint {
+            position: absolute;
+            left: -10px;
+            top: -10px;
+            width: 22px;
+            height: 15px;
+            color: #fff;
+            background-color: #edb802;
+            font-size: 13px;
+            text-align: center;
+            border-radius: 2px;
+            z-index: 1;
+        }
+
+        @media only screen and (min-width: 727px) {
+            .ad_top, .ad_title_banner {
+                width: 728px;
+                max-width: 100%;
+                height: 90px;
+            }
+
+            .ad_bill {
+                width: 970px;
+                max-width: 100%;
+                height: 250px;
+            }
+
+            .ad_space {
+                height: 20px;
+            }
+
+            .ad_title {
+                height: 90px;
+            }
+        }
+
+        @media only screen and (min-width: 980px) {
+            .ad_title_banner {
+                position: absolute;
+                right: 20px;
+            }
+
+            .ad_title_caption {
+                display: block;
+            }
+        }
+
+
+        .sidebar_1 {
+            position: relative;
+            display: block;
+            float: left;
+            top: 0px;
+            margin: 15px 10px 10px -10px;
+            padding: 0px;
+            width: 320px;
+            overflow: hidden;
+        }
+
+        @media only screen and (max-width: 979px) {
+            .sidebar_1 {
+                width: 640px;
+                margin: 10px auto;
+                float: none;
+            }
+        }
+
+        @media only screen and (max-width: 639px) {
+            .sidebar_1 {
+                width: 320px;
+                float: none;
+            }
+        }
+    </style>
+
+    <!-- Thumbnail Style Begin -->
+    <style>
+        .thumb {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            float: left;
+            display: inline;
+            margin: 10px;
+            width: 300px;
+            height: 250px;
+            -webkit-box-shadow: 1px 1px 5px 0px rgba(109, 109, 109, 0.3);
+            -moz-box-shadow: 1px 1px 5px 0px rgba(109, 109, 109, 0.3);
+            box-shadow: 1px 1px 5px 0px rgba(109, 109, 109, 0.3);
+        }
+
+        .thumbb, a.thumbb {
+            position: absolute;
+            left: -1px;
+            top: -1px;
+            width: 302px;
+            height: 252px;
+            color: #000;
+            background-color: #CCC;
+        }
+
+            a.thumbb:visited {
+                color: #ff8400;
+            }
+
+            .thumbb:hover, a.thumbb:hover {
+                color: #fff;
+                background-color: #ff8400;
+            }
+
+        .thumbi {
+            position: absolute;
+            left: 1px;
+            top: 36px;
+            width: 300px;
+            height: 215px;
+            line-height: 211px;
+            text-align: center;
+            background-color: #F6F6F6;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+            .thumbi img {
+                vertical-align: middle;
+                border: none;
+            }
+
+        .thumbc {
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            width: 300px;
+            height: 35px;
+            background-color: #EAEAEA;
+        }
+
+        a.thumbb:hover .thumbc {
+            background-color: #ff8400;
+        }
+
+        .thumbc {
+            font-size: 18px;
+            line-height: 35px;
+            text-align: center;
+        }
+
+        .thumb_wrapper {
+            position: relative;
+            margin: 10px auto;
+            padding: 0px;
+            width: 100%;
+            max-width: 960px;
+            /*height: 100%;*/
+            overflow: hidden;
+        }
+
+        .reserve_sidebar_space {
+            float: none;
+        }
+
+        @media only screen and (min-width: 960px) {
+            .reserve_sidebar_space {
+                max-width: 640px;
+                float: left;
+                margin: 10px;
+            }
+        }
+
+        @media only screen and (max-width: 959px) {
+            .thumb_wrapper {
+                max-width: 640px;
+            }
+        }
+
+        @media only screen and (max-width: 639px) {
+            .thumb_wrapper {
+                max-width: 320px;
+            }
+        }
+    </style>
+    <!-- Thumbnail Style End -->
+
+    <!-- Google Counter Begin -->
+    <!-- Count 50% Traffic -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-45690170-1', 'jssor.com');
+        ga('require', 'displayfeatures');
+        ga('send', 'pageview');
+    </script>
+    <!-- Google Counter End -->
+    
+</head>
+<body>
+
+    <!-- Google Ad Code -->
+    <script async src="/static/js/model/adsbygoogle.js"></script>
+
+    <!-- End Google Ad Code -->
+
+    <!-- NAVBAR
+    ================================================== -->
+    <style>
+        /* use navbar-wrapper to wrap navigation bar, the purpose is to overlay navigation bar above slider */
+        .navbar-wrapper {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            height: 51px;
+        }
+        .navbar-wrapper > .container {
+            padding: 0;
+        }
+
+        @media all and (max-width: 768px ){
+            .navbar-wrapper {
+                position: relative;
+                top: 0px;
+            }
+        }
+    </style>
+    <div class="navbar-wrapper">
+        <div class="container">
+
+            <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0px;">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="http://www.jssor.com/index.html">Bootstrap Carousel</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="http://www.jssor.com/index.html">Home</a></li>
+                            <li><a href="http://www.jssor.com/demos/index.html">Demos</a></li>
+                            <li><a href="http://www.jssor.com/skins/index.html">Skins</a></li>
+                            <li><a href="http://www.jssor.com/development/index.html">Development</a></li>
+                            <li><a href="http://www.jssor.com/download.html">Download</a></li>
+                            <li><a href="http://www.jssor.com/support.html">Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+        </div>
+    </div>
+
+    <div style="min-height: 50px;">
+        <!-- Jssor Slider Begin -->
+        <!-- To move inline styles to css file/block, please specify a class name for each element. --> 
+        <!-- ================================================== -->
+        <div id="slider1_container" style="display: none; position: relative; margin: 0 auto;
+        top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
+            <!-- Loading Screen -->
+            <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+                <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block;
+                top: 0px; left: 0px; width: 100%; height: 100%;">
+                </div>
+                <div style="position: absolute; display: block; background: url(/static/images/share/loading.gif) no-repeat center center;
+                top: 0px; left: 0px; width: 100%; height: 100%;">
+                </div>
+            </div>
+            <!-- Slides Container -->
+            <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1300px; height: 500px; overflow: hidden;">
+                <div>
+                    <img u="image" src2="/static/images/share/red.jpg" />
+                </div>
+                <div>
+                    <img u="image" src2="/static/images/share/purple.jpg" />
+                </div>
+                <div>
+                    <img u="image" src2="/static/images/share/blue.jpg" />
+                </div>
+
+                <!-- Example to add fixed static share buttons in slider BEGIN -->
+                <!-- Remove it if no need -->
+                <div u="any" style="position: absolute; display: block; bottom: 25px; right: 25px; width: 280px; height: 40px;">
+
+
+                    <a class="share-icon share-facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=http://jssor.com" title="Share on Facebook"></a>
+                    <a class="share-icon share-twitter" target="_blank" href="http://twitter.com/share?url=http://jssor.com&text=jQuery%20Image%20Slider/Slideshow/Carousel/Gallery/Banner%20javascript+html%20TOUCH%20SWIPE%20Responsive" title="Share on Twitter"></a>
+                    <a class="share-icon share-googleplus" target="_blank" href="https://plus.google.com/share?url=http://jssor.com" title="Share on Google Plus"></a>
+                    <a class="share-icon share-linkedin" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=http://jssor.com" title="Share on LinkedIn"></a>
+                    <a class="share-icon share-stumbleupon" target="_blank" href="http://www.stumbleupon.com/submit?url=http://jssor.com&title=jQuery%20Image%20Slider/Slideshow/Carousel/Gallery/Banner%20javascript+html%20TOUCH%20SWIPE%20Responsive" title="Share on StumbleUpon"></a>
+                    <a class="share-icon share-pinterest" target="_blank" href="http://pinterest.com/pin/create/button/?url=http://jssor.com&media=http://jssor.com/img/site/jssor.slider.jpg&description=jQuery%20Image%20Slider/Slideshow/Carousel/Gallery/Banner%20javascript+html%20TOUCH%20SWIPE%20Responsive" title="Share on Pinterst"></a>
+                    <a class="share-icon share-email" target="_blank" href="mailto:?Subject=Jssor%20Slider&Body=Highly%20recommended%20jQuery%20Image%20Slider/Slideshow/Carousel/Gallery/Banner%20javascript+html%20TOUCH%20SWIPE%20Responsive%20http://jssor.com" title="Share by Email"></a>
+                </div>
+                <!-- Example to add fixed static share buttons in slider END -->
+            </div>
+            
+            <!--#region Bullet Navigator Skin Begin -->
+            <!-- Help: http://www.jssor.com/development/slider-with-bullet-navigator-jquery.html -->
+            <style>
+                /* jssor slider bullet navigator skin 21 css */
+                /*
+                .jssorb21 div           (normal)
+                .jssorb21 div:hover     (normal mouseover)
+                .jssorb21 .av           (active)
+                .jssorb21 .av:hover     (active mouseover)
+                .jssorb21 .dn           (mousedown)
+                */
+                .jssorb21 {
+                    position: absolute;
+                }
+                .jssorb21 div, .jssorb21 div:hover, .jssorb21 .av {
+                    position: absolute;
+                    /* size of bullet elment */
+                    width: 19px;
+                    height: 19px;
+                    text-align: center;
+                    line-height: 19px;
+                    color: white;
+                    font-size: 12px;
+                    background: url(/static/images/share/b21.png) no-repeat;
+                    overflow: hidden;
+                    cursor: pointer;
+                }
+                .jssorb21 div { background-position: -5px -5px; }
+                .jssorb21 div:hover, .jssorb21 .av:hover { background-position: -35px -5px; }
+                .jssorb21 .av { background-position: -65px -5px; }
+                .jssorb21 .dn, .jssorb21 .dn:hover { background-position: -95px -5px; }
+            </style>
+            <!-- bullet navigator container -->
+            <div u="navigator" class="jssorb21" style="bottom: 16px; right: 6px;">
+                <!-- bullet navigator item prototype -->
+                <div u="prototype"></div>
+            </div>
+            <!--#endregion Bullet Navigator Skin End -->
+            
+            <!--#region Arrow Navigator Skin Begin -->
+            <!-- Help: http://www.jssor.com/development/slider-with-arrow-navigator-jquery.html -->
+            <style>
+                /* jssor slider arrow navigator skin 21 css */
+                /*
+                .jssora21l                  (normal)
+                .jssora21r                  (normal)
+                .jssora21l:hover            (normal mouseover)
+                .jssora21r:hover            (normal mouseover)
+                .jssora21l.jssora21ldn      (mousedown)
+                .jssora21r.jssora21rdn      (mousedown)
+                */
+                .jssora21l, .jssora21r {
+                    display: block;
+                    position: absolute;
+                    /* size of arrow element */
+                    width: 55px;
+                    height: 55px;
+                    cursor: pointer;
+                    background: url(/static/images/share/a21.png) center center no-repeat;
+                    overflow: hidden;
+                }
+                .jssora21l { background-position: -3px -33px; }
+                .jssora21r { background-position: -63px -33px; }
+                .jssora21l:hover { background-position: -123px -33px; }
+                .jssora21r:hover { background-position: -183px -33px; }
+                .jssora21l.jssora21ldn { background-position: -243px -33px; }
+                .jssora21r.jssora21rdn { background-position: -303px -33px; }
+            </style>
+            <!-- Arrow Left -->
+            <span u="arrowleft" class="jssora21l" style="top: 123px; left: 8px;">
+            </span>
+            <!-- Arrow Right -->
+            <span u="arrowright" class="jssora21r" style="top: 123px; right: 8px;">
+            </span>
+            <!--#endregion Arrow Navigator Skin End -->
+            <a style="display: none" href="http://www.jssor.com">Bootstrap Slider</a>
+        </div>
+        <!-- Jssor Slider End -->
+    </div>
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">This page runs <a href="http://getbootstrap.com" rel="nofollow" target="_blank">Bootstrap</a> with Jssor Slider.</h2>
+                <p class="lead">It's extremly easy to use Jssor Slider as a compoment of Bootstrap. Given a carousel you worked out, to integrate it with Bootstrap, you can just copy javascript and html code and paste it into your page. This page is a simple demo, please view source of this page or download <a href="http://www.jssor.com/download-bootstrap-carousel-slider-example.html">Bootstrap Carousel Slider Example</a>.</p>
+            </div>
+            <div class="col-md-5">
+                <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+            </div>
+        </div>
+
+        <div style="height: 20px;"></div>
+        <div class="ad_top">
+            <!-- 728x90_first_banner -->
+
+            <ins id="ad_banner_728_first" class="adsbygoogle"
+                 style="display:inline-block;width:728px;height:90px"
+                 data-ad-client="ca-pub-5323311666976160"
+                 data-ad-slot="4320160732"></ins>
+            <!-- 320x50_first_banner_mobile -->
+            <ins id="ad_banner_320_first" class="adsbygoogle"
+                 style="display:inline-block;width:320px;height:50px"
+                 data-ad-client="ca-pub-5323311666976160"
+                 data-ad-slot="8078291933"></ins>
+            <script>
+                new function () {
+                    var availableWidth = document.body.clientWidth || 728;
+                    window.screen && window.screen.availWidth && (availableWidth = Math.max(availableWidth, window.screen.availWidth));
+
+                    var adElementToRemove = document.getElementById(availableWidth < 728 ? "ad_banner_728_first" : "ad_banner_320_first");
+                    adElementToRemove.parentNode.removeChild(adElementToRemove);
+
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                };
+            </script>
+
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-5">
+                <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+            </div>
+            <div class="col-md-7">
+                <h2 class="featurette-heading">Javascript Code</h2>
+                <div class="lead" style="background-color:#f0f0f0; border: 1px dashed #000; white-space: nowrap;">
+                    <pre style="margin:0px;">
+&lt;script type="text/javascript" src="../js/jssor.slider.mini.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    jQuery(document).ready(function ($) {
+        var options = {
+            ..
+        };
+            
+        $("#slider1_container").css("display", "block");
+        var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+        ...
+    });
+&lt;/script&gt;</pre>
+                </div>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">HTML Code</h2>
+                <div class="lead" style="background-color:#f0f0f0; border: 1px dashed #000; white-space: nowrap;">
+                    <pre style="margin:0px;">
+&lt;div style="min-height: 50px;"&gt;
+    &lt;!-- Jssor Slider Begin --&gt;
+    &lt;div id="slider1_container" style="display: none; position: relative; margin: 0 auto; width: 980px; height: 380px; overflow: hidden;"&gt;
+        ...
+    &lt;/div&gt;
+    &lt;!-- Jssor Slider End --&gt;
+&lt;/div&gt;</pre>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+            </div>
+        </div>
+
+        <div style="height: 20px;"></div>
+        <!-- demo sliders begin -->
+        <div class="ad_title">
+            <div class="ad_title_banner">
+                <!-- 728x90_second_banner -->
+                <ins id="ad_banner_728_second" class="adsbygoogle"
+                     style="display:inline-block;width:728px;height:90px"
+                     data-ad-client="ca-pub-5323311666976160"
+                     data-ad-slot="9380985535"></ins>
+                <!-- 320x50_second_banner_mobile -->
+                <ins id="ad_banner_320_second" class="adsbygoogle"
+                     style="display:inline-block;width:320px;height:50px"
+                     data-ad-client="ca-pub-5323311666976160"
+                     data-ad-slot="4773938338"></ins>
+
+                <script>
+                    new function () {
+                        var availableWidth = document.body.clientWidth || 728;
+                        window.screen && window.screen.availWidth && (availableWidth = Math.max(availableWidth, window.screen.availWidth));
+
+                        var adElementToRemove = document.getElementById(availableWidth < 728 ? "ad_banner_728_second" : "ad_banner_320_second");
+                        adElementToRemove.parentNode.removeChild(adElementToRemove);
+
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    };
+                </script>
+            </div>
+
+            <div class="ad_title_caption" style="position: absolute; top: 0px; left: 0px; margin-left: 30px; line-height: 90px; font-size: 26px; color: #ff8400; ">
+                <span>Demo - Sliders</span>
+            </div>
+        </div>
+
+        <div style="margin: 0 auto; width:100%; max-width: 980px; background-color: #EAEAEA; overflow: hidden;">
+            <div class="thumb_wrapper">
+
+                <div class=thumb>
+                    <a class=thumbb href="http://www.jssor.com/demos/full-width-slider.html">
+                        <div class="thumbi"><img src="../img/demo/t-full-width-slider.jpg" alt="full width slider jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+                        <div class=thumbc>Full Width Slider</div>
+                    </a>
+                </div>
+                <div class=thumb>
+                    <a class=thumbb href="http://www.jssor.com/demos/simple-fade-slideshow.html">
+                        <div class="thumbi"><img src="../img/demo/t-simple-fade-slideshow.jpg" alt="simple fade slideshow jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+                        <div class=thumbc>Simple Fade Slideshow</div>
+                    </a>
+                </div>
+                <div class=thumb>
+                    <a class=thumbb href="http://www.jssor.com/demos/image-slider.html">
+                        <div class="thumbi"><img src="../img/demo/t-image-slider.jpg" alt="image slider jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+                        <div class=thumbc>Image Slider</div>
+                    </a>
+                </div>
+
+                <div class=thumb>
+                    <a class=thumbb href="../demos/banner-slider.html">
+                        <div class="thumbi"><img src="../img/demo/t-banner-slider.jpg" alt="banner slider jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+                        <div class=thumbc>Banner Slider</div>
+                    </a>
+                </div>
+
+                <div class=thumb>
+                    <a class=thumbb href="../demos/image-gallery.html">
+                        <div class="thumbi"><img src="../img/demo/t-image-gallery.jpg" alt="image gallery jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+                        <div class=thumbc>Image Gallery</div>
+                    </a>
+                </div>
+
+                <div class=thumb>
+                    <a class=thumbb href="../demos/list-slider.html">
+                        <div class="thumbi"><img src="../img/demo/t-list-slider.jpg" alt="list slider jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+                        <div class=thumbc>List Slider</div>
+                    </a>
+                </div>
+                <div class=thumb>
+                    <a class=thumbb href="../demos/image-gallery-with-vertical-thumbnail.html">
+                        <div class="thumbi"><img src="../img/demo/t-image-gallery-with-vertical-thumbnail.jpg" alt="image gallery with vertical thumbnail jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+                        <div class=thumbc>Image Gallery with Vertical Thumbnail</div>
+                    </a>
+                </div>
+                <div class=thumb>
+                    <div class="ad_hint">Ad</div>
+                    <div class="ad_rect">
+                        <!-- 300x250_grid_rectangle -->
+                        <ins class="adsbygoogle"
+                             style="display:inline-block;width:300px;height:250px"
+                             data-ad-client="ca-pub-5323311666976160"
+                             data-ad-slot="9752854738"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                </div>
+
+                <div class=thumb>
+                    <a class=thumbb href="../demos/carousel-slider.html">
+                        <div class="thumbi"><img src="../img/demo/t-carousel-slider.jpg" alt="carousel jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+                        <div class=thumbc>Carousel Slider</div>
+                    </a>
+                </div>
+                <div class=thumb>
+                    <a class=thumbb href="../demos/grid-slider.html">
+                        <div class="thumbi"><img src="../img/demo/t-grid-slider.jpg" alt="grid slider jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+                        <div class=thumbc>Grid Slider</div>
+                    </a>
+                </div>
+                <div class=thumb>
+                    <a class=thumbb href="../demos/nested-slider.html">
+                        <div class="thumbi"><img src="../img/demo/t-nested-slider.jpg" alt="nested slider jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+                        <div class=thumbc>Nested Slider</div>
+                    </a>
+                </div>
+                <div class=thumb>
+                    <a class=thumbb href="../demos/content-slider.html">
+                        <div class="thumbi"><img src="../img/demo/t-content-slider.jpg" alt="content slider jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+                        <div class=thumbc>Content Slider</div>
+                    </a>
+                </div>
+                <div class=thumb>
+                    <a class=thumbb href="../demos/introduction-slider.html">
+                        <div class="thumbi"><img src="../img/demo/t-introduction-slider.jpg" alt="introduction slider jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+                        <div class=thumbc>Introduction Slider</div>
+                    </a>
+                </div>
+                <div class=thumb>
+                    <a class=thumbb href="../demos/slider-cluster.html">
+                        <div class="thumbi"><img src="../img/demo/t-slider-cluster.jpg" alt="slider cluster jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+                        <div class=thumbc>Slider Cluster</div>
+                    </a>
+                </div>
+                <div class=thumb>
+                    <a class=thumbb href="../demos/banner-rotator.html">
+                        <div class="thumbi"><img src="../img/demo/t-banner-rotator.jpg" alt="banner rotator jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+                        <div class=thumbc>Banner Rotator</div>
+                    </a>
+                </div>
+                <div class=thumb>
+                    <a class=thumbb href="../demos/vertical-slider.html">
+                        <div class="thumbi"><img src="../img/demo/t-vertical-slider.jpg" alt="vertical slider jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+                        <div class=thumbc>Vertical Slider</div>
+                    </a>
+                </div>
+                <div class=thumb>
+                    <a class=thumbb href="../demos/scrolling-logo-thumbnail-slider.html">
+                        <div class="thumbi"><img src="../img/demo/t-scrolling-logo-thumbnail-slider.jpg" alt="scrolling logo thumbnail slider jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+                        <div class=thumbc>Scrolling Logo/Thumbnail Slider</div>
+                    </a>
+                </div>
+                <div class=thumb>
+                    <a class=thumbb href="../demos/thumbnail-navigator-with-arrows.html">
+                        <div class="thumbi"><img src="../img/demo/t-arrow-for-thumbnail-navigator-slider.jpg" alt="arrow for thumbnail navigator slider jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+                        <div class=thumbc>Arrow for Thumbnail Navigator Slider</div>
+                    </a>
+                </div>
+                <div class=thumb>
+                    <a class=thumbb href="../demos/different-size-photo-slider.html">
+                        <div class="thumbi"><img src="../img/demo/t-different-size-photo-slider.jpg" alt="different size photo slider jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+                        <div class=thumbc>Different Size Photo Slider</div>
+                    </a>
+                </div>
+
+                <div class=thumb>
+                    <a class=thumbb href="../demos/nearby-image-partial-visible-slider.html">
+                        <div class="thumbi"><img src="../img/demo/t-nearby-image-partial-visible-slider.jpg" alt="nearby image partial visible slider jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+                        <div class=thumbc>Nearby Image Partial Visible Slider</div>
+                    </a>
+                </div>
+                <div class=thumb>
+                    <a class=thumbb href="../demos/tiled-menu-slider.html">
+                        <div class="thumbi"><img src="../img/demo/t-tiled-menu-slider.jpg" alt="tiled menu slider jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+                        <div class=thumbc>Tiled Menu Slider</div>
+                    </a>
+                </div>
+                <div class=thumb>
+                    <a class=thumbb href="../demos/responsive-slider.html">
+                        <div class="thumbi"><img src="../img/demo/t-responsive-slider.jpg" alt="responsive slider jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+                        <div class=thumbc>Responsive Slider</div>
+                    </a>
+                </div>
+
+                <div class=thumb>
+                    <a class=thumbb href="../demos/tab-slider.html">
+                        <div class="thumbi"><img src="../img/demo/t-tab-slider.jpg" alt="tabs, jquery tab slider, javascript tab slider jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+                        <div class=thumbc>Tab Slider</div>
+                    </a>
+                </div>
+                <div class=thumb>
+                    <a class=thumbb href="../demos/video-gallery.html">
+                        <div class="thumbi"><img src="../img/demo/t-video-gallery.jpg" alt="video gallery jquery javascript+html code example for website builder, website design, web developer, web design, web development, website development, web designer, website designer, website developer, website, web page" /></div>
+
+                        <div class=thumbc>Video Gallery</div>
+                    </a>
+                </div>
+                <div class=thumb>
+                    <a class=thumbb href="../bootstrap/bootstrap-carousel.html">
+                        <div class="thumbi"><img src="../img/demo/t-bootstrap-carousel.jpg" alt="Bootstrap Carousel Component Image Slider/Slideshow/Gallery/Banner/Rotator/Scroller" /></div>
+
+                        <div class=thumbc>Bootstrap Carousel</div>
+                    </a>
+                </div>
+                <div class=thumb>
+                    <a class=thumbb href="../bootstrap/bootstrap-slider.html">
+                        <div class="thumbi"><img src="../img/demo/t-bootstrap-slider.jpg" alt="Bootstrap Slider Component Image Carousel/Slideshow/Gallery/Banner/Rotator/Scroller" /></div>
+
+                        <div class=thumbc>Bootstrap Slider</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+        <!-- FOOTER -->
+        <footer>
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p>&copy; Jssor Slider 2009 - 2014. &middot; <a href="#">Privacy</a> &middot; </p>
+        </footer>
+
+    </div><!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/js/jquery-1.11.2.min.js"></script>
+	<script src="/static/js/model/bootstrap-3.3.1-dist/dist/js/bootstrap.min.js"></script>
+	<script src="/static/js/model/bootstrap-3.3.1-dist/dist/js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="ie10-viewport-bug-workaround.js"></script>
+
+    <!-- jssor slider scripts-->
+    <!-- use jssor.js + jssor.slider.js instead for development -->
+    <!-- jssor.slider.mini.js = (jssor.js + jssor.slider.js) -->
+    <script type="text/javascript" src="/static/js/model/jssor.slider.js/js/jssor.slider.mini.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+
+            var options = {
+                $FillMode: 2,                                       //[Optional] The way to fill image in slide, 0 stretch, 1 contain (keep aspect ratio and put all inside slide), 2 cover (keep aspect ratio and cover whole slide), 4 actual size, 5 contain for large image, actual size for small image, default value is 0
+                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlayInterval: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 1,                                   //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+
+                $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideEasing: $JssorEasing$.$EaseOutQuint,          //[Optional] Specifies easing for right to left animation, default value is $JssorEasing$.$EaseOutQuad
+                $SlideDuration: 800,                               //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+                //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
+                $DisplayPieces: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+                $DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+              
+                $BulletNavigatorOptions: {                          //[Optional] Options to specify and enable navigator or not
+                    $Class: $JssorBulletNavigator$,                 //[Required] Class to create navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 1,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+                    $Lanes: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
+                    $SpacingX: 8,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+                    $SpacingY: 8,                                   //[Optional] Vertical space between each item in pixel, default value is 0
+                    $Orientation: 1,                                //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                    $Scale: false                                   //Scales bullets navigator or not while slider scale
+                },
+
+                $ArrowNavigatorOptions: {                           //[Optional] Options to specify and enable arrow navigator or not
+                    $Class: $JssorArrowNavigator$,                  //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 1,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 2,                                 //[Optional] Auto center arrows in parent container, 0 No, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
+                }
+            };
+
+            //Make the element 'slider1_container' visible before initialize jssor slider.
+            $("#slider1_container").css("display", "block");
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizes
+            function ScaleSlider() {
+                var bodyWidth = document.body.clientWidth;
+                if (bodyWidth)
+                    jssor_slider1.$ScaleWidth(Math.min(bodyWidth, 1920));
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+            ScaleSlider();
+
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="height: 100%;border: none;padding: 0px;margin: 0px;">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7;  IE=EDGE"/>
+	<meta content="Deploy" name="keywords" />
+	<meta content="Deploy" name="description" />
+	<meta name="generator" content="Deploy"/>
+	<title>Deploy-easyAnsible</title>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/bootstrap.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/bootstrap-theme.min.css" type="text/css"/>
+	<!--<link rel="stylesheet" href="/static/js/model/DataTables-1.10.4-trial/media/css/jquery.dataTables.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/DataTables-1.10.4-trial/extensions/TableTools/css/dataTables.tableTools.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/DataTables-1.10.4-trial/extensions/Editor-1.3.3/css/dataTables.editor.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/font-awesome.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/css/demo/nav/docs.min.css" type="text/css"/>-->
+	<link rel="stylesheet" href="/static/js/model/bootstrap-datetimepicker-master/build/css/bootstrap-datetimepicker.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-table-master/dist/bootstrap-table.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/patch.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/css/docs.min.css" type="text/css"/>
+	<style type="text/css">
+		/* Move down content because we have a fixed navbar that is 50px tall */
+		body {
+			padding-top: 50px;
+			padding-bottom: 20px;
+		}
+		/* footer css #f8f8f8; */
+		.pb-page-footer{
+			width: 100%;
+			color: gray;
+			background-color: #3C3C3C;
+			#border-top: 1px solid #e7e7e7;
+			margin-top: 5px;
+			margin-bottom: 0px;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+		.pb-page-footer a, .pb-page-footer a:visited {
+			color: #777;
+			text-decoration: none;
+		}
+		.pb-page-footer a:active, .pb-page-footer a:hover, .pb-page-footer a:focus{
+			color: white;
+			text-decoration: none;
+		}
+		body {
+			padding-bottom:0px;
+		}
+		.pb-page-footer h4 {
+			color:white;
+		}
+		
+		/* job center body */
+		.form-control {
+			height: 34px;
+		}
+		.keep-open {
+			height: 28px;
+		}
+		div.bootstrap-table > div.fixed-table-toolbar > div.columns.columns-right.btn-group.pull-right > div > button {
+			height: 28px;
+		}
+		div.fixed-table-pagination > div.pull-left.pagination-detail > span.page-list {
+			display: inline-block !important;
+		}
+		div.fixed-table-container > div.fixed-table-pagination > div.pull-right.pagination {
+			display: inline-block !important;
+		}
+		.fixed-table-container {
+			border: none;
+		}
+		
+		
+		/* new create */
+		body{margin-top:50px;}
+		.glyphicon { margin-right:10px; }
+		.panel-body { padding:0px; }
+		.panel-body table tr td { padding-left: 15px }
+		.panel-body .table {margin-bottom: 0px; }
+		/* blogitem style*/
+		.blogitem {
+			margin-top:10px;
+			border-bottom: 1px solid #E3E3E3;
+		}
+		/* bot-links style */
+		.bot-links{float: left; width: 100%;}
+		/* bot-links-all style */
+		.bot-links-all{float: left; width: 100%;}
+		.bot-links-all a{margin-bottom:5px;font-size: 18px;}
+		.bot-links a .badge:hover{background-color: #F87B00;}
+		.bot-links-all a .badge:hover{background-color: #F87B00;}
+		/*.bot-links a{display: inline-block; padding: 5px; background: #ccc; font-size: 12px; margin-bottom: 5px; color: #9c9c9c; text-decoration:none;}*/
+		/* search style*/
+		.stylish-input-group .input-group-addon{
+			background: white !important; 
+		}
+		.stylish-input-group .form-control{
+			border-right:0; 
+			box-shadow:0 0 0; 
+			border-color:#ccc;
+		}
+		.stylish-input-group button{
+			border:0;
+			background:transparent;
+		}
+		/* recommendlist style*/
+		.recommendlist li {
+			margin-bottom:10px;
+		}
+		/* filter new blog style*/
+		.filter {
+			margin-top: 10px;
+			padding: 5px;
+			padding-right:10px;
+			border: 1px solid #eee;
+		}
+		/**/
+		#id_addTag {
+			border: 0;
+			background: none;
+			/** belows styles are working good */
+			padding: 2px 5px;
+			margin-top: 2px;
+			position: relative;
+			left: -28px;
+			/* IE7-8 doesn't have border-radius, so don't indent the padding */
+			margin-bottom: 0;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			color:#D9230F;
+			z-index: 3;   
+		}
+		.twitter-typeahead {
+			width:100%;
+		}
+	</style>
+</head>
+<body>
+	<!-- Navigation
+	================================================== -->
+	<nav class="navbar navbar-fixed-top navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/" style="font-size:18px;font-weight:bold;color:#FFF;"><!--<img alt="Brand" src="/static/images/favicon.ico" title="junneyang.sinaapp.com" style="margin-left:5px;height:24px;width:24px;"/>-->easyAnsible</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse js-navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/">Home</a></li>
+					<li><a href="#">Dashboard</a></li>
+					<li><a href="/jobcenter/">Job Center</a></li>
+					<li  class="active"><a href="/deploy/">Deploy</a></li>
+					<!--<li class="dropdown dropdown-large">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog Center<span class="caret"></span></a>
+						<ul class="dropdown-menu dropdown-menu-large row">
+							<li class="col-sm-4">
+								<ul>
+									<li class="dropdown-header">系统</li>
+									<li><a href="#">Linux</a></li>
+									<li><a href="#">Shell</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-header">架构</li>
+									<li><a href="#">设计模式</a></li>
+									<li><a href="#">Web系统</a></li>
+									<li><a href="#">后端</a></li>
+									<li><a href="#">网络框架</a></li>
+									<li><a href="#">中间件</a></li>
+								</ul>
+							</li>
+							<li class="col-sm-4">
+								<ul>
+									<li class="dropdown-header">开发</li>
+									<li><a href="#">C/C++</a></li>
+									<li><a href="#">Java</a></li>
+									<li><a href="#">Python</a></li>
+									<li><a href="#">html/css/js</a></li>
+									<li><a href="#">Algorithm</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-header">测试</li>
+									<li><a href="#">系统测试</a></li>
+									<li><a href="#">自动化测试</a></li>
+									<li><a href="#">性能测试</a></li>
+									<li><a href="#">持续集成</a></li>
+								</ul>
+							</li>
+							<li class="col-sm-4">
+								<ul>
+									<li class="dropdown-header">云计算</li>
+									<li><a href="#">数据中心</a></li>
+									<li><a href="#">虚拟化</a></li>
+									<li><a href="#">OpenStack</a></li>
+									<li><a href="#">Hadoop/Spark</a></li>
+									<li><a href="#">SDN/NFV</a></li>
+									<li><a href="#">存储技术</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>-->
+					<li><a href="/help/">Help</a></li>
+				</ul>
+				<!--<form class="navbar-form navbar-right" role="search">
+					<div class="form-group"><input type="text" class="form-control" placeholder="Search"></div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>-->
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#" class="navbar-link">sign up</a></li>
+					<li class="dropdown">
+						<a href="#" class="navbar-link" class="dropdown-toggle" data-toggle="dropdown">log in<b class="caret"></b></a>
+						<ul class="dropdown-menu" style="padding:15px;min-width:250px;">
+							<li>
+								<div class="row">
+									<div class="col-md-12">
+										<form class="form" role="form" onsubmit="return loginWithDefault();">
+											<div class="form-group">
+												<label class="sr-only" for="exampleInputEmail2">Email address</label>
+												<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+											</div>
+											<div class="form-group">
+												<label class="sr-only" for="exampleInputPassword2">Password</label>
+												<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+											</div>
+											<div class="checkbox">
+												<label>
+												<input type="checkbox" class="checkbox" checked="checked"/>Subscribe Newsletter
+												</label>
+											</div>
+											<div class="form-group">
+												<button type="submit" class="btn btn-success btn-block">Sign in</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<input class="btn btn-primary btn-block" type="button" id="sign-in-google" value="Sign In with QQ">
+								<input class="btn btn-primary btn-block" type="button" id="sign-in-twitter" value="Sign In with GitHub">
+								<!--<input class="btn btn-primary btn-block" type="button" id="sign-in-google" value="Sign In with Google">-->
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<!--<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">{{usrname}}<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">个人中心</a></li>
+							<li><a href="#">退出登录</a></li>
+						</ul>
+					</li>
+					<li class="divider-vertical"></li>
+					<li><a href="#">帮助</a></li>
+				</ul>-->
+			</div><!-- /.nav-collapse -->
+		</div><!-- /.container -->
+	</nav><!-- /.navbar -->
+	
+	<!-- <div id="id_loading" style="display:none;">
+		<p style="text-align:center;"><img src="/static/images/loading.gif"></img></p>
+		<p style="text-align:center;">Deploying，Please wait a moment...</p>
+	</div> -->
+	<div class="container-fluid" style="margin-bottom: 10px;">
+		<div class="row">
+			<div class="col-sm-2 col-md-2">
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><span class="glyphicon glyphicon-home">
+								</span>Home</a>
+							</h4>
+						</div>
+						<div id="collapse1" class="panel-collapse collapse"> <!--in-->
+							<div class="panel-body">
+								<table class="table">
+									<tr><!--class="active"-->
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#" class="active">客户门户</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">用户门户</a>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><span class="glyphicon glyphicon-th">
+								</span>DataBase</a>
+							</h4>
+						</div>
+						<div id="collapse2" class="panel-collapse collapse"> <!--in-->
+							<div class="panel-body">
+								<table class="table">
+									<tr><!--class="active"-->
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#" class="active">MySQL</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">大数据存储</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">缓存</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">KV存储</a>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><span class="glyphicon glyphicon-road">
+								</span>云计算</a>
+							</h4>
+						</div>
+						<div id="collapse3" class="panel-collapse collapse">
+							<div class="panel-body">
+								<table class="table">
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">分布式计算</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">流式计算</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">并行处理</a>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapse4"><span class="glyphicon glyphicon-random">
+								</span>应用组件</a>
+							</h4>
+						</div>
+						<div id="collapse4" class="panel-collapse collapse">
+							<div class="panel-body">
+								<table class="table">
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">celery任务调度</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">消息队列</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">消息推送</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">开放搜索</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">日志服务</a>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapse5"><span class="glyphicon glyphicon-hand-right">
+								</span>安全服务</a>
+							</h4>
+						</div>
+						<div id="collapse5" class="panel-collapse collapse">
+							<div class="panel-body">
+								<table class="table">
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">Ddos防护</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">Web漏洞监测</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">渗透测试服务</a>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapse6"><span class="glyphicon glyphicon-cloud">
+								</span>常用服务</a>
+							</h4>
+						</div>
+						<div id="collapse6" class="panel-collapse collapse">
+							<div class="panel-body">
+								<table class="table">
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">邮件服务</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">短信服务</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">性能测试</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">视频转码</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">音频转码</a>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapse7"><span class="glyphicon glyphicon-flag">
+								</span>Others</a>
+							</h4>
+						</div>
+						<div id="collapse7" class="panel-collapse collapse">
+							<div class="panel-body">
+								<table class="table">
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">XXX开发环境</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">XXX工具</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">XXX模板</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="glyphicon glyphicon-file"></span><a href="#">docker管理</a>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-10 col-md-10" style="min-height:680px;">
+				<!--<div class="well">
+					<h4 class="pull-left">天才在于积累, 今天, 你积累了吗?</h4>
+					<button type="submit" class="btn btn-default">我要积累</button>
+				</div>-->
+				<div class="container-fluid">
+					<div class="tabable" style="margin-top:10px;" id="items_tab">
+						<ul class="nav nav-tabs" id="pageTab"><!-- id="item_nav"-->
+							<li class="active"><a href="#deploy_list" data-toggle="tab">Deploy List</a></li>
+							<li><a href="#new_deploy" data-toggle="tab">New Deploy</a></li>
+						</ul>
+						<div class="tab-content" id="pageTabContent">
+							<div class="tab-pane active" id="deploy_list">
+								<div class="container-fluid" style=" margin-top:20px;" id="id_blog_list">
+									<table id="url_tbl" data-toggle="table" 
+										data-url="/getDeploys/"
+										data-classes="table table-hover table-condensed" 
+										data-striped="true"
+										data-row-style="rowStyle" 
+										data-sort-name="id" 
+										data-sort-order="desc" 
+										data-show-header="true" 
+										data-query-params-type="limit" 
+										data-show-pagination-switch="true" 
+										data-pagination="true" 
+										data-smart-display="true"
+										data-side-pagination="server" 
+										data-page-number="1" 
+										data-page-size="15" 
+										data-page-list="[5, 10, 15, 20, 50, 100]" 
+										data-search="true" 
+										data-show-refresh="true" 
+										data-show-toggle="true" 
+										data-show-columns="true" 
+										data-click-to-select="true" 
+										data-select-item-name="myRadioName" 
+										data-single-select="true" 
+										data-toolbar="#toolbar" >
+										<!--data-height="200"-->
+										<thead>
+											<tr>
+												<th data-field="id" data-sortable="true" data-halign="center" data-align="left">ID</th>
+												<th data-field="deployName" data-sortable="true" data-halign="center" data-align="left">DeployName</th>
+												<th data-field="serviceName" data-sortable="true" data-halign="center" data-align="left">ServiceName</th>
+												<!-- <th data-field="module_name" data-sortable="true" data-halign="center" data-align="left">Module</th> -->
+												<!--<th data-field="module_args" data-sortable="true" data-halign="center" data-align="left">Args</th>
+												<th data-field="pattern" data-sortable="true" data-halign="center" data-align="left">Pattern</th>
+												<th data-field="forks" data-sortable="true" data-halign="center" data-align="left">Forks</th>
+												<th data-field="script_content" data-sortable="true" data-halign="center" data-align="left">Script</th>
+												<th data-field="playbook_content" data-sortable="true" data-halign="center" data-align="left">Playbook</th>
+												<th data-field="hosts_list" data-sortable="true" data-halign="center" data-align="left">HostList</th>
+												<th data-field="extra_vars" data-sortable="true" data-halign="center" data-align="left">ExtraVars</th>
+												<th data-field="only_tags" data-sortable="true" data-halign="center" data-align="left">Tags</th>-->
+												<th data-field="taskStatus" data-sortable="true" data-halign="center" data-align="left" data-formatter="deployStatusFormatter">Status</th>
+												<!-- <th data-field="job_submit" data-sortable="true" data-halign="center" data-align="left">Submit</th>
+												<th data-field="job_submit_time" data-sortable="true" data-halign="center" data-align="left">SubmitTime</th> -->
+												<th data-field="task_start_time" data-sortable="true" data-halign="center" data-align="left">StartTime</th>
+												<th data-field="task_end_time" data-sortable="true" data-halign="center" data-align="left">EndTime</th>
+												<!--<th data-field="job_log" data-sortable="true" data-halign="center" data-align="left">Logs</th>-->
+												<th data-field="operation" data-halign="center" data-align="center" data-formatter="operationFormatter" data-visible="true">Operation</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+							</div>
+							<div class="tab-pane" id="new_deploy">
+								<div class="container-fluid col-sm-11" style="margin-left:20px; margin-top: 10px; padding-left:20px;padding-right:20px;">
+									<form class="form-horizontal" id="id_addblog_form">
+										<div class="form-group">
+											<!-- <label class="col-sm-2 control-label" for="formGroupInputLarge" style="float:left; margin-top: 13px;">* ServiceName:</label> -->
+											<label class="control-label">* ServiceName</label><p></p>
+											<select class="form-control" id="id_serviceName_select">
+												<option selected="selected" value="NULL">Please Select the ServiceName</option>
+												<option value="service_TEST">Just A Test</option>
+												<option value="service_Choi_Wan">CELERY 任务调度</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<!-- <label for="inputEmail3" class="col-sm-2 control-label"  style="float:left; margin-top: 13px;">* DeployName:</label> -->
+											<label class="control-label">* DeployName</label><br/><p></p>
+											<input type="text" class="form-control" id="id_deployName_input" placeholder="Input The Deploy Name"/>
+										</div>
+										<div class="form-group">
+											<label class="control-label">* TaskParamList</label><br/><p></p>
+											<textarea id="id_taskParamList" type="text" class="form-control" placeholder="" value='' rows="15"></textarea>
+										</div>
+										<div id="id_loading" style="display:none;">
+											<p style="text-align:center;"><img src="/static/images/loading.gif"></img></p>
+											<p style="text-align:center;">Submitting，Please wait a moment...</p>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-offset-2 col-sm-10">
+											<!-- <button type="submit" class="btn btn-default" onClick="return submitBlog();">Submit</button> -->
+											<button class="btn btn-primary pull-right" type="submit" style="margin-left:10px" onclick="return submitJobDeploy();">Submit!</button>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</div>
+										</div>
+									</form>
+									<!--<label class="col-sm-1 control-label" for="datetimepicker1" style="float:left; margin-top: 13px;">时间 : </label>
+									<div class="col-sm-3" style="float:left; margin-top: 5px;">
+										<div class='input-group date' id='datetimepicker1'>
+											<input type='text' class="form-control" />
+											<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+										</div>
+									</div>
+									<label class="col-sm-1 control-label" for="formGroupInputLarge" style="float:auto; margin-top: 13px;">--</label>
+									<div class="col-sm-3" style="float:left; margin-top: 5px;">
+										<div class='input-group date' id='datetimepicker2'>
+											<input type='text' class="form-control" />
+											<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+										</div>
+									</div>
+									<div class="col-sm-3" style="float:left; margin-top: 5px;">
+										<select class="form-control" id="id_account_select">
+											<option selected="selected" value="NULL">请选择账户</option>
+										</select>
+									</div>
+									<div class="col-sm-1" style="float:left; margin-top: 5px;">
+										<a type="button" class="btn btn-info" href="javascript:queryAccountInfoChart();" role="button">查看</a>
+									</div>
+									<div style="clear:both;"></div>-->
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--<div class="blogitem">
+						<div class="media">
+							<div class="media-body">
+								<a href="#"><h3 class="media-heading">Java设计模式之十五（桥接模式）</h3></a>
+								<ul class="list-inline list-unstyled">
+									<li><span><i class="glyphicon glyphicon-calendar"></i>2015-03-03 10:02:20</span></li>
+									<li>|</li>
+									<span><i class="glyphicon glyphicon-eye-open"></i> 3 views</span>
+									<li>|</li>
+									<span><i class="glyphicon glyphicon-thumbs-up"></i> 18 thumbs</span>
+								</ul>
+								<ul class="list-inline list-unstyled">
+									<li>
+										<div class="bot-links">
+											<a href="#"><span class="badge">Java</span></a>
+											<a href="#"><span class="badge">设计模式</span></a>
+											<a href="#"><span class="badge">设计模式</span></a>
+											<a href="#"><span class="badge">设计模式</span></a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="blogitem">
+						<div class="media">
+							<div class="media-body">
+								<a href="#"><h3 class="media-heading">Java设计模式之十五（桥接模式）</h3></a>
+								<ul class="list-inline list-unstyled">
+									<li><span><i class="glyphicon glyphicon-calendar"></i>2015-03-03 10:02:20</span></li>
+									<li>|</li>
+									<span><i class="glyphicon glyphicon-eye-open"></i> 3 views</span>
+									<li>|</li>
+									<span><i class="glyphicon glyphicon-thumbs-up"></i> 18 thumbs</span>
+								</ul>
+								<ul class="list-inline list-unstyled">
+									<li>
+										<div class="bot-links">
+											<a href="#"><span class="badge">Java</span></a>
+											<a href="#"><span class="badge">设计模式</span></a>
+											<a href="#"><span class="badge">设计模式</span></a>
+											<a href="#"><span class="badge">设计模式</span></a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>-->
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<footer class="footer" style="margin-top:0px;margin-bottom:0px;padding-top:20px;background-color:black;">
+		<div class="container text-center">
+			<p class="text-muted">Copyright ©2015 NSFOCUS. All Rights Reserved. </p>
+			<p class="text-muted">Technical Support : <a href="http://www.ansible.com/">Ansible</a></p>
+			<p class="text-muted">easyAnsible 2015 Lab @NSFOCUS</p><br/>
+		</div>
+	</footer>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+					<h4 class="modal-title" id="myModalLabel">Info</h4>
+				</div>
+				<div class="modal-body text-center">
+					Operation Success
+				</div>
+				<!--<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>-->
+			</div>
+		</div>
+	</div>
+	
+	<div id="alerts" style='position:fixed;top:60px;right:20px;'></div>
+	
+	<script src="/static/js/jquery-1.11.2.min.js"></script>
+	<script src="/static/js/model/bootstrap-3.3.1-dist/dist/js/bootstrap.min.js"></script>
+	<script src="/static/js/model/bootstrap-3.3.1-dist/dist/js/docs.min.js"></script>
+	<script src="/static/js/model/moment-develop/min/moment-with-locales.min.js"></script>
+	<script src="/static/js/model/bootstrap-datetimepicker-master/build/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="/static/js/model/bootstrap-table-master/dist/bootstrap-table.min.js"></script>
+	<script src="/static/js/model/bootstrap-table-master/dist/locale/bootstrap-table-zh-CN.min.js"></script>
+	<script type="text/javascript">
+		//初始菜单样式
+		$(document).ready(function(){
+			var url = decodeURIComponent(location.href);
+			var cat = parseRequestURL(url, 'cat');
+			//alert(cat);
+			/*var catlist = $(".panel-body .table tr td a").toArray();
+			$.each(catlist, function(i, catitem) {
+				if(catlist[i].innerHTML == cat){
+					catlist[i].parent().parent().addClass("active");
+					catlist[i].parent().parent().parent().parent().parent().parent().addClass("in");
+				}
+			});*/
+			var alist = new Array();
+			var flag = 0;
+			$('.panel-body .table tr td a').each(function(){
+				//alert($(this).text());
+				//alert(cat);
+				alist.push($(this));
+				if($(this).text() == cat) {
+					//$(this).parent().parent().addClass("active");
+					$(this).parent().parent().parent().parent().parent().parent().addClass("in");
+					flag = 1;
+				}
+			});
+			if(flag == 0) {
+				//alist[0].parent().parent().addClass("active");
+				alist[0].parent().parent().parent().parent().parent().parent().addClass("in");
+			}
+		});
+		$(document).ready(function() {
+			//Remove a Tag
+			$('#id_add_tag_list').on('click', 'a', function() {
+				$(this).remove();
+				return false;
+			});
+		});
+		
+		/**********************************************************************************************
+		*****账号下拉列表初始化
+		**********************************************************************************************/
+		//表格行style设置
+		function rowStyle(row, index) {
+			var classes = ['active', 'success', 'info', 'warning', 'danger'];
+			/*if (index % 2 === 0 && index / 2 < classes.length) {
+				return {
+					classes: classes[index / 2]
+				};
+			}*/
+			/*if (row.job_status == 5) {
+				return {
+					classes: 'danger'
+				};
+			}*/
+			return {};
+		}
+		//表格列data设置
+		function moduleNameFormatter(value) {
+			return '<a href="/helpModuleInfo/?module='+value+'"><b>'+value+'</b></a>';
+		}
+		function jobTypeFormatter(value) {
+			if (value == 0) {
+				return "Basic";
+			} else if (value == 1) {
+				return "Script";
+			} else if (value == 2) {
+				return "Playbook";
+			}
+		}
+		function deployStatusFormatter(value) {
+			if (value == 0) {
+				return "<img src='/static/images/r_loading.gif' title='initial'>";
+			} else if (value == 1) {
+				return "<img src='/static/images/r_running.gif' title='running'>";
+			} else if (value == 2) {
+				return "<img src='/static/images/r_exception.png' title='exception'>";
+			} else if (value == 3) {
+				return "<img src='/static/images/r_success.png' title='success'>";
+			}
+		}
+		//表格列data设置
+		function operationFormatter(value) {
+			//return '<a href="#"><i class="glyphicon glyphicon-cutlery"></i>查看</a> <a href="#"><i class="glyphicon glyphicon-cutlery"></i>修改</a>';
+			//return '<i class="glyphicon glyphicon-cutlery"></i> ' ;//+ value;
+			//return '<a href="javascript:queryDeployInfo(' + value.id + ')"><i class="glyphicon glyphicon-search"></i>查看详情</a>';
+			return '<a href="/deployInfo/?deploy_id='+value.id+'"><i class="glyphicon glyphicon-search"></i>查看详情</a>';
+			/*if (value.job_type == 0 || value.job_type == 1) {
+				return "<a href='/getJobRes/?job_id="+value.id+"'>执行结果</a>";
+			} else if (value.job_type == 2 && value.job_status < 4) {
+				return "<a href='/getJobRes/?job_id="+value.id+"'>执行结果</a>";
+			} else if (value.job_type == 2 && value.job_status >= 4) {
+				return "<a href='/getJobRes/?job_id="+value.id+"'>执行结果</a> | " +
+				"<a href='/getPlaybookJobLog/?job_id="+value.id+"'>详细日志</a>";
+			}*/
+		}
+		//表格index设置
+		function runningFormatter(value, row, index) {
+			return index;
+		}
+		//表格复选设置
+		function stateFormatter(value, row, index) {
+			if (index === 2) {
+				return {
+					disabled: true
+				};
+			}
+			if (index === 0) {
+				return {
+					disabled: true,
+					checked: true
+				}
+			}
+			return value;
+		}
+		//表格分页查询设置
+		function queryParams() {
+			return {
+				limit: 5,
+				offset: 0,
+				//search: 
+				sort: 'id',
+				order: 'desc'
+			};
+		}
+		/*
+		$(document).ready(function() {
+			$('.page-list').css('display','inline-block'); 
+			$('.pagination').css('display','inline-block'); 
+			$('.page-list').css({visibility,"visible"});
+			$('.pagination').css({visibility,"visible"});
+		});*/
+		/*$(document).ready(function() {
+			$('#datetimepicker1').datetimepicker({
+				format: 'YYYY-MM-DD',
+				useCurrent: true,
+				calendarWeeks: true,
+				showTodayButton: true,
+				showClear: true
+			});
+		});
+		$(document).ready(function() {
+			initAccountList();
+		});*/
+		function initAccountList() {
+			$.when(queryAccounts()).done(function(data){
+				$.each(data,function(n,value) {  
+					$("#id_account_select").append('<option value="' + value + '">' + value + '</option>');
+				});
+			});
+		}
+		function queryAccounts() {
+			var metricsID = parseRequestURL("metricsID");
+			//alert(metricsID);
+			var defer = $.Deferred();
+			$.ajax({
+				type: "POST",
+				url : '/queryAccounts/',
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				data: {metricsID:metricsID},
+				//async : false,
+				success: function(data){
+					defer.resolve(data)
+				}
+			});
+			return defer.promise();
+		}
+		/**********************************************************************************************
+		*****账户点击率监控曲线
+		**********************************************************************************************/
+		function queryAccountInfoChart() {
+			var date = $("#datetimepicker1 input").val();
+			alert(date);
+			var account = $("#id_account_select option:selected").val();
+			if(account == "NULL") {
+				alert("请选择查询账号");
+				return;
+			}
+			var categories = new Array();
+			var data = new Array();
+			data[0] = new Array();
+			data[1] = new Array();
+			data[2] = new Array();
+			data[3] = new Array();
+			$.each(accountInfo,function(i,item) {
+				$.each(item,function(j,itemitem) {  
+					if(itemitem.accountName == account) {
+						categories.push(itemitem.datetime);
+						data[0].push(Number(itemitem.clickrate[0]));
+						data[1].push(Number(itemitem.clickrate[1]));
+						data[2].push(Number(itemitem.clickrate[2]));
+						data[3].push(Number(itemitem.clickrate[3]));
+					}
+				});
+			});
+			/*alert(data[0]);
+			alert(data[1]);
+			alert(data[2]);
+			alert(data[3]);*/
+			disStatChart(categories, data);
+		}
+		/*$(document).ready(function() {
+			initAlarmTrendChart();
+		});
+		function initAlarmTrendChart(){
+			$('#alarmTrendLoading').show();
+			$.when(queryAlarmTrendData()).done(function(data){
+				$('#alarmTrendLoading').hide();
+				disAlarmTrendChart(data.date, data.data);
+			});
+		}
+		function queryAlarmTrendData() {
+			var defer = $.Deferred();
+			$.ajax({
+				type: "POST",
+				url : '/queryAlarmDayperiod/',
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				//async : false,
+				success: function(data){
+					defer.resolve(data)
+				}
+			});
+			return defer.promise();
+		}*/
+		function disStatChart(categories, data) {
+			$('#container_account_clickrate').highcharts({
+				chart: {
+					type: 'column'
+				},
+				title: {
+					text: '账户点击率监控曲线'
+				},
+				subtitle: {
+					text: '今天-前一周-前两周-前三周'
+				},
+				credits: { 
+					enabled: false   //右下角不显示LOGO 
+				}, 
+				xAxis: {
+					categories: categories
+				},
+				yAxis: {
+					min: 0,
+					title: {
+						text: '次数/次'
+					}
+				},
+				tooltip: {
+					pointFormat: '<b>{series.name} : {point.y}</b>次 ',
+					shared: true,
+					useHTML: true
+				},
+				exporting: {
+					enabled: true  //设置导出按钮不可用
+				},
+				plotOptions: {
+					column: {
+						pointPadding: 0.2,
+						borderWidth: 0
+					}
+				},
+				series: [{
+					name: '今天',
+					data: data[0]
+
+				}, {
+					name: '前一周',
+					data: data[1]
+
+				}, {
+					name: '前两周',
+					data: data[2]
+
+				}, {
+					name: '前三周',
+					data: data[3]
+
+				}]
+			});
+		}
+		function parseRequestURL(paras) {
+			var url = location.href;
+			var paraString = url.substring(url.indexOf("?")+1,url.length).split("&"); 
+			var paraObj = {} 
+			for (i=0; j=paraString[i]; i++){ 
+				paraObj[j.substring(0,j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=")+1,j.length); 
+			} 
+			var returnValue = paraObj[paras.toLowerCase()]; 
+			if(typeof(returnValue)=="undefined"){ 
+				return ""; 
+			}else{ 
+				return returnValue; 
+			} 
+		}
+		
+		
+		function addAlert(message) {
+			$('#alerts').append(
+				'<div class="alert alert-danger alert-dismissible fade in" style="min-width:300px;">' +
+					'<button type="button" class="close" data-dismiss="alert">' +
+					'&times;</button>' + message + '</div>');
+		}
+		$(document).ready(function(){
+			var tips_taskParamList = 'Enter Playbook Content, eg:\n\
+{\n\
+	"task_A": {"host_list":"10.5.24.12;10.5.24.13","task_args":"123456789 987654321"},\n\
+	"task_B": {"host_list":"10.5.24.12;10.5.24.13","task_args":"123456789 987654321"},\n\
+	"task_C": {"host_list":"10.5.24.12;10.5.24.13","task_args":"123456789 987654321"},\n\
+	"task_D": {"host_list":"10.5.24.12;10.5.24.13","task_args":"123456789 987654321"},\n\
+	"task_E": {"host_list":"10.5.24.12;10.5.24.13","task_args":"123456789 987654321"},\n\
+	"task_F": {"host_list":"10.5.24.12;10.5.24.13","task_args":"123456789 987654321"},\n\
+	"task_G": {"host_list":"10.5.24.12;10.5.24.13","task_args":"123456789 987654321"},\n\
+	"task_H": {"host_list":"10.5.24.12;10.5.24.13","task_args":"123456789 987654321"},\n\
+	"task_I": {"host_list":"10.5.24.12;10.5.24.13","task_args":"123456789 987654321"}\n\
+}\n';
+			document.getElementById('id_taskParamList').value = tips_taskParamList;
+		});
+		
+		function submitJobDeploy() {
+			var request = {};
+			var serviceName = $("#id_serviceName_select option:selected").val();
+			if(serviceName == "NULL") {
+				addAlert("ParamException: " + "ServiceName must be selected.");
+				return false;
+			}
+			
+			var deployName = $('#id_deployName_input').val();
+			if(deployName == "") {
+				addAlert("ParamException: " + "DeployName must not be null.");
+				return false;
+			}
+			
+			var taskParamList = $('#id_taskParamList').val();
+			try {
+				taskParamList = jQuery.parseJSON(taskParamList);
+			} catch (error) {
+				addAlert("ParamException: " + "TaskParamList not a valid json format string.");
+				return false;
+			}
+			if (!taskParamList && typeof(taskParamList)!="undefined" && taskParamList!=0) {
+				addAlert("ParamException: " + "TaskParamList should not be null. eg: {}");
+				return false;
+			}
+			if (typeof(taskParamList) != "object") {
+				addAlert("ParamException: " + "TaskParamList not a valid json format string.");
+				return false;
+			}
+			request['serviceName'] = serviceName;
+			request['deployName'] = deployName;
+			request['taskParamList'] = taskParamList;
+			//alert(JSON.stringify(request));
+			
+			$.when(submitDeploy(request)).done(function(data){
+				if(data.ERRORCODE == 0) {
+					window.location.href = "/deploy/";
+				} else {
+					addAlert(data.CH + " : " + data.msg);
+				}
+			});
+			return false;
+		}
+		function submitDeploy(request) {
+			var defer = $.Deferred();
+			$.ajax({
+				type: "POST",
+				url : '/deployService/',
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				data: JSON.stringify(request),
+				//async : false,
+				beforeSend:function(XMLHttpRequest){
+				   document.getElementById('id_loading').style.display = "block";
+				},
+				success: function(data){
+					//document.getElementById('id_loading').style.display = "block";
+					defer.resolve(data)
+				}
+			});
+			return defer.promise();
+		}
+		function queryDeployInfo(deploy_id) {
+			addAlert("Warning: " + "Deploy详情查询暂未实现，请到Job Center查看子任务状态.");
+			
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+celery -A taskworker worker -c 2 --logfile=../logs/taskworker.log -l info

@@ -1,0 +1,542 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="height: 100%;border: none;padding: 0px;margin: 0px;">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7;  IE=EDGE"/>
+	<meta content="首页" name="keywords" />
+	<meta content="首页" name="description" />
+	<meta name="generator" content="首页"/>
+	<link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon" />
+	<title>Document-Scheduler Man</title>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/bootstrap.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/bootstrap-theme.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/css/slider.css" type="text/css"/>
+    <link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/patch.css" type="text/css"/>
+	<link rel="stylesheet" href="/static/css/docs.min.css" type="text/css"/>
+	<style type="text/css">
+        /* Move down content because we have a fixed navbar that is 50px tall */
+		body {
+			padding-top: 50px;
+            height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-fixed-top navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/" style="font-size:18px;font-weight:bold;color:#FFF;"><!--<img alt="Brand" src="/static/images/favicon.ico" title="junneyang.sinaapp.com" style="margin-left:5px;height:24px;width:24px;"/>-->Scheduler Man</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse js-navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/">Home</a></li>
+                    <li class="active"><a href="doc.html">Document</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+    <div style="min-height:100%;height: auto !important;height: 100%;">
+        <div class="container bs-docs-container">
+            <div class="row" style="margin-top:30px;">
+                <div class="col-md-9" role="main">
+                    <div class="bs-docs-section">
+                        <h1 id="id_overview" class="page-header">1. Overview</small></h1>
+                        <h3 id="id_overview_goal">1.1 Scheduler Man定位</h3>
+                        <p>Scheduler Man为云环境PAAS服务提供通用适配层，为PAAS服务提供生命周期管理基础服务。兼容<b>传统业务</b>和<b>基于Docker容器的业务</b>。</p>
+                        <h3 id="id_overview_feature">1.2 Scheduler Man特性</h3>
+                        <ul>
+                            <li>基于Mesos、Marathon实现。分布式调度、高容错、高性能。</li>
+                            <li>兼容传统业务、基于Docker容器的业务。</li>
+                            <li>支持CPU、内存限额。</li>
+                            <li>支持业务快速、自动部署。</li>
+                            <li>支持业务更新升级。</li>
+                            <li>支持业务健康检查。</li>
+                            <li>支持扩容、减容、重启、销毁等。</li>
+                            <li>支持内置DNS。</li>
+                            <li>支持负载均衡。</li>
+                        </ul>
+                        <h3 id="id_overview_feature">1.3 Scheduler Man系统拓扑</h3>
+                        <p>Scheduler Man支持多种异构虚拟化环境。每套物理环境使用一个Scheduler进行管理。拓扑结构如下：</p>
+                        <p><img src="/static/images/resources/top.png"></p>
+                    </div>
+                    <div class="bs-docs-section">
+                        <h1 id="id_api_doc" class="page-header">2. API Doc</small></h1>
+                        <h3 id="id_svc_create">2.1 新建服务</h3>
+                        <ul>
+                            <li>Native Shell 类型服务</li>
+                            <p>scheduler_id为上图中调度器的ID，每套物理环境对应一个调度器，调度器ID后续可通过平台门户API查询。</p>
+                            <p>svc_params为新建的服务的参数。字段具体含义如下：</p>
+                            <p>id为服务的ID，由服务的目录和服务的ID拼接而成。服务目录将多个服务视为一个逻辑分组，服务ID为用户申请服务时系统生成的apply_id。</p>
+                            <p>apps为服务包含的app，复杂服务可包含多个app，app部署可配置依赖关系。app字段具体含义如下：</p>
+                            <p>id为app的ID。</p>
+                            <p>cmd为app启动命令。</p>
+                            <p>cpu为app的CPU限额。</p>
+                            <p>mem为app的内存限额。</p>
+                            <p>ports为app需要使用的端口，0为随机，也可指定(此时requirePorts为true)，范围31000-32000。app通过$PORT0、$PORT1访问。</p>
+                            <p>instances为app部署的个数。</p>
+                            <p>env为app的环境变量，可作为部署参数。</p>
+                            <p>constraints为app部署限制，比如可指定到特定机器部署。</p>
+                            <p>uris为app部署前需要下载的软件包等资源。</p>
+                            <p>dependencies为app是否部署依赖其他app。</p>
+                            <p>healthChecks为app是部署之后需要做什么健康检查，支持HTTP、TCP、以及普通Command命令。</p>
+                            <p>其他参数可默认。</p>
+                            <p><pre>POST            /svc_create/
+Content-Type    application/json
+{
+    "scheduler_id":"1",
+    "svc_params": {
+        "id": "/catalog-test/111",
+        "apps": [
+            {
+                "id": "app-test01",
+                "cmd": "env && tar -xzvf *.tar.gz && rm -rf *.tar.gz && cd applications/ && sleep 30 && chmod 755 run.sh && ./run.sh",
+                "cpus": 0.1,
+                "mem": 16.0,
+                "ports": [
+                    0
+                ],
+                "requirePorts": false,
+                "instances": 2,
+                "executor": "",
+                "env": {
+                    "APP01_PARAM1": "123456",
+                    "APP01_PARAM2": "654321"
+                },
+                "constraints": [
+                    ["hostname","CLUSTER","10.5.24.31"]
+                ],
+                "labels": {
+                },
+                "uris": [
+                    "http://10.5.24.160/app-test01-1.0.0.1.tar.gz"
+                ],
+                "dependencies": [],
+                "healthChecks": [
+                    {
+                        "protocol": "HTTP",
+                        "path": "/",
+                        "gracePeriodSeconds": 30,
+                        "intervalSeconds": 10,
+                        "portIndex": 0,
+                        "timeoutSeconds": 10,
+                        "maxConsecutiveFailures": 5
+                    }
+                ],
+                "backoffSeconds": 1,
+                "backoffFactor": 1.15,
+                "maxLaunchDelaySeconds": 3600,
+                "upgradeStrategy": {
+                    "minimumHealthCapacity": 0.5,
+                    "maximumOverCapacity": 0.2
+                }
+            },
+            {
+                "id": "app-test02",
+                "cmd": "env && tar -xzvf *.tar.gz && rm -rf *.tar.gz && cd applications/ && sleep 30 && chmod 755 run.sh && ./run.sh",
+                "cpus": 0.1,
+                "mem": 16.0,
+                "ports": [
+                    0
+                ],
+                "requirePorts": false,
+                "instances": 2,
+                "executor": "",
+                "env": {
+                    "APP02_PARAM1": "123456",
+                    "APP02_PARAM2": "654321"
+                },
+                "constraints": [
+                    ["hostname", "UNIQUE"]
+                ],
+                "labels": {
+                },
+                "uris": [
+                    "http://10.5.24.160/app-test02-1.0.0.1.tar.gz"
+                ],
+                "dependencies": [],
+                "healthChecks": [
+                    {
+                        "protocol": "HTTP",
+                        "path": "/",
+                        "gracePeriodSeconds": 30,
+                        "intervalSeconds": 10,
+                        "portIndex": 0,
+                        "timeoutSeconds": 10,
+                        "maxConsecutiveFailures": 5
+                    }
+                ],
+                "backoffSeconds": 1,
+                "backoffFactor": 1.15,
+                "maxLaunchDelaySeconds": 3600,
+                "upgradeStrategy": {
+                    "minimumHealthCapacity": 0.5,
+                    "maximumOverCapacity": 0.2
+                }
+            },
+            {
+                "id": "app-test03",
+                "cmd": "env && tar -xzvf *.tar.gz && rm -rf *.tar.gz && cd applications/ && sleep 30 && chmod 755 run.sh && ./run.sh",
+                "cpus": 0.1,
+                "mem": 16.0,
+                "ports": [
+                    0
+                ],
+                "requirePorts": false,
+                "instances": 2,
+                "executor": "",
+                "env": {
+                    "APP03_PARAM1": "123456",
+                    "APP03_PARAM2": "654321"
+                },
+                "constraints": [
+                ],
+                "labels": {
+                },
+                "uris": [
+                    "http://10.5.24.160/app-test03-1.0.0.1.tar.gz"
+                ],
+                "dependencies": ["../app-test01", "../app-test02"],
+                "healthChecks": [
+                    {
+                        "protocol": "HTTP",
+                        "path": "/",
+                        "gracePeriodSeconds": 30,
+                        "intervalSeconds": 10,
+                        "portIndex": 0,
+                        "timeoutSeconds": 10,
+                        "maxConsecutiveFailures": 5
+                    }
+                ],
+                "backoffSeconds": 1,
+                "backoffFactor": 1.15,
+                "maxLaunchDelaySeconds": 3600,
+                "upgradeStrategy": {
+                    "minimumHealthCapacity": 0.5,
+                    "maximumOverCapacity": 0.2
+                }
+            },
+            {
+                "id": "app-test04",
+                "cmd": "env && tar -xzvf *.tar.gz && rm -rf *.tar.gz && cd applications/ && sleep 30 && chmod 755 run.sh && ./run.sh",
+                "cpus": 0.1,
+                "mem": 16.0,
+                "ports": [
+                    0
+                ],
+                "requirePorts": false,
+                "instances": 2,
+                "executor": "",
+                "env": {
+                    "APP04_PARAM1": "123456",
+                    "APP04_PARAM2": "654321"
+                },
+                "constraints": [
+                ],
+                "labels": {
+                },
+                "uris": [
+                    "http://10.5.24.160/app-test04-1.0.0.1.tar.gz"
+                ],
+                "dependencies": ["../app-test03"],
+                "healthChecks": [
+                    {
+                        "protocol": "HTTP",
+                        "path": "/",
+                        "gracePeriodSeconds": 30,
+                        "intervalSeconds": 10,
+                        "portIndex": 0,
+                        "timeoutSeconds": 10,
+                        "maxConsecutiveFailures": 5
+                    }
+                ],
+                "backoffSeconds": 1,
+                "backoffFactor": 1.15,
+                "maxLaunchDelaySeconds": 3600,
+                "upgradeStrategy": {
+                    "minimumHealthCapacity": 0.5,
+                    "maximumOverCapacity": 0.2
+                }
+            }
+        ]     
+    }
+}
+</pre></p>
+                            <li>Docker Container 类型服务</li>
+                            <p><pre>POST            /svc_create/
+Content-Type    application/json
+{
+    "scheduler_id":"1",
+    "svc_params": {
+        "id": "/test/1",
+        "apps": [
+            {
+                "id": "mysql01",
+                "cpus": 1.0,
+                "mem": 512.0,
+                "ports": [
+                    0
+                ],
+                "requirePorts": false,
+                "instances": 1,
+                "executor": "",
+                "container": {
+                    "type": "DOCKER",
+                    "docker": {
+                        "image": "10.5.24.46:80/mysql:5.6",
+                        "forcePullImage": true,
+                        "network": "BRIDGE",
+                        "portMappings": [
+                            {
+                                "containerPort": 3306,
+                                "hostPort": 0,
+                                "servicePort": 0,
+                                "protocol": "tcp"
+                            }
+                        ],
+                        "privileged": false,
+                        "parameters": [
+                        ]
+                    },
+                    "volumes": [
+                    ]
+                },
+                "env": {
+                    "MYSQL_DATABASE": "mysite",
+                    "MYSQL_ROOT_PASSWORD": "Admin@123",
+                    "MYSQL_USER": "mysite",
+                    "MYSQL_PASSWORD": "Admin@123"
+                },
+                "constraints": [
+                ],
+                "labels": {
+                },
+                "uris": [
+                ],
+                "dependencies": [],
+                "healthChecks": [
+                    {
+                        "protocol": "TCP",
+                        "gracePeriodSeconds": 60,
+                        "intervalSeconds": 10,
+                        "portIndex": 0,
+                        "timeoutSeconds": 10,
+                        "maxConsecutiveFailures": 3
+                    }
+                ],
+                "backoffSeconds": 1,
+                "backoffFactor": 1.15,
+                "maxLaunchDelaySeconds": 3600,
+                "upgradeStrategy": {
+                    "minimumHealthCapacity": 0.5,
+                    "maximumOverCapacity": 0.2
+                }
+            }
+        ]
+    }
+}
+</pre></p>
+                        </ul>
+                        <h3 id="id_svc_delete">2.2 删除服务</h3>
+                        <p><pre>POST            /svc_delete/
+Content-Type    application/json
+{
+    "scheduler_id":"1",
+    "svc_catalog":"test",
+    "apply_id":"1"
+}
+</pre></p>
+                        <h3 id="id_svc_update">2.3 更新服务</h3>
+                        <p><pre>POST            /svc_update/
+Content-Type    application/json
+{
+    "scheduler_id":"1",
+    "svc_params": {
+        "id": "/test/1",
+        "apps": [
+            {
+                "id": "mysql01",
+                "cpus": 1.0,
+                "mem": 512.0,
+                "ports": [
+                    0
+                ],
+                "requirePorts": false,
+                "instances": 2,
+                "executor": "",
+                "container": {
+                    "type": "DOCKER",
+                    "docker": {
+                        "image": "10.5.24.46:80/mysql:5.6",
+                        "forcePullImage": true,
+                        "network": "BRIDGE",
+                        "portMappings": [
+                            {
+                                "containerPort": 3306,
+                                "hostPort": 0,
+                                "servicePort": 0,
+                                "protocol": "tcp"
+                            }
+                        ],
+                        "privileged": false,
+                        "parameters": [
+                        ]
+                    },
+                    "volumes": [
+                    ]
+                },
+                "env": {
+                    "MYSQL_DATABASE": "mysite",
+                    "MYSQL_ROOT_PASSWORD": "Admin@123",
+                    "MYSQL_USER": "mysite",
+                    "MYSQL_PASSWORD": "Admin@123"
+                },
+                "constraints": [
+                ],
+                "labels": {
+                },
+                "uris": [
+                ],
+                "dependencies": [],
+                "healthChecks": [
+                    {
+                        "protocol": "TCP",
+                        "gracePeriodSeconds": 60,
+                        "intervalSeconds": 10,
+                        "portIndex": 0,
+                        "timeoutSeconds": 10,
+                        "maxConsecutiveFailures": 3
+                    }
+                ],
+                "backoffSeconds": 1,
+                "backoffFactor": 1.15,
+                "maxLaunchDelaySeconds": 3600,
+                "upgradeStrategy": {
+                    "minimumHealthCapacity": 0.5,
+                    "maximumOverCapacity": 0.2
+                }
+            }
+        ]
+    }
+}
+</pre></p>
+                        <h3 id="id_get_svc_deploy_status">2.4 任务查询</h3>
+                        <p><pre>GET             /get_svc_deploy_status/?deploy_id=10
+Content-Type    application/json
+{ 
+    "msg": { 
+        "status": 3, 
+        "info": "-", 
+        "description": "SUCCESS", 
+        "start_time": "2015-11-26 11:12:11+08:00", 
+        "apply_id": 1, 
+        "end_time": "2015-11-26 11:12:51+08:00", 
+        "action": "CREATE", 
+        "deploy_id": 16 
+        }, 
+    "ch": "操作成功", 
+    "en": "operation success", 
+    "err_code": 0 
+}
+</pre></p>
+                        <h3 id="id_get_svc_apps">2.5 查询服务APP列表</h3>
+                        <p><pre>GET             /get_svc_apps/?scheduler_id=1&svc_catalog=test&apply_id=23
+Content-Type    application/json
+{
+	"msg": [{
+		"tasksStaged": 0,
+		"tasksUnhealthy": 0,
+		"mem": 512.0,
+		"cpus": 1.0,
+		"tasksHealthy": 1,
+		"instances": 1,
+		"tasksRunning": 1,
+		"id": "/test/1/mysql01"
+	}],
+	"ch": "操作成功",
+	"en": "operation success",
+	"err_code": 0
+}
+</pre></p>
+                        <h3 id="id_get_app_instances">2.6 查询APP的实例列表</h3>
+                        <p><pre>GET             /get_app_instances/?scheduler_id=1&app_id=/test/1/mysql01
+Content-Type    application/json
+{
+	"msg": [{
+		"slaveId": "f112823e-a902-4cf6-af12-bc43fe1326cf-S2",
+		"stagedAt": "2015-11-26T03:49:02.523Z",
+		"log": "http://10.5.24.20:5050/#/slaves/84590e30-803f-4926-8803-166fe5b62883-S4/frameworks/b5a007c8-780b-4fe3-a41f-65d904dbcdc0-0000/executors/test_29_mysql01.08b469a6-9361-11e5-95e4-fa163e6a6c5a",
+		"healthCheckResults": [{
+			"lastSuccess": "2015-11-26T03:59:53.423Z",
+			"consecutiveFailures": 0,
+			"alive": true,
+			"firstSuccess": "2015-11-26T03:49:32.543Z",
+			"taskId": "test_1_mysql01.a2129982-93f0-11e5-95e4-fa163e6a6c5a",
+			"lastFailure": null
+		}],
+		"ports": [31573],
+		"host": "10.5.24.36",
+		"version": "2015-11-26T03:49:02.379Z",
+		"appId": "/test/1/mysql01",
+		"startedAt": "2015-11-26T03:49:04.438Z",
+		"id": "test_1_mysql01.a2129982-93f0-11e5-95e4-fa163e6a6c5a"
+	}],
+	"ch": "操作成功",
+	"en": "operation success",
+	"err_code": 0
+}
+</pre></p>
+                        <p>之后可以使用 mysql01-1-test.marathon.nsc. 域名访问此mysql，即使应用自动迁移到其他主机也不受影响。</p>
+                        <br/><br/><br/><br/><br/><br/>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" role="complementary">
+                        <ul class="nav bs-docs-sidenav">
+                            <li>
+                                <a href="#id_overview">1. Overview</a>
+                                <ul class="nav">
+                                    <li><a href="#id_overview_goal">1.1 Scheduler Man定位</a></li>
+                                    <li><a href="#id_overview_feature">1.2 Scheduler Man定位</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#id_api_doc">2. API Doc</a>
+                                <ul class="nav">
+                                    <li><a href="#id_svc_create">2.1 新建服务</a></li>
+                                    <li><a href="#id_svc_delete">2.2 删除服务</a></li>
+                                    <li><a href="#id_svc_update">2.3 更新服务</a></li>
+                                    <li><a href="#id_get_svc_deploy_status">2.4 任务查询</a></li>
+                                    <li><a href="#id_get_svc_apps">2.5 查询服务APP列表</a></li>
+                                    <li><a href="#id_get_app_instances">2.6 查询APP的实例列表</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <a class="back-to-top" href="#top">返回顶部</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <footer class="footer" style="margin-top:-130px;margin-bottom:0px;padding-top:20px;background-color:black;">
+		<div class="container text-center">
+			<p class="text-muted">Copyright ©2015 NSFOCUS. <a href="http://www.nsfocus.com">绿盟科技</a>. All Rights Reserved. </p>
+			<p class="text-muted">Technical Support : <a href="#">nscloud</a></p>
+			<p class="text-muted">京ICP备14004349号 京公网安备110108002872号 京ICP证110355号</p><br/>
+		</div>
+	</footer> -->
+	<script src="/static/js/jquery-1.11.2.min.js"></script>
+	<script src="/static/js/model/bootstrap-3.3.1-dist/dist/js/bootstrap.min.js"></script>
+    <script src="/static/js/model/bootstrap-3.3.1-dist/dist/js/docs.min.js"></script>
+	<script type="text/javascript">
+        $(document).ready(function(){
+		});
+	</script>
+</body>
+</html>

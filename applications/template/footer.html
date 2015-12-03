@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="height: 100%;border: none;padding: 0px;margin: 0px;">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7;  IE=EDGE"/>
+	<!-- <meta content="首页" name="keywords" />
+	<meta content="首页" name="description" />
+	<meta name="generator" content="首页"/>
+	<link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon" />
+	<title>首页-XXX云平台</title> -->
+	<link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/bootstrap.min.css" type="text/css"/>
+	<!-- <link rel="stylesheet" href="/static/js/model/bootstrap-3.3.1-dist/dist/css/bootstrap-theme.min.css" type="text/css"/> -->
+	<!-- <link rel="stylesheet" href="/static/css/slider.css" type="text/css"/> -->
+	<style type="text/css">
+		/* Move down content because we have a fixed navbar that is 50px tall */
+		body {
+			#padding-top: 50px;
+			padding-bottom: 20px;
+			height: 100%;
+		}
+		/* item img opacity */
+		.item img {
+			opacity:0.8;
+			filter:alpha(opacity=80); /* 针对 IE8 以及更早的版本 */
+		}
+		/* IMG hover rotate */
+		.hover {
+			margin: 0 auto;
+			width: 140px;
+			height: 140px;
+			position: relative;
+			#font-size: .8em;
+			font-size: 14px;
+			-webkit-perspective: 600px;
+			-moz-perspective: 600px;
+		}
+		.hover .front {
+			position: absolute;
+			top: 0;
+			z-index: 900;
+			width: inherit;
+			height: inherit;
+			text-align: center;
+		}
+		.hover .back {
+			position: absolute;
+			top: 0;
+			z-index: 800;
+			width: inherit;
+			height: inherit;
+		}
+		/* -- make sure to declare a default for every property that you want animated -- */
+		/* -- general styles, including Y axis rotation -- */
+		.hover .front {
+			position: absolute;
+			top: 0;
+			z-index: 900;
+			width: inherit;
+			height: inherit;
+			text-align: center;
+			-webkit-transform: rotateX(0deg) rotateY(0deg);
+			-webkit-transform-style: preserve-3d;
+			-webkit-backface-visibility: hidden;
+			-moz-transform: rotateX(0deg) rotateY(0deg);
+			-moz-transform-style: preserve-3d;
+			-moz-backface-visibility: hidden;
+			/* -- transition is the magic sauce for animation -- */
+			-o-transition: all .4s ease-in-out;
+			-ms-transition: all .4s ease-in-out;
+			-moz-transition: all .4s ease-in-out;
+			-webkit-transition: all .4s ease-in-out;
+			transition: all .4s ease-in-out;
+		}
+		.hover.flip .front {
+			z-index: 900;
+			-webkit-transform: rotateY(180deg);
+			-moz-transform: rotateY(180deg);
+		}
+		.hover .back {
+			position: absolute;
+			top: 0;
+			z-index: 800;
+			width: inherit;
+			height: inherit;
+			-webkit-transform: rotateY(-180deg);
+			-webkit-transform-style: preserve-3d;
+			-webkit-backface-visibility: hidden;
+		 
+			-moz-transform: rotateY(-180deg);
+			-moz-transform-style: preserve-3d;
+			-moz-backface-visibility: hidden;
+			/* -- transition is the magic sauce for animation -- */
+			-o-transition: all .4s ease-in-out;
+			-ms-transition: all .4s ease-in-out;
+			-moz-transition: all .4s ease-in-out;
+			-webkit-transition: all .4s ease-in-out;
+			transition: all .4s ease-in-out;
+		}
+		.hover.flip .back {
+			z-index: 1000;
+			-webkit-transform: rotateX(0deg) rotateY(0deg);
+			-moz-transform: rotateX(0deg) rotateY(0deg);
+		}
+		/* dropdown-large-menu style */
+		.dropdown-large {
+			position: static !important;
+		}
+		.dropdown-menu-large {
+			margin-left: 250px;
+			margin-right: 16px;
+			padding: 20px 0px;
+			min-width: 600px;
+		}
+		.dropdown-menu-large > li > ul {
+			padding: 0;
+			margin: 0;
+		}
+		.dropdown-menu-large > li > ul > li {
+			list-style: none;
+		}
+		.dropdown-menu-large > li > ul > li > a {
+			display: block;
+			padding: 3px 20px;
+			clear: both;
+			font-weight: normal;
+			line-height: 1.428571429;
+			color: #333333;
+			white-space: normal;
+		}
+		.dropdown-menu-large > li ul > li > a:hover,
+		.dropdown-menu-large > li ul > li > a:focus {
+			text-decoration: none;
+			color: #262626;
+			background-color: #E8E8E8;
+		}
+		.dropdown-menu-large .disabled > a,
+		.dropdown-menu-large .disabled > a:hover,
+		.dropdown-menu-large .disabled > a:focus {
+			color: #999999;
+		}
+		.dropdown-menu-large .disabled > a:hover,
+		.dropdown-menu-large .disabled > a:focus {
+			text-decoration: none;
+			background-color: transparent;
+			background-image: none;
+			filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+			cursor: not-allowed;
+		}
+		.dropdown-menu-large .dropdown-header {
+			color: #428bca;
+			font-size: 16px;
+		}
+		@media (max-width: 800px) {
+			.dropdown-menu-large {
+				margin-left: 0 ;
+				margin-right: 0 ;
+			}
+			.dropdown-menu-large > li {
+				margin-bottom: 30px;
+			}
+			.dropdown-menu-large > li:last-child {
+				margin-bottom: 0;
+			}
+			.dropdown-menu-large .dropdown-header {
+				padding: 3px 15px !important;
+			}
+		}
+		/* footer css #f8f8f8; */
+		.pb-page-footer{
+			width: 100%;
+			color: gray;
+			background-color: #3C3C3C;
+			#border-top: 1px solid #e7e7e7;
+			margin-top: 5px;
+			margin-bottom: 0px;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+		.pb-page-footer a, .pb-page-footer a:visited {
+			color: #777;
+			text-decoration: none;
+		}
+		.pb-page-footer a:active, .pb-page-footer a:hover, .pb-page-footer a:focus{
+			color: white;
+			text-decoration: none;
+		}
+		body {
+			padding-bottom:0px;
+		}
+		.pb-page-footer h4 {
+			color:white;
+		}
+		/* carousel-caption position */
+		/*.carousel-caption {
+			left:10%;
+			right:45%;
+			text-align:left;
+		}
+		.carousel-caption .pbutton{
+			text-align:center;
+		}*/
+	</style>
+</head>
+<body>
+	<footer class="footer" style="margin-top:0px;margin-bottom:0px;padding-top:20px;background-color:black;">
+		<div class="container text-center">
+			<p class="text-muted">Copyright ©2015 NSFOCUS. <a href="http://www.nsfocus.com">绿盟科技</a>. All Rights Reserved. </p>
+			<p class="text-muted">Technical Support : <a href="#">nscloud</a></p>
+			<p class="text-muted">京ICP备14004349号 京公网安备110108002872号 京ICP证110355号</p><br/>
+		</div>
+	</footer>
+	
+	<!-- <script src="/static/js/jquery-1.11.2.min.js"></script>
+	<script src="/static/js/model/bootstrap-3.3.1-dist/dist/js/bootstrap.min.js"></script> -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+		});
+	</script>
+</body>
+</html>

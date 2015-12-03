@@ -1,0 +1,66 @@
+server {
+    listen                  443;
+    charset                 utf-8;
+    ssl                     on;
+    ssl_certificate         /opt/mysite/nginx/server.crt;
+    ssl_certificate_key     /opt/mysite/nginx/server.key;
+    access_log  on;
+    
+    location / {
+        root   /opt/mysite;
+        uwsgi_pass 127.0.0.1:9090;
+        include    uwsgi_params;
+    }
+#        location /media/ {
+#                alias /opt/disk2/var/www/static/;
+#                limit_conn perip 10;
+#                limit_rate 200k;
+#                limit_req  zone=portal burst=60;
+#                expires         5d;
+#        }
+    location /static/ {
+        expires 5d;
+        alias /opt/mysite/static;
+    }
+
+    location ^(.*)\.favicon.ico$ {
+        log_not_found off;
+    }
+    location ~ /\.(ht|svn|git) {  
+        deny all;
+    }
+
+}
+
+server {
+    listen                  80;
+    charset                 utf-8;
+    access_log              on;
+    #server_name             localhost;
+    root   /opt/disk2/var/www;
+    location / {
+        root   /opt/mysite;
+        uwsgi_pass 127.0.0.1:9090;
+        include    uwsgi_params;
+    }
+#        location /media/ {
+#                alias /opt/disk2/var/www/static/;
+#                limit_conn perip 10;
+#                limit_rate 200k;
+#                limit_req  zone=portal burst=60;
+#                expires         5d;
+#        }
+    location /static/ {
+        expires 5d;
+        alias /opt/mysite/static;
+    }
+
+    location ^(.*)\.favicon.ico$ {
+        log_not_found off;
+    }
+    location ~ /\.(ht|svn|git) {  
+        deny all;
+    }
+}
+
+
