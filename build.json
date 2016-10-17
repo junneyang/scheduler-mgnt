@@ -51,7 +51,7 @@
             "env": {
                 "MYSQL_DATABASE": "mysite",
                 "MYSQL_USER": "mysite",
-                "MYSQL_PASSWORD": "Admin@123",
+                "MYSQL_PASSWORD": "xxxxxx",
                 "MYSQL_HOST": "mysqldb-envname-product.marathon.mesos.",
                 "MYSQL_PORT": "31111"
             },
